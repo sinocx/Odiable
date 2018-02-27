@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.where(user: current_user)
-
   end
 
   def new
@@ -13,7 +12,6 @@ class OrdersController < ApplicationController
 
   def key(product)
     key1 = []
-
     key0 = [product.id]
     3.times do
       key1 << ("A".."Z").to_a.sample
@@ -21,9 +19,9 @@ class OrdersController < ApplicationController
     2.times do
       key1 << rand(0..9)
     end
+    key1.shuffle
     unique_key = key0 << key1
     unique_key.shuffle
-
   end
 
   def create

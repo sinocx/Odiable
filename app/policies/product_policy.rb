@@ -13,14 +13,14 @@ class ProductPolicy < ApplicationPolicy
     true
   end
   def edit?
-    record.user == current_user
+    record.user == user
   end
   def update?
-    record.user == current_user
+    record.user == user
   end
 
   def destroy?
-    record.user == current_user
+    record.user == user
   end
   class Scope < Scope
     def resolve

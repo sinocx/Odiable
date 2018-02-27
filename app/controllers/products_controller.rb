@@ -37,8 +37,6 @@ class ProductsController < ApplicationController
     @product.update(product_params)
   end
 
-
-
   def destroy
     authorize @product
     @product = Product.find(params[:id])
