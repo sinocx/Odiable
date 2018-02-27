@@ -1,32 +1,38 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @product = policy_scope(Product).order(created_at: :desc)
   end
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
+    authorize @product
     @product.user = current_user
     authorize @product
     if @product.save
       redirect_to product_path(@product)
     else
       render :new
-    end  end
+    end
+  end
 
   def edit
+    authorize @product
     @product = Product.find(params[:id])
   end
 
   def update
+    authorize @product
     @product = Product.find(params[:id])
     @product.update(product_params)
   end
@@ -34,6 +40,7 @@ class ProductsController < ApplicationController
 
 
   def destroy
+    authorize @product
     @product = Product.find(params[:id])
     @product.destroy
   end
@@ -41,6 +48,7 @@ class ProductsController < ApplicationController
     private
 
   def product_params
+    authorize @product
     params.require(:product).permit(:title, :description, :status)
   end
 
