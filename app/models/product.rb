@@ -7,5 +7,6 @@ class Product < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 15 }
   validates :status, presence: true
+  mount_uploader :photo, PhotoUploader
 end
 
