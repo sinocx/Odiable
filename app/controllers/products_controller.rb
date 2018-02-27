@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     authorize @product
+    @product.status = 0
     @product.user = current_user
     authorize @product
     if @product.save
@@ -27,29 +28,32 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    authorize @product
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def update
-    authorize @product
     @product = Product.find(params[:id])
+    authorize @product
     @product.update(product_params)
+    redirect_to product_path(@product)
+
   end
 
 
 
   def destroy
-    authorize @product
     @product = Product.find(params[:id])
+    authorize @product
     @product.destroy
+    redirect_to products_path
+
   end
 
     private
 
   def product_params
-    authorize @product
-    params.require(:product).permit(:title, :description, :status)
+    params.require(:product).permit(:title, :description)
   end
 
 end
