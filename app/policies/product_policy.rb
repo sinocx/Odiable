@@ -24,7 +24,7 @@ class ProductPolicy < ApplicationPolicy
   end
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
 end
