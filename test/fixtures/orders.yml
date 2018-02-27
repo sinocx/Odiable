@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  product: one
+  checkin: 2018-02-26
+  checkout: 2018-02-26
+  aa: MyString
+  ad: MyString
+  uniquekey: MyString
+
+two:
+  user: two
+  product: two
+  checkin: 2018-02-26
+  checkout: 2018-02-26
+  aa: MyString
+  ad: MyString
+  uniquekey: MyString

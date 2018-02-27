@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car: MyString
+  capacity: MyString
+  permit: MyString
+  cin: MyString
+
+two:
+  car: MyString
+  capacity: MyString
+  permit: MyString
+  cin: MyString
