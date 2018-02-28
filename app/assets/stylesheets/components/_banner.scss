@@ -1,0 +1,45 @@
+.banner-container {
+  height: 100vh;
+  text-align: center;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  background-image: image-url("ban.jpg" );
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-content {
+  color: f7f4f4;
+  h2 {
+    margin-top: 32px;
+    padding-bottom: 180px;
+    font-size: 25px;
+
+  h1 {
+    font-size: 58px;
+    margin-top: 95px;
+  }
+}
+}
+
+#specific {
+  font-family: $specific-title;
+  color: white;
+}
+
+  .btn-banner {
+    border: 3px solid $red;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 25px;
+  &:hover {
+    text-decoration:none;
+    color: white;
+    background-color: rgba(200, 200, 200, 0.7)
+  }
+}
+
+
+
