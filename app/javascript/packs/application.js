@@ -10,6 +10,6 @@
 import 'bootstrap';
 import "../plugins/flatpickr";
 
-import { stepForm } from "../component/signup_form";
+import { stepForm, stepBack } from "../component/signup_form";
 stepForm();
-
+stepBack();
