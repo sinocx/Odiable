@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227164359) do
+ActiveRecord::Schema.define(version: 20180228133206) do
 
 
   # These are extensions that must be enabled in order to support this database
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 20180227164359) do
     t.bigint "product_id"
     t.date "checkin"
     t.date "checkout"
-    t.string "aa"
-    t.string "ad"
     t.string "uniquekey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,6 +48,9 @@ ActiveRecord::Schema.define(version: 20180227164359) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "aa"
+    t.string "ad"
+    t.datetime "date"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
