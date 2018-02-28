@@ -40,8 +40,6 @@ class ProductsController < ApplicationController
 
   end
 
-
-
   def destroy
     @product = Product.find(params[:id])
     authorize @product
