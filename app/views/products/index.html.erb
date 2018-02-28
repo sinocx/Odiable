@@ -1,5 +1,25 @@
 <h1>INDEX</h1>
 
+<%= form_tag(products_path, method: :get) do %>
+      <%= text_field_tag :query, nil, placeholder: "Choisir une ville", class: 'btn-sea' %>
+      <%= submit_tag 'Recherche', class: "btn-recherche" %>
+      <% end %>
+
+
+
+
+
+
+<%= form_tag(products_path, method: :get) do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Trouve une annonce"
+  %>
+  <%= submit_tag 'Recherche' %>
+<% end %>
+
+
 <div class="wrapper">
   <div class="container">
     <div class="row">
