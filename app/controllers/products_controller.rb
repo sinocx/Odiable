@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
 
   def index
-    @product = policy_scope(Product).order(created_at: :desc)
+    @products = policy_scope(Product).order(created_at: :desc)
+
   end
 
   def show
     @product = Product.find(params[:id])
+    @offers = Offer.where(product_id: @product.id)
     authorize @product
   end
 
