@@ -6,9 +6,10 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-import 'bootstrap';
-import { init } from "../component/progressBar";
-init();
-console.log('Hello World from Webpacker');
 
+import 'bootstrap';
+import "../plugins/flatpickr";
+
+import { stepForm } from "../component/signup_form";
+stepForm();
 

@@ -1,25 +1,56 @@
 class OffersController < ApplicationController
+  def index
+    @offers = policy_scope(Offer).order(created_at: :desc)
+  end
   def new
     @offer = Offer.new
+    authorize @offer
     @product = Product.find(params[:product_id])
     @user = current_user
   end
 
   def create
-    @offer = Offer.new
+    @offer = Offer.new(offers_params)
+    authorize @offer
     @product = Product.find(params[:product_id])
-    @user = current_user
-    if @offer.save && @offer.user.transporter
-      redirect_to
+    @offer.product = @product
+    @offer.status = 0
+    @transporter = Transporter.where(user_id: current_user.id)
+    @offer.transporter = @transporter.first
+    if @offer.save!
+      redirect_to product_path(@product)
     else
       render :new
     end
+  end
+  def validate
+    @product = Product.find(params[:product_id])
+    @offer = Offer.find(params[:id])
+
+    authorize @offer
+    @product.status = 1
+    @offer.status = 1
+    @product.save
+    @offer.save
+    redirect_to product_path(@product)
+  end
+  def refused
+    @product = Product.find(params[:product_id])
+    @offer = Offer.find(params[:id])
+    authorize @offer
+    @offer.status = 2
+    @product.save
+    @offer.save
+    redirect_to product_path(@product)
   end
 
   def destroy
     @offer = Offer.Find(params[:id])
     @offer.destroy
     redirect_to
+  end
+  def offers_params
+    params.require(:offer).permit(:price, :description)
   end
 
 end

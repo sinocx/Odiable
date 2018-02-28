@@ -1,10 +1,32 @@
-<h1><%= @product.title %></h1>
-<p><%= @product.description %></p>
-<%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="content">
+          <%= @product.title %>
+          <%= @product.description %>
+          <%= @product.status %>
+          <%= link_to "retour au produit", products_path %>
+          <%= link_to "Faire une offre", new_product_offer_path(@product) %>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="content">
+          <% @offers.each do |offer|  %>
+          <% if offer.status ==  %>
 
-<ul>
-  <li><%= link_to  "Editer mon annonce", edit_product_path(@product) %></li>
-  <li><%= link_to  "Supprimer mon annonce", product_path(@product), method: :delete %></li>
-</ul>
-
-
+            <div class="offer">
+              <%= offer.transporter.user.first_name %>
+              <%= offer.description %>
+              <%= offer.price %>
+              <% if @product.user == current_user %>
+                <%= link_to "Validé", validate_offer_path(@product,offer)  %>
+                <%= link_to "Refusé", refused_offer_path(@product,offer)  %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

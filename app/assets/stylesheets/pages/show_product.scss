@@ -1,0 +1,11 @@
+.content {
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  .offer {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black
+  }
+}
