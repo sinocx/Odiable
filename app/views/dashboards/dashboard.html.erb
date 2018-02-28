@@ -1,8 +1,39 @@
 <div class="dashboard">
-  <% @products.each do |product| %>
-    <div class="content-dashboard-show">
-      <%= product.description %>
-      <%= link_to "Show", dashboards_product_path(product) %>
+</div>
+<% if current_user.transporter %>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
+  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
+</ul>
+<% else %>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
+  </ul>
+<% end %>
+  <!-- Tab panes -->
+<div class="wrap">
+  <div class="container">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="home">
+        <%  %>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="profile">
+
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="messages">
+        <div class="row">
+          <% @products.each do |product| %>
+            <div class="col-xs-12">
+              <div class="dash-card">
+                <div class="prod-description">
+                  <%= product.description %>
+                </div>
+                <%= link_to "Show", dashboards_product_path(product) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
 </div>

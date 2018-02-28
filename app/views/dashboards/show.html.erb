@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="content">
+        <div class="content-dashboard-show">
             <%= @product.title %>
             <%= @product.description %>
             <%= @product.status %>
@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="col-xs-12">
-        <div class="content">
+        <div class="content-dashboard-show">
           <% @offers.each do |offer|  %>
             <div class="offer">
               <%= offer.transporter.user.first_name %>
