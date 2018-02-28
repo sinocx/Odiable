@@ -1,0 +1,25 @@
+.btn-valider {
+  width: 200px;
+  font-size: 17px;
+  background-color: $blue;
+  border-radius: 10px;
+  padding: 13px 39px;
+  color: $white;
+  text-align: center;
+  &:hover {
+    text-decoration:none;
+  }
+}
+
+.btn-refuser {
+  width: 200px;
+  font-size: 17px;
+  background-color: $red-light;
+  border-radius: 10px;
+  padding: 13px 39px;
+  color: $white;
+  text-align: center;
+  &:hover {
+    text-decoration:none;
+  }
+}

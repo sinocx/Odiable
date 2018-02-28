@@ -8,5 +8,12 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { minimum: 15 }
   validates :status, presence: true
   mount_uploader :photo, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :search_by_aa,
+    against: [ :aa ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
 
