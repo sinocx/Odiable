@@ -1,0 +1,8 @@
+<div class="dashboard">
+  <% @products.each do |product| %>
+    <div class="content-dashboard-show">
+      <%= product.description %>
+      <%= link_to "Show", dashboards_product_path(product) %>
+    </div>
+  <% end %>
+</div>

@@ -3,18 +3,15 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="content">
-          <%= @product.title %>
-          <%= @product.description %>
-          <%= @product.status %>
-          <%= link_to "retour au produit", products_path %>
-          <%= link_to "Faire une offre", new_product_offer_path(@product) %>
+            <%= @product.title %>
+            <%= @product.description %>
+            <%= @product.status %>
+            <%= link_to "retour au dashboard", dashboards_path %>
         </div>
       </div>
       <div class="col-xs-12">
         <div class="content">
           <% @offers.each do |offer|  %>
-            <% if offer.status == true %>
-            <% end %>
             <div class="offer">
               <%= offer.transporter.user.first_name %>
               <%= offer.description %>
@@ -25,6 +22,7 @@
               <% end %>
             </div>
           <% end %>
+
         </div>
       </div>
     </div>
