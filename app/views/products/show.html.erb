@@ -6,6 +6,7 @@
           <%= @product.title %>
           <%= cl_image_tag @product.photo, height: 400, width: 480, crop: :fill, class: "img-show"%> %>
           <%= @product.description %>
+
           <%= @product.status %>
           <%= link_to "retour au produit", products_path %>
           <%= link_to "Faire une offre", new_product_offer_path(@product) %>
