@@ -9,7 +9,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :age, presence: true
   validates :description, presence: true, length: { minimum: 15 }
-  validates :transporter, presence: true
   validates :email, presence: true, uniqueness: true
 end
 
