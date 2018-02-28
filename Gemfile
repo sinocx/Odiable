@@ -6,11 +6,14 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
+
 gem 'rails', '5.1.5'
 gem 'redis'
 gem "pundit"
-gem 'pg_search'
 
+gem 'pg_search'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
