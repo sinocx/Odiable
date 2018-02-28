@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227095225) do
+ActiveRecord::Schema.define(version: 20180228133206) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180227095225) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
     t.index ["product_id"], name: "index_offers_on_product_id"
     t.index ["transporter_id"], name: "index_offers_on_transporter_id"
   end
@@ -31,8 +33,6 @@ ActiveRecord::Schema.define(version: 20180227095225) do
     t.bigint "product_id"
     t.date "checkin"
     t.date "checkout"
-    t.string "aa"
-    t.string "ad"
     t.string "uniquekey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(version: 20180227095225) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "aa"
+    t.string "ad"
+    t.datetime "date"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -78,7 +82,7 @@ ActiveRecord::Schema.define(version: 20180227095225) do
     t.string "last_name"
     t.integer "age"
     t.text "description"
-    t.boolean "transporter"
+    t.boolean "transporter", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
