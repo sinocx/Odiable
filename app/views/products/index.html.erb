@@ -11,11 +11,7 @@
 
 
 <%= form_tag(products_path, method: :get) do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Trouve une annonce"
-  %>
+  <%= text_field_tag :query, nil, placeholder: "Trouve une annonce par ville", class: "form-control" %>
   <%= submit_tag 'Recherche' %>
 <% end %>
 
@@ -35,3 +31,4 @@
   </div>
 </div>
 
+<%= render "components/card" %>
