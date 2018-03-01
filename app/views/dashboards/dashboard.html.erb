@@ -14,11 +14,10 @@
 <div class="wrap">
   <div class="container">
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade in active" id="home">
-        <%  %>
+      <div role="tajbpanel" class="tab-pane fade in active" id="home">
+        <p>Bonjour</p>
       </div>
       <div role="tabpanel" class="tab-pane fade" id="profile">
-
       </div>
       <div role="tabpanel" class="tab-pane fade" id="messages">
         <div class="row">
@@ -27,6 +26,9 @@
               <div class="dash-card">
                 <div class="prod-description">
                   <%= product.description %>
+                </div>
+                <div class="prod-photo">
+                  <%= product.photo %>
                 </div>
                 <%= link_to "Show", dashboards_product_path(product) %>
               </div>
