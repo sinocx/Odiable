@@ -17,6 +17,14 @@ class Product < ApplicationRecord
 
   before_save :geocode_endpoints
 
+   
+  include PgSearch
+  pg_search_scope :search_by_aa,
+    against: [ :aa ],
+    using: {
+      tsearch: { prefix: true }
+    }
+  
   private
 
   def geocode_endpoints
