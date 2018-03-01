@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     if params[:query].present?
-      @products = policy_scope(Product).search_by_aa(params[:query])
+      @products = policy_scope(Product).search_by_ad(params[:query])
     else
     @products = policy_scope(Product).order(created_at: :desc)
     end

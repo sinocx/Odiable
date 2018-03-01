@@ -9,18 +9,18 @@ class Product < ApplicationRecord
   validates :status, presence: true
   mount_uploader :photo, PhotoUploader
 
-  geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude
-  after_validation :geocode, if: :will_save_change_to_ad?
-
-  geocoded_by :aa, latitude: :aa_latitude, longitude: :aa_longitude
-  after_validation :geocode, if: :will_save_change_to_aa?
-
   include PgSearch
-  pg_search_scope :search_by_aa,
-    against: [ :aa ],
+  pg_search_scope :search_by_ad,
+    against: [ :ad ],
     using: {
       tsearch: { prefix: true }
     }
+
+  # geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude
+  # after_validation :geocode, if: :will_save_change_to_ad?
+
+  # geocoded_by :aa, latitude: :aa_latitude, longitude: :aa_longitude
+  # after_validation :geocode, if: :will_save_change_to_aa?
 
 end
 

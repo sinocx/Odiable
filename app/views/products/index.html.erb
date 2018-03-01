@@ -1,20 +1,22 @@
-<h1>INDEX</h1>
 <%= render "components/search" %>
 <div class="wrapper">
-  <div class="container">
+  <div class="contain">
     <div class="row">
       <% @products.each do |product| %>
-          <%= product.photo %>
-          <%= product.title %>
-          <%= product.description %>
-          <%= product.status %>
-          <%= link_to "Show", product_path(product) %>
-          <%= link_to "Offre",  %>
+        <% if product.photo.present? %>
+          <div class="col-xs-3" >
+            <%= render partial: "components/card", locals: {product: product} %>
+          </div>
+            <%#= product.photo %>
+            <%#= product.title %>
+            <%#= product.description %>
+            <%#= product.status %>
+            <%#= link_to "Show", product_path(product) %>
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
 
 
-<%= render "components/card" %>
 

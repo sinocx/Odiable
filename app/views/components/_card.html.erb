@@ -1,34 +1,36 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xl-6">
-      <div class="card-content">
-        <div class="card-image">
-          <!-- MON IMAGE -->
-        </div>
-        <div class="card-title">
-          <p>Canapé</p>
-        </div>
-        <div class="description">
-          <p><%= "Je cherche quelqu'un pour transporter mon meuble de 0x1m" %></p>
-        </div>
-        <div class="details" >
-          <div class="offres">
-            <p><%= "5" %></p>
-            <p><%= "Offres" %></p>
+<!-- <div class="container">
+  <div class="row"> -->
+    <%# @products.each do |product| %>
+    <!-- <div class="col-xs-3"> -->
+        <div class="card-content">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
           </div>
-          <div class="poste">
-            <p><%= "10j" %></p>
-            <p><%= "Posté" %></p>
+          <div class="card-content-details">
+            <div class="card-title">
+              <p><%= product.title %></p>
+            </div>
+            <div class="card-kilometre">
+              <p><%= "10Km" %></p>
+            </div>
+            <div class="card-description">
+              <p><%= product.description %></p>
+            </div>
+            <div class="card-offres">
+              <p><strong><%= "5" %></strong></p>
+              <p><%= "Offres" %></p>
+            </div>
+            <div class="card-poste">
+              <p><strong><%= "10j" %></strong></p>
+              <p><%= "Restant" %></p>
+            </div>
+            <div class="hvr-radial-out">
+              <p><%= link_to "Voir l'annonce", product_path(product) %></p>
+            <%# end %>
+            </div>
           </div>
         </div>
-        <div class="button">
-          <p><%= "Voir l'annonce" %></p>
-        </div>
-      </div>
-    </div>
-
-
-
+   <!--  </div>
   </div>
-</div>
+</div> -->
 
