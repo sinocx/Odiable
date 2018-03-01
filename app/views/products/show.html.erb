@@ -1,10 +1,10 @@
+
 <div class="wrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
         <div class="content">
           <%= @product.title %>
-          <%= cl_image_tag @product.photo, height: 400, width: 480, crop: :fill, class: "img-show"%> %>
           <%= @product.description %>
           <%= @product.status %>
           <%= link_to "retour au produit", products_path %>
