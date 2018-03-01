@@ -8,5 +8,11 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { minimum: 15 }
   validates :status, presence: true
   mount_uploader :photo, PhotoUploader
+
+  geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude
+  after_validation :geocode, if: :will_save_change_to_ad?
+
+  geocoded_by :aa, latitude: :aa_latitude, longitude: :aa_longitude
+  after_validation :geocode, if: :will_save_change_to_aa?
 end
 
