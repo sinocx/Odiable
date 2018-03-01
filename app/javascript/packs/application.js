@@ -9,7 +9,8 @@
 
 import 'bootstrap';
 import "../plugins/flatpickr";
-
-import { stepForm, stepBack } from "../component/signup_form";
-stepForm();
-stepBack();
+import { showOffer } from "../component/dash_offer";
+// import { stepForm, stepBack } from "../component/signup_form";
+// stepForm();
+// stepBack();
+showOffer();
