@@ -1,10 +1,8 @@
-<div class="dashboard">
-</div>
 <% if current_user.transporter %>
-<ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
-  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
-</ul>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
+  </ul>
 <% else %>
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
@@ -29,26 +27,46 @@
                     <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill%>
                   </div>
                   <div class="prod-description">
-                    <p><%= product.description %></p>
-                    <p><%= product.aa %></p>
-                    <p><%= product.ad %></p>
-                    <p><%= product.date %></p>
+                    <div class="dash-prod-title">
+                      <h4> <%= product.title %> </h4>
+                    </div>
+                    <div class="dash-prod-desc">
+                      <h4>Description : </h4>
+                      <p><%= product.description %></p>
+                    </div>
+                    <div class="dash-prod-aa">
+                      <h4>Adresse:</h4>
+                      <div class="aa">
+                        <p>Depart : <%= product.aa %></p>
+                      </div>
+                      <div class="ad">
+                        <p>Arrivé : <%= product.ad %></p>
+                      </div>
+                    </div>
+                    <div class="dash-prod-date">
+                      <h4> Date:</h4>
+                      <p><%= product.date %></p>
+                    </div>
                   </div>
                   <div class="dash-prod-link">
-                    <p><%= link_to "Editer", dashboards_product_path(product) %></p>
-                    <p><%= link_to "Supprimer", dashboards_product_path(product) %></p>
-                    <a href="#", data-product-id="<%= product.id %>">Vos offres</a>
+                    <p><%= link_to "Editer", dashboards_product_path(product), class: "link-dash-edit" %></p>
+                    <p><%= link_to "Supprimer", dashboards_product_path(product), class: "link-dash-supprimer" %></p>
+                    <a href="#", data-product-id="<%= product.id %>", class= "link-dash-offer">Vos offres</a>
                   </div>
                 </div>
-                <div class="dash-offer-details hidden", data-product-id="<%= product.id%>">
+                <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
                   <% product.offers.each do |offer| %>
-                    <div class="dash-offer-user">
-                      <%= offer.transporter.user.photo %>
-                    </div>
+                  <div class="dash-transporter-offer">
+                    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
                     <div class="dash-offer-desc">
-                      <p><%= offer.description %></p>
-                      <p><%= offer.price %></p>
+                      <p><%= offer.description.capitalize %></p>
+                      <p><%= offer.price %> € </p>
                     </div>
+                    <div class="dash-offer-link">
+                      <%= link_to "Valider", validate_offer_path(product, offer), class: "link-dash-edit" %>
+                      <%= link_to "Refused", refused_offer_path(product, offer), class: "link-dash-supprimer" %>
+                    </div>
+                  </div>
                   <% end %>
                 </div>
               </div>

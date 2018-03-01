@@ -24,7 +24,7 @@ class DashboardsController < ApplicationController
     @offer.status = 1
     @product.save
     @offer.save
-    redirect_to dashboards_product_path(@product)
+    redirect_to dashboards_path(@product)
   end
 
   def refused
