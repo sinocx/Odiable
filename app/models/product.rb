@@ -14,5 +14,27 @@ class Product < ApplicationRecord
 
   geocoded_by :aa, latitude: :aa_latitude, longitude: :aa_longitude
   after_validation :geocode, if: :will_save_change_to_aa?
+
+  before_save :geocode_endpoints
+
+  private
+
+  def geocode_endpoints
+    if ad_changed?
+      geocoded = Geocoder.search(ad).first
+      if geocoded
+        self.ad_latitude = geocoded.latitude
+        self.ad_longitude = geocoded.longitude
+      end
+    end
+    if aa_changed?
+      geocoded = Geocoder.search(aa).first
+      if geocoded
+        self.aa_latitude = geocoded.latitude
+        self.aa_longitude = geocoded.longitude
+      end
+    end
+end
+
 end
 
