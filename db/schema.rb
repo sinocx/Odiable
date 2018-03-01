@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 20180301120816) do
     t.string "aa"
     t.string "ad"
     t.datetime "date"
+    t.float "ad_latitude"
+    t.float "ad_longitude"
+    t.float "aa_latitude"
+    t.float "aa_longitude"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
