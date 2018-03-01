@@ -14,5 +14,13 @@ class Product < ApplicationRecord
 
   geocoded_by :aa, latitude: :aa_latitude, longitude: :aa_longitude
   after_validation :geocode, if: :will_save_change_to_aa?
+
+  include PgSearch
+  pg_search_scope :search_by_aa,
+    against: [ :aa ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
 
