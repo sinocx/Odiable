@@ -9,6 +9,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @offers = Offer.where(product_id: @product.id)
     authorize @product
+    @products = Product.where.not(latitude: nil, longitude: nil)
+    @markers = []
+    @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
+    @markers << { lat: @product.aa_latitude, lng: @product.aa_longitude }
+
   end
 
   def new
@@ -53,7 +58,7 @@ class ProductsController < ApplicationController
     private
 
   def product_params
-    params.require(:product).permit(:title, :description, :photo)
+    params.require(:product).permit(:title, :description, :photo, :aa, :ad, :date)
   end
 
 end
