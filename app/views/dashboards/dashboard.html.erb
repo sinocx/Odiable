@@ -23,14 +23,34 @@
         <div class="row">
           <% @products.each do |product| %>
             <div class="col-xs-12">
-              <div class="dash-card">
-                <div class="prod-description">
-                  <%= product.description %>
+              <div class="dash-product-content">
+                <div class="dash-card">
+                  <div class="prod-photo">
+                    <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill%>
+                  </div>
+                  <div class="prod-description">
+                    <p><%= product.description %></p>
+                    <p><%= product.aa %></p>
+                    <p><%= product.ad %></p>
+                    <p><%= product.date %></p>
+                  </div>
+                  <div class="dash-prod-link">
+                    <p><%= link_to "Editer", dashboards_product_path(product) %></p>
+                    <p><%= link_to "Supprimer", dashboards_product_path(product) %></p>
+                    <a href="#", data-product-id="<%= product.id %>">Vos offres</a>
+                  </div>
                 </div>
-                <div class="prod-photo">
-                  <%= product.photo %>
+                <div class="dash-offer-details hidden", data-product-id="<%= product.id%>">
+                  <% product.offers.each do |offer| %>
+                    <div class="dash-offer-user">
+                      <%= offer.transporter.user.photo %>
+                    </div>
+                    <div class="dash-offer-desc">
+                      <p><%= offer.description %></p>
+                      <p><%= offer.price %></p>
+                    </div>
+                  <% end %>
                 </div>
-                <%= link_to "Show", dashboards_product_path(product) %>
               </div>
             </div>
           <% end %>
