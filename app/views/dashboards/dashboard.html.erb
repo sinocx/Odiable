@@ -9,7 +9,7 @@
   </ul>
 <% end %>
   <!-- Tab panes -->
-<div class="wrap">
+<div class="wrap-dash" >
   <div class="container">
     <div class="tab-content">
       <div role="tajbpanel" class="tab-pane fade in active" id="home">
@@ -20,22 +20,22 @@
       <div role="tabpanel" class="tab-pane fade" id="messages">
         <div class="row">
           <% @products.each do |product| %>
-            <div class="col-xs-12">
+            <div class="col-xs-12 dash-cards">
               <div class="dash-product-content">
                 <div class="dash-card">
                   <div class="prod-photo">
                     <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill%>
                   </div>
                   <div class="prod-description">
-                    <div class="dash-prod-title">
-                      <h4> <%= product.title %> </h4>
+                    <div class="dash-prod-title pad">
+                      <h4> <%= product.title.capitalize %> </h4>
                     </div>
-                    <div class="dash-prod-desc">
+                    <div class="dash-prod-desc pad">
                       <h4>Description : </h4>
-                      <p><%= product.description %></p>
+                      <p><%= product.description.capitalize %></p>
                     </div>
-                    <div class="dash-prod-aa">
-                      <h4>Adresse:</h4>
+                    <div class="dash-prod-aa pad">
+                      <!-- <h4>Adresse:</h4> -->
                       <div class="aa">
                         <p>Depart : <%= product.aa %></p>
                       </div>
@@ -43,30 +43,34 @@
                         <p>Arrivé : <%= product.ad %></p>
                       </div>
                     </div>
-                    <div class="dash-prod-date">
+                    <div class="dash-prod-date pad">
                       <h4> Date:</h4>
                       <p><%= product.date %></p>
                     </div>
                   </div>
                   <div class="dash-prod-link">
-                    <p><%= link_to "Editer", dashboards_product_path(product), class: "link-dash-edit" %></p>
-                    <p><%= link_to "Supprimer", dashboards_product_path(product), class: "link-dash-supprimer" %></p>
-                    <a href="#", data-product-id="<%= product.id %>", class= "link-dash-offer">Vos offres</a>
+                    <p><%= link_to "Editer", dashboards_product_path(product), class: "btn btn-success" %></p>
+                    <p><%= link_to "Supprimer", dashboards_product_path(product), class: "btn btn-danger" %></p>
+                    <a href="#", data-product-id="<%= product.id %>", class= "btn btn-primary">Vos offres</a>
                   </div>
                 </div>
                 <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
                   <% product.offers.each do |offer| %>
-                  <div class="dash-transporter-offer">
-                    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
-                    <div class="dash-offer-desc">
-                      <p><%= offer.description.capitalize %></p>
-                      <p><%= offer.price %> € </p>
+                  <% if offer.status == 2 %>
+
+                  <% else  %>
+                    <div class="dash-transporter-offer">
+                      <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
+                      <div class="dash-offer-desc">
+                        <p><%= offer.description.capitalize %></p>
+                        <p><%= offer.price %> € </p>
+                      </div>
+                      <div class="dash-offer-link">
+                        <%= link_to "Valider", validate_offer_path(product, offer), class: "btn btn-primary" %>
+                        <%= link_to "Refused", refused_offer_path(product, offer), class: "btn btn-danger" %>
+                      </div>
                     </div>
-                    <div class="dash-offer-link">
-                      <%= link_to "Valider", validate_offer_path(product, offer), class: "link-dash-edit" %>
-                      <%= link_to "Refused", refused_offer_path(product, offer), class: "link-dash-supprimer" %>
-                    </div>
-                  </div>
+                  <% end %>
                   <% end %>
                 </div>
               </div>

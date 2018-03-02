@@ -1,7 +1,9 @@
 class TransportersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
 
   def new
     @transporter = Transporter.new
+    @user
     authorize @transporter
   end
 

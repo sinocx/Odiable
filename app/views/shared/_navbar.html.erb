@@ -5,7 +5,6 @@
     <%= link_to image_tag("logo-odiable.jpg"), root_path %>
     </div>
 
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete  %>
 
     <div class="liens">
       <%= link_to "Voir les annonces", products_path  %>
@@ -18,7 +17,8 @@
     <% end %>
 
     <div class="mydashboard">
-      <%= link_to "My Dashboard", dashboards_path  %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn-logout'  %>
+      <%= link_to "Dashboard", dashboards_path, class: 'dashboard-btn'  %>
     </div>
   </div>
     <% else %>
