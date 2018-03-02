@@ -1,25 +1,21 @@
-.btn-search {
-  border-radius: 5px;
-  border: red;
-  color: red;
-}
-
 .form-control {
-  width: 300%;
-  font-size: 96px;
-  font-weight: bold;
+  width: 100%;
+  font-size: 96px !important;
+  font-weight: bold !important;
   letter-spacing: 2px;
 }
 
 .form-style {
   margin: 28px;
-  margin-right: -208px;
   padding: 13px;
 }
 
 .button {
+  top: 130px;
+  right: 8px;
+  border: 2px solid #0e69d8 !important;
+  border-radius: 2px;
   background-color: $blue;
-  border-radius: 4px;
   color: white !important;
   margin-left: -29px;
   height: 38px;
