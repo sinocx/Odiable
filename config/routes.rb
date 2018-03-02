@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/dashboards/:id", to: "dashboards#show", as: "dashboards_product"
   get "/dashboards/product/:product_id/offer/:id/validate", to: "dashboards#validate", as: "validate_offer"
   get "/dashboards/product/:product_id/offer/:id/refused", to: "dashboards#refused", as: "refused_offer"
+  get "/transporter/sign_up", to: "transporters#new", as: "sign_up_transporter"
+  post "transporter/create", to: "transporters#create", as: "registration_session"
 end
