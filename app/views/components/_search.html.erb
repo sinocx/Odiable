@@ -1,6 +1,12 @@
 <div class="form-style">
-  <%= form_tag(products_path, method: :get) do %>
-    <%= text_field_tag :query, nil, placeholder: "Trouve une annonce par ville", class: "form-control" %>
-    <%= submit_tag 'Recherche', class: "hvr-radial-out" %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-9">
+    <%= form_tag(products_path, method: :get) do %>
+      <%= text_field_tag :query, nil, placeholder: "Trouve une annonce par ville", class: "form-control" %>
+      </div>
+      <div class="col-xs-3">
+        <%= submit_tag 'Recherche', class: "button"%>
+      </div>
+    <% end %>
+  </div>
 </div>
