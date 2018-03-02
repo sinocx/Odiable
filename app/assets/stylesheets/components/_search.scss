@@ -1,19 +1,12 @@
-.btn-search {
-  border-radius: 5px;
-  border: red;
-  color: red;
-}
-
 .form-control {
-  width: 300%;
-  font-size: 96px;
-  font-weight: bold;
+  width: 100%;
+  font-size: 96px !important;
+  font-weight: bold !important;
   letter-spacing: 2px;
 }
 
 .form-style {
   margin: 28px;
-  margin-right: -208px;
   padding: 13px;
 }
 
@@ -22,7 +15,7 @@
   right: 8px;
   background-color: #0e69d8;
   border: 2px solid #0e69d8 !important;
-  border-radius: 4px;
+  border-radius: 2px;
   color: white !important;
   font-weight: lighter;
   transition: 0.2s !important;
