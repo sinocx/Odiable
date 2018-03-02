@@ -2,13 +2,13 @@ class DashboardsController < ApplicationController
   skip_after_action :verify_authorized
   def dashboard
     # @orders = current_user.bookings
-    @product = current_user.products.map{ |product| product.offers }.flatten
+    @products = current_user.products
     # @product.sort_by! do |b|
     #   b.status
     # end
     # @product_bookings = current_user.bookings
-    @products = current_user.products
   end
+
   def show
 
     @product = Product.find(params[:id])
@@ -24,7 +24,7 @@ class DashboardsController < ApplicationController
     @offer.status = 1
     @product.save
     @offer.save
-    redirect_to dashboards_product_path(@product)
+    redirect_to dashboards_path(@product)
   end
 
   def refused

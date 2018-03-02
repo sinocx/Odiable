@@ -12,11 +12,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @offers = Offer.where(product_id: @product.id)
     authorize @product
-    @products = Product.where.not(latitude: nil, longitude: nil)
+    @products = Product.where.not(ad_latitude: nil, ad_longitude: nil, aa_latitude: nil, aa_longitude: nil)
     @markers = []
     @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
     @markers << { lat: @product.aa_latitude, lng: @product.aa_longitude }
-
   end
 
   def new
