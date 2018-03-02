@@ -4,32 +4,35 @@
   color: white;
   align-items: center;
   justify-content: center;
-  background-image: image-url("ban.jpg" );
+  // background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));z
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), image-url("ban.jpg" );
   background-size: cover;
   background-position: center;
 }
 
+#specific-title {
+  font-size: 20px;
+}
+#specific {
+  font-family: $specific-title;
+  color: white;
+  font-size: 65px;
+  margin-top: 95px;
+  margin-bottom: 50px;
+}
 .banner-content {
   color: f7f4f4;
   h2 {
     margin-top: 32px;
     padding-bottom: 180px;
-    font-size: 25px;
-
-  h1 {
-    font-size: 58px;
-    margin-top: 95px;
-  }
+    font-size: 20px;
 }
 }
 
-#specific {
-  font-family: $specific-title;
-  color: white;
-}
 
   .btn-banner {
-    border: 3px solid $red;
+    font-size: 15px;
+    background-color: $blue;
     color: white;
     text-decoration: none;
     border-radius: 30px;

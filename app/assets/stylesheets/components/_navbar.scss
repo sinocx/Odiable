@@ -1,6 +1,6 @@
 .navbar-container {
   height: 88px;
-  border-bottom: 3px solid $red;
+  border-bottom: 3px solid $blue;
   background-color: $white;
   display: flex;
   align-items: center;
@@ -31,6 +31,7 @@
     padding-left: 32px;
   &:hover {
     color: #555555;
+    text-decoration:none;
   }
   }
 }
@@ -43,11 +44,11 @@
 }
 
 .btn-signin {
-  border: 2px solid $red;
+  border: 2px solid $blue;
   border-radius: 25px;
   padding: 13px;
   &:hover {
-    background-color: rgba(198, 17, 45, 0.3);
+    background-color: $blue;
     color: white;
     text-decoration:none;
   }
@@ -63,4 +64,33 @@
     color: #555555;
     text-decoration:none;
   }
+}
+
+.dashboard-btn {
+  border: 2px solid $blue;
+  border-radius: 25px;
+  padding: 13px;
+  color: #555555;
+  margin-right: 30px;
+  &:hover {
+    background-color: $blue;
+    color: white;
+    text-decoration:none;
+  }
+}
+.btn-logout {
+  border: 2px solid $red;
+  border-radius: 25px;
+  padding: 13px;
+  color: #555555;
+  &:hover {
+    background-color: $red;
+    color: white;
+    text-decoration:none;
+  }
+}
+.mydashboard {
+  display: flex;
+  justify-content: space-between;
+  width: 200px
 }

@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem "pundit"
+gem 'i18n'
 
 gem 'pg_search'
 gem 'cloudinary'
