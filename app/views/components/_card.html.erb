@@ -4,7 +4,7 @@
     <!-- <div class="col-xs-3"> -->
         <div class="card-content">
           <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= cl_image_path product.photo, height: 300, width: 400, crop: :fill %>')">
+           url('<%= cl_image_path product.photo, crop: :fill %>')">
           </div>
           <div class="card-content-details">
             <div class="card-title">
@@ -16,6 +16,7 @@
             <div class="card-description">
               <p><%= product.description %></p>
             </div>
+            <div class="offre-poste">
             <div class="card-offres">
               <p><strong><%= "5" %></strong></p>
               <p><%= "Offres" %></p>
@@ -24,10 +25,10 @@
               <p><strong><%= "10j" %></strong></p>
               <p><%= "Restant" %></p>
             </div>
-            <div class="button2">
-              <p><%= link_to "Voir l'annonce", product_path(product) %></p>
-            <%# end %>
             </div>
+
+              <%= link_to "Voir l'annonce", product_path(product), class: "button2" %>
+            <%# end %>
           </div>
         </div>
    <!--  </div>
