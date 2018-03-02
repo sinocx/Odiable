@@ -1,0 +1,6 @@
+<div class="form-style">
+  <%= form_tag(products_path, method: :get) do %>
+    <%= text_field_tag :query, nil, placeholder: "Trouve une annonce par ville", class: "form-control" %>
+    <%= submit_tag 'Recherche', class: "hvr-radial-out" %>
+  <% end %>
+</div>
