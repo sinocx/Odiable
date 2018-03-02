@@ -15,8 +15,8 @@ class OffersController < ApplicationController
     @product = Product.find(params[:product_id])
     @offer.product = @product
     @offer.status = 0
-    @transporter = Transporter.where(user_id: current_user.id)
-    @offer.transporter = @transporter.first
+    @transporter = Transporter.find_by(user_id: current_user.id)
+    @offer.transporter = @transporter
     if @offer.save!
       redirect_to product_path(@product)
     else
