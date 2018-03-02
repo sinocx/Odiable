@@ -5,9 +5,42 @@
 }
 
 .form-control {
-  border-radius: 50%;
+  width: 300%;
+  font-size: 96px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .form-style {
-  display: inline-block;
+  margin: 28px;
+  margin-right: -208px;
+  padding: 13px;
+}
+
+.button {
+  top: 130px;
+  right: 8px;
+  background-color: #0e69d8;
+  border: 2px solid #0e69d8 !important;
+  border-radius: 4px;
+  color: white !important;
+  font-weight: lighter;
+  transition: 0.2s !important;
+  font-size: 13px;
+  margin-left: -29px;
+  // text-align: center;
+  height: 38px;
+  width: 120px;
+  // align-items: center;
+  font-size: 16px;
+
+  &:hover {
+    color: #161616 !important;
+    transition-duration: 0.2s !important;
+    background-color: white;
+
+    &:hover > p {
+      color: #D4334D;
+    }
+  }
 }

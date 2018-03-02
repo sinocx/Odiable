@@ -1,6 +1,7 @@
 .navbar-container {
   height: 88px;
-  border-bottom: 3px solid $red;
+  border-bottom: 1px solid $red;
+  box-shadow: 2px 2px #d4d4d4;
   background-color: $white;
   display: flex;
   align-items: center;

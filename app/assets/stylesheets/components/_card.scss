@@ -12,7 +12,7 @@
   background-color: #F9F9F9;
   margin-bottom: 32px;
   margin-left: 8px;
-  width: 423px;
+  width: 395px;
 }
 
 .card-image {
@@ -97,33 +97,34 @@
   margin-bottom: 10px;
 }
 
-// .button {
-//   position: absolute;
-//   top: 130px;
-//   right: 8px;
-//   background-color: #D4334D;
-//   border: 2px solid #D4334D !important;
-//   border-radius: 25px;
-//   color: white !important;
-//   font-weight: lighter;
-//   transition: 0.2s !important;
-//   font-size: 13px;
-//   text-align: center;
-//   height: 38px;
-//   width: 120px;
-//   align-items: center;
-//   font-size: 16px;
+.button2 {
+  position: absolute;
+  top: 130px;
+  right: 8px;
+  background-color: #0e69d8;
+  border: 2px solid #0e69d8 !important;
+  border-radius: 4px;
+  color: white !important;
+  font-weight: lighter;
+  transition: 0.2s !important;
+  font-size: 13px;
+  text-align: center;
+  height: 38px;
+  width: 256px;
+  padding: 5px;
+  align-items: center;
+  font-size: 16px;
 
-//   &:hover {
-//     color: #161616 !important;
-//     transition-duration: 0.2s !important;
-//     background-color: white;
+  &:hover {
+    color: #161616 !important;
+    transition-duration: 0.2s !important;
+    background-color: white;
 
-//     &:hover > p {
-//       color: #D4334D;
-//     }
-//   }
-// }
+    &:hover > p {
+      color: #D4334D;
+    }
+  }
+}
 
 .hvr-radial-out > p {
   margin: 6px;
@@ -133,13 +134,13 @@
 .hvr-radial-out {
   align-items: center;
   height: 38px;
-  width: 120px;
+  width: 216px;
   font-size: 16px;
   text-align: center;
   font-weight: lighter;
   position: absolute;
   top: 130px;
-  left: 296px;
+  left: 171px;
   color: white;
   display: inline-block;
   vertical-align: middle;
