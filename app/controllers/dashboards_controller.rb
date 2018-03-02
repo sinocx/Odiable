@@ -18,10 +18,10 @@ class DashboardsController < ApplicationController
   def validate
     @product = Product.find(params[:product_id])
     @offer = Offer.find(params[:id])
-
     authorize @offer
     @product.status = 1
     @offer.status = 1
+    # chercher les autres offres puis status validé
     @product.save
     @offer.save
     redirect_to dashboards_path(@product)
@@ -34,6 +34,6 @@ class DashboardsController < ApplicationController
     @offer.status = 2
     @product.save
     @offer.save
-    redirect_to dashboards_product_path(@product)
+    redirect_to dashboards_path(@product)
   end
 end
