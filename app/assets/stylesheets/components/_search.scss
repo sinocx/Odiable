@@ -18,29 +18,16 @@
 }
 
 .button {
-  top: 130px;
-  right: 8px;
-  background-color: #0e69d8;
-  border: 2px solid #0e69d8 !important;
+  background-color: $blue;
   border-radius: 4px;
   color: white !important;
-  font-weight: lighter;
-  transition: 0.2s !important;
-  font-size: 13px;
   margin-left: -29px;
-  // text-align: center;
   height: 38px;
   width: 120px;
-  // align-items: center;
-  font-size: 16px;
-
+  font-size: 13px;
   &:hover {
-    color: #161616 !important;
+    color: white !important;
     transition-duration: 0.2s !important;
-    background-color: white;
-
-    &:hover > p {
-      color: #D4334D;
-    }
+    background-color: #008ff5;
   }
 }
