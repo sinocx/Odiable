@@ -3,7 +3,7 @@ class TransportersController < ApplicationController
 
   def new
     @transporter = Transporter.new
-    @user
+    @transporter.user_id = current_user.id
     authorize @transporter
   end
 
