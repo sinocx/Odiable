@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   enum status: [:en_cours, :terminée]
   belongs_to :user
   has_one :order
-  has_many :offers
+  has_many :offers, dependent: :destroy
   validates :user_id, presence: true
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 15 }
@@ -18,7 +18,7 @@ class Product < ApplicationRecord
 
   before_save :geocode_endpoints
 
-   
+
 
   include PgSearch
   pg_search_scope :search_by_ad,
@@ -26,7 +26,7 @@ class Product < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-  
+
   private
 
   def geocode_endpoints

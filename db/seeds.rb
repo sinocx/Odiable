@@ -10,6 +10,6 @@ user2 = User.create(email:" adrien@gmail.com",password: "123456", first_name: "a
 user3 = User.create(email:" david@gmail.com",password: "123456", first_name: "david", last_name:"Crenin", age: 22, description: "Bonjour, disposant souvent d'objet encombrant, je suis a la recherche d'une personne pouvant deplacer mes objets frequemment", transporter: false )
 user4 = User.create(email:" vincent@gmail.com",password: "123456", first_name: "Vincent", last_name:"Monneger", age: 22, description: "Bonjour, disposant souvent d'objet encombrant, je suis a la recherche d'une personne pouvant deplacer mes objets frequemment", transporter: false )
 
-transporter1 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user_id: user1)
-transporter2 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user_id: user2)
+transporter1 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user1)
+transporter2 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user2)
 
