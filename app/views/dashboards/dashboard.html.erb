@@ -1,6 +1,6 @@
 <% if current_user.transporter %>
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
+  <ul class="nav nav-tabs " role="tablist">
+    <li role="presentation" class="custom-nav"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
   </ul>
 <% else %>
@@ -13,7 +13,7 @@
   <div class="container">
     <div class="tab-content">
       <div role="tajbpanel" class="tab-pane fade in active" id="home">
-        <p>Bonjour</p>
+      <!--   <p>Bonjour</p> -->
       </div>
       <div role="tabpanel" class="tab-pane fade" id="profile">
       </div>
@@ -49,9 +49,9 @@
                     </div>
                   </div>
                   <div class="dash-prod-link">
-                    <p><%= link_to "Editer", dashboards_product_path(product), class: "btn btn-success" %></p>
-                    <p><%= link_to "Supprimer", dashboards_product_path(product), class: "btn btn-danger" %></p>
-                    <a href="#", data-product-id="<%= product.id %>", class= "btn btn-primary">Vos offres</a>
+                    <p> <a href="#", data-product-id="<%= product.id %>", class= "btn btn-primary custom-btn">Vos offres</a></p>
+                    <p><%= link_to "Editer", dashboards_product_path(product), class: "btn btn-success custom-btn" %></p>
+                    <p><%= link_to "Supprimer", dashboards_product_path(product), class: "btn btn-danger custom-btn" %></p>
                   </div>
                 </div>
                 <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
