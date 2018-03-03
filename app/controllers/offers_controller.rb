@@ -30,11 +30,11 @@ class OffersController < ApplicationController
     authorize @offer
     @product.status = 1
     @offer.status = 1
-    other_offer = Offer.where(status: 0)
-    # other_offer.each do |offer|
-    #   offer.status = 2
-    #   offer.save
-    # end
+    other_offer = Offer.where(product_id: @product )
+    other_offer.each do |offer|
+      offer.status = 2
+      offer.save
+    end
     @product.save
     @offer.save
     redirect_to product_path(@product)

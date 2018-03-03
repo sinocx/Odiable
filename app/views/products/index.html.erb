@@ -17,11 +17,9 @@
     <div class="row">
       <% @products.each do |product| %>
         <% if product.status == "en_cours" %>
-          <% if product.photo.present? %>
-            <div class="col-xs-3" >
-              <%= render partial: "components/card", locals: {product: product} %>
-            </div>
-          <% end %>
+          <div class="col-xs-3" >
+            <%= render partial: "components/card", locals: {product: product} %>
+          </div>
         <% else %>
         <% end %>
       <% end %>

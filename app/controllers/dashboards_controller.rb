@@ -21,6 +21,11 @@ class DashboardsController < ApplicationController
     authorize @offer
     @product.status = 1
     @offer.status = 1
+    other_offer = Offer.where(product_id: @product )
+    other_offer.each do |offer|
+      offer.status = 2
+      offer.save
+    end
     # chercher les autres offres puis status validé
     @product.save
     @offer.save
