@@ -8,10 +8,15 @@
       <div class="titre-show">
         <h2><%= @product.title %></h2>
         <p><%= @product.description %></p>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalPrice">
-          Faire une offre
-          <%#= link_to "Faire une offre", new_product_offer_path(@product), class: "btn btn-primary"  %>
-        </button>
+        <% if @product.user == current_user %>
+            <%= link_to "Editer", edit_product_path(@product) ,class:"btn btn-primary btn-lg" %>
+        <% elsif current_user.transporter? %>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalPrice">
+            Faire une offre
+          </button>
+        <% else %>
+
+        <% end %>
       </div>
     </div>
     <div class="map-show">
