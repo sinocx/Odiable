@@ -14,3 +14,11 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.fitLatLngBounds(markers);
   }
 }
+
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
+
+import { autocomplete2 } from '../components/autocomplete2';
+autocomplete2();
+import { autocomplete3 } from '../components/autocomplete_index';
+autocomplete2();

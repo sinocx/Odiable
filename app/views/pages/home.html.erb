@@ -7,30 +7,40 @@
 <%= link_to "Déposer une annonce", new_product_path, class: 'btn-banner' %>
 </div>
 
+<div class="container-transporter">
+  <div class="image-transporteur">
+    <%= link_to image_tag("transporteur.jpg")  %>
+  </div>
+  <div class="text-transporteur">
+    <h2> Devenez transporteur !</h2>
+    <p>Ammortissez votre véhicule plus sereinement.</p>
+      <%= link_to "Devenir transporteur", sign_up_transporter_path, class: 'btn-banner btn-transporter' %>
+  </div>
 
+</div>
 
 <div class="recapitulatif">
-  <div class="text-recapitulatif">
+  <div class="text-comment">
   <h1>Comment ça marche ?</h1>
   </div>
 
   <div class="content-explication">
     <div class="card-explication">
       <%= link_to image_tag("edit.png")  %>
-      <h5>  Déposer votre annonce </h5>
-      <p>Renseignez les caractéristiques de votre meuble</p>
+      <h5>  Déposez votre annonce </h5>
+      <!-- <p>Renseignez les caractéristiques de votre meuble</p> -->
     </div>
 
     <div class="card-explication">
       <%= link_to image_tag("proposition.png")  %>
       <h5> Recevez des propositions</h5>
-      <p>Des propositions vont vous parvenir</p>
+      <!-- <p>Des propositions vont vous parvenir</p> -->
     </div>
 
     <div class="card-explication">
       <%= link_to image_tag("validate.png")  %>
       <h5>  Validez votre réservation</h5>
-      <p>Choisissez parmi plusieurs propositions celle qui vous convient le mieux</p>
+      <!-- <p>Choisissez parmi plusieurs propositions celle qui vous convient le mieux</p> -->
     </div>
   </div>
 </div>
