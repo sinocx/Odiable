@@ -21,8 +21,8 @@
         <div class="row">
           <% @products.each do |product| %>
             <div class="col-xs-12">
-              <!-- <div class="dash-product-content"> -->
-                <div class="content-top-dash">
+              <div class="dashboard-card">
+                <!-- <div class="content-top-dash"> -->
                   <div class="cover">
                     <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill, class: "img-dash"%>
                     <label>
@@ -36,7 +36,7 @@
                     <div class="title-dash">
                       <h1><%= product.title.capitalize %></h1>
                     </div>
-                    <div class="-dashboard">
+                    <div class="description-dashboard">
                       <strong>Description:</strong>
                       <%= product.description.capitalize %>
                     </div>
@@ -46,9 +46,11 @@
                     <div class="addres-arrive">
                       <p><%= product.aa %></p>
                     </div>
-                    <div class="dash-prod-link">
-                      <p><%= link_to "Editer", edit_product_path(product), class: "button-dash-edit" %></p>
-                      <p><%= link_to "Supprimer", product_path(product), method: :delete, class: "button-dash-suppr" %></p>
+                    <div class="button-dash-edit">
+                      <p><%= link_to "Editer", edit_product_path(product) %></p>
+                    </div>
+                    <div class="button-dash-suppr">
+                      <p><%= link_to "Supprimer", product_path(product), method: :delete %></p>
                     </div>
                   </div>
                   <div class="info">
@@ -117,8 +119,8 @@
                     </div>
                   <% end %>
                   <% end %>
-                </div>
-              <!-- </div> -->
+                <!-- </div> -->
+              </div>
             </div>
           <% end %>
         </div>
