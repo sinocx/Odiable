@@ -2,7 +2,7 @@
 
   <div class="navbar-container">
     <div class="logo">
-    <%= link_to image_tag("logo-odiable.jpg"), root_path %>
+    <%= link_to image_tag("logo-bleu-diable.png"), root_path %>
     </div>
 
 
@@ -24,7 +24,7 @@
     <% else %>
     <div class="navbar-container">
     <div class="logo">
-    <%= link_to image_tag("logo-odiable.jpg"), root_path %>
+    <%= link_to image_tag("logo-bleu-diable.png"), root_path %>
     </div>
 
     <div class="liens">
@@ -32,7 +32,7 @@
       <%= link_to "Devenir transporteur", sign_up_transporter_path %>
     </div>
       <div class="btn-container">
-         <%= link_to "S'inscrire", new_user_registration_path, class: "btn-signin" %>
+        <%= link_to "S'inscrire", new_user_registration_path, class: "btn-signin" %>
         <%= link_to "Se connecter", user_session_path,  class: "btn-signup" %>
       </div>
 </div>
