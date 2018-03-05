@@ -8,7 +8,10 @@
       <div class="titre-show">
         <h2><%= @product.title %></h2>
         <p><%= @product.description %></p>
-        <%= link_to "Faire une offre", new_product_offer_path(@product), class: "btn btn-primary"  %>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalPrice">
+          Faire une offre
+          <%#= link_to "Faire une offre", new_product_offer_path(@product), class: "btn btn-primary"  %>
+        </button>
       </div>
     </div>
     <div class="map-show">
@@ -21,3 +24,37 @@
     </div>
   </div>
 </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalPrice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-price">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Votre offre</h4>
+      </div>
+      <div class="modal-body">
+      <%= simple_form_for [@product, @offer] do |f| %>
+        <%= f.input :price, required: false, placeholder: "€" %>
+        <%= f.input :description, required: false, placeholder: "Description" %>
+        <%= f.submit "Valider votre offre", class: "btn-bleue" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <!--         <button type="button" class="btn btn-primary">Valider votre offre</button>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

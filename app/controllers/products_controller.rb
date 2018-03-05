@@ -17,6 +17,8 @@ class ProductsController < ApplicationController
     @markers = []
     @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
     @markers << { lat: @product.aa_latitude, lng: @product.aa_longitude }
+    @offer = Offer.new
+
   end
 
   def new
