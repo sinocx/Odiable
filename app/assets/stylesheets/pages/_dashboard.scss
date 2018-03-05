@@ -25,12 +25,13 @@
   padding: 10px;
   background: rgba(250,250,250, 0.8) !important;
 }
+
 .dash-card {
-  margin-top: 15px;
-  background-color: #ebebeb;
   box-shadow: 1px 1px 2px 1px rgba(115, 115, 115, 0.29);
-  border-radius: 3px;
   border: 1px solid #04030336;
+  border-radius: 3px;
+  background-color: #ebebeb;
+  margin-top: 15px;
   height: 250px;
   display: flex;
   align-items: center;
@@ -116,6 +117,22 @@
     }
   }
 }
+.recipe {
+  width: 100px;
+  height: 80px;
+  padding: 10px;
+  background: #294e57;
+  font-size: 14px;
+  display:flex;
+  flex-position: column;
+  a {
+    color: #FFF;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  text-align: center;
+  border-radius: 0 0 0 2px;
+    }
 .dash-offer-details {
   background-color: #ebebeb;
   height: 100px;
