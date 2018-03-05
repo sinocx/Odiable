@@ -11,7 +11,6 @@ class Product < ApplicationRecord
   CATEGORIES = ["Canapé", "mobilier", "chaises"]
   validates :category , inclusion: {in: CATEGORIES}
 
-
   geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude
   after_validation :geocode, if: :will_save_change_to_ad?
 
