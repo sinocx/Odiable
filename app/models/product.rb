@@ -5,9 +5,9 @@ class Product < ApplicationRecord
   has_many :offers, dependent: :destroy
   validates :user_id, presence: true
   validates :title, presence: true
-  validates :description, presence: true, length: { minimum: 15 }
   validates :status, presence: true
   mount_uploader :photo, PhotoUploader
+
 
 
   geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude
