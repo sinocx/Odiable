@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
+    @product = Product.new
     if params[:query].present?
       @products = policy_scope(Product).search_by_ad(params[:query])
     else
