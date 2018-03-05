@@ -9,6 +9,7 @@
 
 import 'bootstrap';
 import "../plugins/flatpickr";
+import "../components/active"
 import { showOffer } from "../components/dash_offer";
 import { stepForm, stepBack } from "../components/signup_form";
 import { autocomplete } from '../components/autocomplete';

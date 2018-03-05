@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @product = Product.find(params[:id])
     @offers = Offer.where(product_id: @product.id)
     authorize @product
@@ -28,6 +29,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @width = Width.find(params[:product][:width])
+    @product.width = @width
     authorize @product
     @product.status = 0
     @product.user = current_user
@@ -63,7 +66,8 @@ class ProductsController < ApplicationController
     private
 
   def product_params
-    params.require(:product).permit(:title, :description, :photo, :aa, :ad, :date)
+    params.require(:product).permit(:title, :description, :photo, :aa, :ad, :date, :photo_cache
+)
   end
 
 end

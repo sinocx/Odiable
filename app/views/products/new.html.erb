@@ -9,6 +9,8 @@
       <div class="form-description-title">
         <%= f.input :title,:label => "Titre", placeholder: "Votre product", required: false  %>
         <%= f.input :description, placeholder: "Description de votre produit", required: false %>
+        <%=   f.collection_radio_buttons :width, Width.all, :id, :category%>
+
         <%= f.input :photo, class: "input-photo-add" %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>

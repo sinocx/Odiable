@@ -9,7 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20180305120511) do
+
+ActiveRecord::Schema.define(version: 20180305122244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +57,9 @@ ActiveRecord::Schema.define(version: 20180305120511) do
     t.float "aa_longitude"
     t.integer "price_cents", default: 0, null: false
     t.string "category"
+    t.bigint "width_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+    t.index ["width_id"], name: "index_products_on_width_id"
   end
 
   create_table "transporters", force: :cascade do |t|
@@ -104,5 +107,6 @@ ActiveRecord::Schema.define(version: 20180305120511) do
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "users"
+  add_foreign_key "products", "widths"
   add_foreign_key "transporters", "users"
 end
