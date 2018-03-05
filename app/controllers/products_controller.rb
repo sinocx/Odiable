@@ -7,8 +7,13 @@ class ProductsController < ApplicationController
     else
     @products = policy_scope(Product).order(created_at: :desc)
     end
-    @markers = []
-    @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
+        @markers = @products.map do |product|
+      {
+        lat: product.ad_latitude,
+        lng: product.ad_longitude,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
