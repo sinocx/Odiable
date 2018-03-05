@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
+    @product = Product.new
     if params[:query].present?
       @products = policy_scope(Product).search_by_ad(params[:query])
     else
@@ -16,6 +17,8 @@ class ProductsController < ApplicationController
     @markers = []
     @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
     @markers << { lat: @product.aa_latitude, lng: @product.aa_longitude }
+    @offer = Offer.new
+
   end
 
   def new

@@ -1,25 +1,45 @@
-.form-control {
-  width: 100%;
+.main-container {
+  display: flex;
+  align-items: center;
 }
 
-.form-style {
-  margin: 28px;
-  padding: 13px;
+.check-box-card {
+  border: 1px solid;
 }
 
-.button {
-  top: 130px;
-  right: 8px;
-  border-radius: 2px;
-  background-color: $blue;
-  color: white !important;
-  margin-left: -29px;
-  height: 38px;
-  width: 120px;
-  font-size: 13px;
-  &:hover {
-    color: white !important;
-    transition-duration: 0.2s !important;
-    background-color: #008ff5;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+// .form-control {
+//   width: 100%;
+// }
+
+// .form-style {
+//   margin: 28px;
+//   padding: 13px;
+// }
+
+// .button {
+//   top: 130px;
+//   right: 8px;
+//   border-radius: 2px;
+//   background-color: $blue;
+//   color: white !important;
+//   margin-left: -29px;
+//   height: 38px;
+//   width: 120px;
+//   font-size: 13px;
+//   &:hover {
+//     color: white !important;
+//     transition-duration: 0.2s !important;
+//     background-color: #008ff5;
+//   }
+// }
