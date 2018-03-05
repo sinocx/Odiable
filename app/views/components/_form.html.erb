@@ -1,6 +1,6 @@
 <div class="form-product">
   <%= simple_form_for(@product) do |f| %>
-    
+
   <div id="step-1">
     <%= f.input :title,:label => "Titre", placeholder: "Votre product", class: "input-form"  %>
     <%= f.input :description, placeholder: "Description de votre produit", class: "input-form" %>
@@ -8,10 +8,11 @@
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.button :submit, "Continuer", class: "btn btn-primary", id: "next" %>
    </div>
-  
+
    <div class='hidden' id='step-2'>
       <%= f.input :ad,:label => "Adresse de départ", placeholder: "Adresse de départ" %>
-      <%= f.input :ad,:label => "Adresse de départ", placeholder: "Adresse d'arrivée" %>
+      <%= f.input :aa,:label => "Adresse d'arrivée", placeholder: "Adresse d'arrivée" %>
+      <%= f.input :aa,:label => "Adresse d'arrivée", placeholder: "Adresse d'arrivée" %>
       <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <button class="btn btn-success" id="previous"> Précédent </button>
       <%#= f.button :submit, "Précédent", class: "btn btn-primary", id: "previous" %>

@@ -1,7 +1,7 @@
 .navbar-container {
   height: 88px;
   border-bottom: 1px solid $blue;
-  background-color: $white;
+  background-color: #dddddd00;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,6 +24,7 @@
 .liens {
   width: 500px;
   font-size:16px;
+  font-family: $headers-font;
   a {
     color: $gray-1;
     text-decoration:none;
@@ -39,11 +40,12 @@
 
 .logo img {
   margin-left: 30px;
-  max-height: 75px;
+  max-height: 61px;
   max-width: 75px;
 }
 
 .btn-signin {
+  font-family: $headers-font;
   border: 2px solid $blue;
   border-radius: 25px;
   padding: 13px;
@@ -55,6 +57,7 @@
 }
 
 .btn-signup {
+  font-family: $headers-font;
   padding-left: 32px;
   padding: 13px;
   &:hover {
@@ -67,6 +70,7 @@
 }
 
 .dashboard-btn {
+  font-family: $headers-font;
   border: 2px solid $blue;
   border-radius: 25px;
   padding: 13px;
@@ -79,6 +83,7 @@
   }
 }
 .btn-logout {
+  font-family: $headers-font;
   border: 2px solid $red;
   border-radius: 25px;
   padding: 13px;
