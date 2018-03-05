@@ -36,6 +36,12 @@
                   <div class="description-dashboard">
                     <strong>Description:</strong>
                     <%= product.description %>
+
+                   <div class="dash-prod-link">
+                    <p><%= link_to "Editer", edit_product_path(product), class: "btn btn-success" %></p>
+                    <p><%= link_to "Supprimer", product_path(product), method: :delete, class: "btn btn-danger" %></p>
+                    <a href="#", data-product-id="<%= product.id %>", class= "btn btn-primary">Vos offres</a>
+
                   </div>
                 </div>
                 <div class="info">
