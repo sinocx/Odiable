@@ -20,37 +20,38 @@
       <div role="tabpanel" class="tab-pane fade" id="messages">
         <div class="row">
           <% @products.each do |product| %>
-            <div class="col-xs-12 dash-cards">
-              <div class="dash-product-content">
-                <div class="dash-card">
-                  <div class="prod-photo">
-                    <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill%>
+            <div class="col-xs-12">
+              <!-- <div class="dash-product-content"> -->
+                <div class="content-top-dash">
+                  <div class="cover">
+                    <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill, class: "img-dash"%>
+                    <label>
+                      <i>
+                        <svg x="0px" y="0px" width="17px" height="17px">
+                        <%= image_tag("logo-odiable", id: "logo-dash") %>
+                        </svg>
+                      </i>
+                      <font>Votre annonce en cours</font>
+                    </label>
+                    <div class="title-dash">
+                      <h1><%= product.title.capitalize %></h1>
+                    </div>
+                    <div class="-dashboard">
+                      <strong>Description:</strong>
+                      <%= product.description.capitalize %>
+                    </div>
+                    <div class="address-depart">
+                      <p><%= product.ad %></p>
+                    </div>
+                    <div class="addres-arrive">
+                      <p><%= product.aa %></p>
+                    </div>
+                    <div class="dash-prod-link">
+                      <p><%= link_to "Editer", edit_product_path(product), class: "button-dash-edit" %></p>
+                      <p><%= link_to "Supprimer", product_path(product), method: :delete, class: "button-dash-suppr" %></p>
+                    </div>
                   </div>
-                  <div class="prod-description">
-                    <div class="dash-prod-title pad">
-                      <h4> <%= product.title.capitalize %> </h4>
-                    </div>
-                    <div class="dash-prod-desc pad">
-                      <h4>Description : </h4>
-                      <p><%= product.description.capitalize %></p>
-                    </div>
-                    <div class="dash-prod-aa pad">
-                      <!-- <h4>Adresse:</h4> -->
-                      <div class="aa">
-                        <p>Depart : <%= product.ad %></p>
-                      </div>
-                      <div class="ad">
-                        <p>Arrivé : <%= product.aa %></p>
-                      </div>
-                    </div>
-                    <div class="dash-prod-date pad">
-                      <h4> Date:</h4>
-                      <p><%= product.date %></p>
-                    </div>
-                  </div>
-                  <div class="dash-prod-link">
-                    <p><%= link_to "Editer", edit_product_path(product), class: "btn btn-success" %></p>
-                    <p><%= link_to "Supprimer", product_path(product), method: :delete, class: "btn btn-danger" %></p>
+                  <div class="info">
                     <div class="recipe">
                       <a href="#" data-product-id="<%= product.id %>">
                         <i>
@@ -63,7 +64,32 @@
                        <font>Voir Offres</font>
                       </a>
                     </div>
-                    <!-- <a href="#", data-product-id="<%= product.id %>", class= "btn btn-primary">Vos offres</a> -->
+                    <div class="content-bottom">
+                      <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td align="left" valign="middle" class="pad-right">
+                          </td>
+                          <td align="left" valign="middle"></td>
+                          <td width="20" rowspan="2" class="border-right">&nbsp;</td>
+                          <td width="140" rowspan="2" align="center" valign="middle">
+                            <h1>4.8/5</h1>
+                            <span class="stars">
+                              <em style="width: 91%"></em>
+                            </span><br />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="middle" class="pad-right"><strong>Transporteurs:</strong></td>
+                          <td align="left" valign="middle" class="consumers">
+                            <img src="" />
+                            <img src="" />
+                            <img src="" />
+                            <img src="" />
+                            <span>(+4)</span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
@@ -92,7 +118,7 @@
                   <% end %>
                   <% end %>
                 </div>
-              </div>
+              <!-- </div> -->
             </div>
           <% end %>
         </div>
