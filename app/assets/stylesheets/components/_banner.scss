@@ -1,13 +1,16 @@
 .banner-container {
-  height: 100vh;
+  height: 85vh;
   text-align: center;
   color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
   // background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));z
   background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), image-url("ban.jpg" );
   background-size: cover;
   background-position: center;
+  margin: 15px;
+  font-family: $headers-font;
 }
 
 #specific-title {
@@ -22,6 +25,8 @@
 }
 .banner-content {
   color: f7f4f4;
+      margin-right: 220px;
+
   h2 {
     margin-top: 32px;
     padding-bottom: 180px;

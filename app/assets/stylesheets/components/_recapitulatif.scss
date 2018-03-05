@@ -1,11 +1,21 @@
 .recapitulatif {
-  height: 400px;
+  background-color: #e7e7e72e;
+  height: 300px;
   text-align: center;
+  margin: 15px;
   p {
     font-size: 10px;
+    font-family: $body-font;
   }
   h5 {
-    font-size: 15px;
+    font-size: 20px;
+    font-family: $headers-font;
+  }
+  h1 {
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 30px;
+
   }
 }
 
@@ -22,13 +32,19 @@
 .card-explication {
   height: 200px;
   width: 200px;
+  display: left;
   img {
     padding-bottom: 40px;
     width: 50px;
-  h6 {
+  h5 {
       font-size: 5px;
       text-align:left;
     }
   }
 }
+.text-comment {
+  margin-bottom: 63px;
+  padding-top: 20px;
+}
+
 
