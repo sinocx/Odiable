@@ -3,13 +3,16 @@
 }
 
 .card-container-index {
+  position: relative;
   background-color: white;
   padding: 10px 10px;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
   margin: 30px 30px;
   border-radius: 3px;
   height: 400px;
+
 }
+
 
 .img-container-index img {
   width: 100%;
