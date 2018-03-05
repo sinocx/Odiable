@@ -12,4 +12,3 @@ user4 = User.create(email:" vincent@gmail.com",password: "123456", first_name: "
 
 transporter1 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user1)
 transporter2 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user2)
-

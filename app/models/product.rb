@@ -8,6 +8,8 @@ class Product < ApplicationRecord
   validates :status, presence: true
   mount_uploader :photo, PhotoUploader
 
+  CATEGORIES = ["Canapé", "mobilier", "chaises"]
+  validates :category , inclusion: {in: CATEGORIES}
 
 
   geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude
