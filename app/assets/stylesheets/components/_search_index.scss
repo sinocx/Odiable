@@ -1,11 +1,17 @@
-.main-container {
+.main-container-index-product{
   display: flex;
-  align-items: center;
+  justify-content: space-around;
 }
 
-.check-box-card {
-  border: 1px solid;
+.cards-container-index{
+  margin: 10px 10px;
 }
+ @media(max-width: 500px) {
+  .main-container-index-product {
+    display: block;
+  }
+}
+
 
 
 

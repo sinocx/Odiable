@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     else
     @products = policy_scope(Product).order(created_at: :desc)
     end
+    @markers = []
+    @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
   end
 
   def show

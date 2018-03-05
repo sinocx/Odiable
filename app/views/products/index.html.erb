@@ -1,33 +1,65 @@
-<div class="main-container">
-  <!-- <div class="search-container">
+   <div class="search-container">
     <div class="row">
       <div class="col-xs-6">
-      <%#= form_tag products_path, method: :get do %>
-        <%#= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez une annonce"%>
-        <%#= submit_tag("Recherchez") %>
+
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez une annonce"%>
+        <%= submit_tag("Recherchez") %>
+        <% end %>
 
       </div>
       <div class="col-xs-6">
         <%#= simple_form_for @product do |f| %>
          <%#= f.input :category, collection: Product::CATEGORIES, prompt: "Which category?" %>
           <%# end %>
-
       </div>
     </div>
-  </div> -->
-  <div class="cards-container-index">
-    <div class="row">
+  </div>
+
+<div class="main-container-index-product">
+    <div class="content-card-index">
+      <div class="row">
       <% @products.each do |product| %>
         <% if product.status == "en_cours" %>
           <% if product.photo.present? %>
-            <div class="col-xs-12 col-sm-6 col-md-4" >
-              <%= render partial: "components/card", locals: {product: product} %>
+            <div class="col-xs-12 col-sm-12 col-md-6" >
+              <div class="card-container-index">
+                <div class="img-container-index">
+                  <%= image_tag("adam.jpg") %>
+                </div>
+                  <div class="info-card-index">
+
+
+                    <div class="product-title-card">
+                    <p><%= product.title %></p>
+                    </div>
+                      <div class="product-categorie-card">
+                        <p>Catégorie</p>
+                      </div>
+
+                </div>
+                <div class="distance-card-index">
+                      <div class="product-offer-card">
+                        <p>10km</p>
+                      </div>
+                </div>
+
+              </div>
+              <%#= render partial: "components/card", locals: {product: product} %>
             </div>
           <% end %>
         <% else %>
         <% end %>
         <% end %>
+      </div>
     </div>
+  <div class="container-map">
+     <div
+        id="map"
+        style="width: 100%;
+        height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
   </div>
 </div>
 
