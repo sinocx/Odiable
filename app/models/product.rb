@@ -2,11 +2,14 @@ class Product < ApplicationRecord
   enum status: [:en_cours, :terminée]
   belongs_to :user
   has_one :order
+  belongs_to :width
   has_many :offers, dependent: :destroy
   validates :user_id, presence: true
   validates :title, presence: true
   validates :status, presence: true
+  validates :width, presence: true
   mount_uploader :photo, PhotoUploader
+
 
 
   geocoded_by :ad, latitude: :ad_latitude, longitude: :ad_longitude

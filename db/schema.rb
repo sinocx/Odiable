@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303172929) do
-
+ActiveRecord::Schema.define(version: 20180305122244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +56,10 @@ ActiveRecord::Schema.define(version: 20180303172929) do
     t.float "aa_latitude"
     t.float "aa_longitude"
     t.integer "price_cents", default: 0, null: false
+    t.string "category"
+    t.bigint "width_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+    t.index ["width_id"], name: "index_products_on_width_id"
   end
 
   create_table "transporters", force: :cascade do |t|
@@ -94,10 +96,17 @@ ActiveRecord::Schema.define(version: 20180303172929) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "widths", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "offers", "products"
   add_foreign_key "offers", "transporters"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "users"
+  add_foreign_key "products", "widths"
   add_foreign_key "transporters", "users"
 end

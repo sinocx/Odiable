@@ -1,0 +1,51 @@
+.main-container-index-product{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-container-index{
+  margin: 10px 10px;
+}
+ @media(max-width: 500px) {
+  .main-container-index-product {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .form-control {
+//   width: 100%;
+// }
+
+// .form-style {
+//   margin: 28px;
+//   padding: 13px;
+// }
+
+// .button {
+//   top: 130px;
+//   right: 8px;
+//   border-radius: 2px;
+//   background-color: $blue;
+//   color: white !important;
+//   margin-left: -29px;
+//   height: 38px;
+//   width: 120px;
+//   font-size: 13px;
+//   &:hover {
+//     color: white !important;
+//     transition-duration: 0.2s !important;
+//     background-color: #008ff5;
+//   }
+// }
