@@ -4,6 +4,7 @@ backColor.forEach( function(element){
     $(".collection_radio_buttons").removeClass('actives');
   });
 });
+
 $(document).ready(function(){
  $(".collection_radio_buttons ").click(function(){
    $(this).toggleClass("actives");
