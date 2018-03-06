@@ -7,6 +7,27 @@
 <%= link_to "Déposer une annonce", new_product_path, class: 'btn-banner' %>
 </div>
 
+<div class="container-produit-home">
+    <div class="descriptif-produit-home">
+      <div class="picture-home-large",>
+        <%= image_tag("large-product.jpg") %>
+      </div>
+      <h1>XL - L</h1>
+    </div>
+    <div class="descriptif-produit-home">
+      <h1>M</h1>
+      <div class="picture-home-medium">
+        <%= image_tag("medium-product.jpg") %>
+      </div>
+    </div>
+    <div class="descriptif-produit-home">
+      <h1>S</h1>
+      <div class="picture-home-small">
+      <%= image_tag("small-product.jpg")  %>
+      </div>
+    </div>
+</div>
+
 <div class="container-transporter">
   <div class="image-transporteur">
     <%= link_to image_tag("transporteur.jpg")  %>
