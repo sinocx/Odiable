@@ -4,15 +4,19 @@
   text-decoration: none;
   background: #b7b7b7;
   display: flex;
+  color: white;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px 0;
-  padding: 20px;
+  margin: 0;
+  margin-right: 10px;
+  margin-left: 20px;
+  padding:0 20px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
   border-radius: 5px;
   opacity: .4;
-  flex: 0 0 30%;
+  // flex: 0 0 30%;
   text-align: center;
-  margin-left: 30px;
   &:hover {
     text-decoration: none;
     opacity: 1;
@@ -20,11 +24,11 @@
   }
 }
   .actives {
-    text-decoration: none;
-  background: red;
+  text-decoration: none;
+  background: $blue;
   color: white;
   opacity: 1;
   }
-// #product_width_ids_7, #product_width_ids_8, #product_width_ids_9{
-//   display: none;
-// }
+#product_width_1, #product_width_2, #product_width_3, #offer_hypothese_id_1, #offer_hypothese_id_2{
+  display: none;
+}

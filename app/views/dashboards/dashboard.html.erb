@@ -25,14 +25,25 @@
                 <!-- <div class="content-top-dash"> -->
                   <div class="cover">
                     <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill, class: "img-dash"%>
-                    <label>
-                      <i>
-                        <svg x="0px" y="0px" width="17px" height="17px">
-                        <%= image_tag("logo-odiable", id: "logo-dash") %>
-                        </svg>
-                      </i>
-                      <font>Votre annonce en cours</font>
-                    </label>
+                    <% if product.status == "terminée"  %>
+                      <label>
+                        <i>
+                          <svg x="0px" y="0px" width="17px" height="17px">
+                          <%= image_tag("logo-odiable", id: "logo-dash") %>
+                          </svg>
+                        </i>
+                        <font>Annonce validée</font>
+                      </label>
+                    <% else %>
+                      <label>
+                        <i>
+                          <svg x="0px" y="0px" width="17px" height="17px">
+                          <%= image_tag("logo-odiable", id: "logo-dash") %>
+                          </svg>
+                        </i>
+                        <font>Votre annonce en cours</font>
+                      </label>
+                    <% end %>
                     <div class="title-dash">
                       <h1><%= product.title.capitalize %></h1>
                     </div>
