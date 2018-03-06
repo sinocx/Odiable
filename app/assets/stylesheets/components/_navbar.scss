@@ -9,8 +9,6 @@
 
 .btn-container {
   margin-left: 116px;
-  margin-right: -100px;
-  width: 404px;
   a {
     color: #777777;
     font-size: 15px;
@@ -22,7 +20,7 @@
 }
 
 .liens {
-  width: 500px;
+  // width: 500px;
   font-size:16px;
   font-family: $headers-font;
   a {
@@ -41,7 +39,6 @@
 .logo img {
   margin-left: 30px;
   max-height: 61px;
-  max-width: 75px;
 }
 
 .btn-signin {
@@ -97,5 +94,5 @@
 .mydashboard {
   display: flex;
   justify-content: space-between;
-  width: 200px
+  // width: 200px;
 }

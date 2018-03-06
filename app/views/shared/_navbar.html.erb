@@ -6,12 +6,12 @@
     </div>
 
 
-    <div class="liens">
+    <div class="liens hidden-xs">
       <%= link_to "Voir les annonces", products_path  %>
     </div>
     <% if current_user.transporter? %>
     <% else %>
-    <div class="liens">
+    <div class="liens hidden-xs">
       <%= link_to "Devenir transporteur", sign_up_transporter_path %>
     </div>
     <% end %>
