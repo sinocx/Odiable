@@ -7,11 +7,18 @@
       </div>
       <div class="titre-show">
         <h2><%= @product.title %></h2>
-        <p><%= @product.description %></p>
+        <p class="description-show"><%= @product.description %></p>
+        <p><i class="fas fa-map-marker marker-orange"> <br></i><%= @product.ad %></p>
+        <p class ="last-aa"><i class="fas fa-map-marker marker-green"> <br></i><%= @product.aa %></p>
+        <p><%= @product.category %></p>
+        <p><%= @product.date_delivery %></p>
+
+
+
         <% if @product.user == current_user %>
-            <%= link_to "Editer", edit_product_path(@product) ,class:"btn btn-primary btn-lg" %>
+            <%= link_to "Editer", edit_product_path(@product) ,class: "btn btn-primary btn-lg button-show-size" %>
         <% elsif current_user.transporter? %>
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalPrice">
+          <button type="button" class="btn btn-primary btn-lg button-show-size" data-toggle="modal" data-target="#modalPrice">
             Faire une offre
           </button>
         <% else %>
@@ -23,7 +30,7 @@
       <div
         id="map"
         style="width: 100%;
-        height: calc(100vh - 163px);"
+        height: calc(100vh);"
         data-markers="<%= @markers.to_json %>"
       ></div>
     </div>
