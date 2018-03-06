@@ -3,6 +3,8 @@ class DashboardsController < ApplicationController
   def dashboard
     # @orders = current_user.bookings
     @products = current_user.products
+    @transporter = Transporter.find_by(user: current_user.id)
+    @offers = @transporter.offers
     # @product.sort_by! do |b|
     #   b.status
     # end
