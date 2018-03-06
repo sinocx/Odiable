@@ -1,7 +1,7 @@
 
 <div class="banner-container">
   <div class="banner-content">
-  <br><h1 id="specific">O diable</h1>
+  <br><h1 id="specific">O Diable</h1>
   <h2>Transport d'objets volumineux entre particuliers !</h2>
   </div>
 <%= link_to "Déposer une annonce", new_product_path, class: 'btn-banner' %>
@@ -12,16 +12,19 @@
       <div class="picture-home-large",>
         <%= image_tag("large-product.jpg") %>
       </div>
-      <h1>XL - L</h1>
+      <h1>LARGE (L)</h1>
+      <p>Mobilier de taille très importante: Table, canapé, armoire ...</p>
     </div>
     <div class="descriptif-produit-home">
-      <h1>M</h1>
+      <h1>MOYEN (M)</h1>
+      <p>Mobilier de taille moyenne: Commode, table, rangement ...</p>
       <div class="picture-home-medium">
         <%= image_tag("medium-product.jpg") %>
       </div>
     </div>
     <div class="descriptif-produit-home">
-      <h1>S</h1>
+      <h1>PETIT (S)</h1>
+      <p>Mobilier de taille petite: Chaises, table de nuit, etagère ...</p>
       <div class="picture-home-small">
       <%= image_tag("small-product.jpg")  %>
       </div>
@@ -29,14 +32,15 @@
 </div>
 
 <div class="container-transporter">
-  <div class="image-transporteur">
-    <%= link_to image_tag("transporteur.jpg")  %>
-  </div>
-  <div class="text-transporteur">
-    <h2> Devenez transporteur !</h2>
-    <p>Ammortissez votre véhicule plus sereinement.</p>
+
+    <div class="contenu-home-transporteur">
+      <h2> Devenez transporteur !</h2>
+      <p>Ammortissez votre véhicule plus sereinement.</p>
+    </div>
+
+    <div class="btn-home-transporteur">
       <%= link_to "Devenir transporteur", sign_up_transporter_path, class: 'btn-banner btn-transporter' %>
-  </div>
+    </div>
 
 </div>
 
@@ -47,19 +51,18 @@
 
   <div class="content-explication">
     <div class="card-explication">
-      <%= link_to image_tag("edit.png")  %>
+      <i class="fas fa-edit"></i>
       <h5>  Déposez votre annonce </h5>
-      <!-- <p>Renseignez les caractéristiques de votre meuble</p> -->
     </div>
 
     <div class="card-explication">
-      <%= link_to image_tag("proposition.png")  %>
+     <i class="fas fa-envelope"></i>
       <h5> Recevez des propositions</h5>
-      <!-- <p>Des propositions vont vous parvenir</p> -->
+
     </div>
 
     <div class="card-explication">
-      <%= link_to image_tag("validate.png")  %>
+      <i class="fas fa-check-square"></i>
       <h5>  Validez votre réservation</h5>
       <!-- <p>Choisissez parmi plusieurs propositions celle qui vous convient le mieux</p> -->
     </div>

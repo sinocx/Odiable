@@ -1,0 +1,36 @@
+.modal-map-container {
+  padding: 10px 10px;
+}
+.modal_card {
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+.container-title-offer-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.title-map-index {
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.offer-length-index p {
+  padding: 3px 3px;
+  background: $blue;
+  border-radius: 50px;
+  color: white !important;
+
+}
+.link-modal-index a {
+  margin-top: 10px;
+  padding: 5px 5px;
+  background: $blue;
+  color: white !important;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  a:hover {
+    text-decoration: none !important;
+    opacity: 0.7;
+  }
+}

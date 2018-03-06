@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
       {
         lat: product.ad_latitude,
         lng: product.ad_longitude,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        infoWindow: { content: render_to_string(partial: "/components/modal_map_index", locals: { product: product }) }
       }
     end
   end

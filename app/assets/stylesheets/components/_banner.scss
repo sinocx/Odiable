@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   // background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));z
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), image-url("ban.jpg" );
+  background-image: image-url("banner-road.jpg" );
   background-size: cover;
   background-position: center;
   margin: 15px;
@@ -20,8 +20,9 @@
   font-family: $specific-title;
   color: white;
   font-size: 65px;
-  margin-top: 95px;
+  margin-top: 155px;
   margin-bottom: 50px;
+  letter-spacing: 2px;
 }
 .banner-content {
   color: f7f4f4;
@@ -40,14 +41,13 @@
     background-color: $blue;
     color: white;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 8px;
     padding: 25px;
   &:hover {
     text-decoration:none;
     color: white;
-    background-color: rgba(200, 200, 200, 0.7)
+    opacity: 0.8;
   }
 }
-
 
 

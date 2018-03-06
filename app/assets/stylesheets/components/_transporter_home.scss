@@ -1,32 +1,31 @@
 .container-transporter {
-  height: 300px;
+  height: 400px;
   margin: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.image-transporteur img {
-  background-image: image-url("transporteur.jpg");
+  background-image: image-url("transporteur-home.jpg");
   background-size: cover;
   background-position: center;
-  height: 264px;
-  width: 445px;
 }
+
 
 .btn-transporter {
   padding: 15px;
   font-family: $headers-font;
 }
-.text-transporteur  {
-  margin-bottom: 15px;
+
+.contenu-home-transporteur {
+  margin-bottom: -24px;
   h2 {
     font-family: $headers-font;
     margin-bottom: 15px;
     font-size: 25px;
     font-weight: bold;
+    color: white !important;
   }
   p {
+    color: white !important;
     margin-bottom: 30px;
     font-family: $body-font;
     font-weight: 300;
