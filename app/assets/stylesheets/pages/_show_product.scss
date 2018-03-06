@@ -9,40 +9,49 @@
 }
 .container-grey {
   background: $light-gray;
-  height: calc(100vh - 163px);
+
+  height: 100vh;
 
 }
-
+.description-show{
+  color: rgb(200,200,200);
+  padding: 5px 0px 15px 0px;
+}
 .card-show {
-  background:rgb(255, 255, 255);
-  border-radius: 8px;
-  box-shadow: 0px 10px 40px -10px rgba(0,64,128,0.2);
-  // padding: 15px;
-  margin: 15px;
-  height: 100%;
-  max-width:400px;
+  // background:rgb(255, 255, 255);
+  // border-radius: 8px;
+  // box-shadow: 0px 10px 40px -10px rgba(0,64,128,0.2);
+  // // padding: 15px;
+  // margin: 15px;
+  // height: 100%;
+  // max-width:400px;
 }
 
 .img-show {
-  border-radius: 8px 8px 0 0;
-  // margin: 5px;
+  border-radius: 8px;
+  margin: 20px;
 
 }
 
+.button-show-size {
+  width: 100%;
+  margin: 10px 0px;
+}
+
 .titre-show {
-  // background: rgb(225,225,225);
+  background: white;
   border-radius: 8px;
   // border: 1px solid #e9f2f9;
-  padding: 5px 12px;
-  margin: 5px;
+  padding: 20px 30px;
+  margin: 20px;
   max-width: 400px;
 
 
 }
 
 .map-show {
-  flex: 0 0 450px;
-  height: 100vh;
+  flex: 0 0 900px;
+  height: calc(100vh);
   position: sticky !important;
   top: 0 !important;
 }
@@ -63,8 +72,33 @@
   }
 }
 
+.transporter-show{
+  background: white;
+  border-radius: 8px;
+  // border: 1px solid #e9f2f9;
+  padding: 15px 12px;
+  margin: 20px;
+  max-width: 400px;
+  display: block;
 
+}
 
+.transporter-offer-img {
+ border-radius: 50px
+}
+
+.last-aa {
+  border-bottom: 1px solid rgb(200,200,200);
+  padding-bottom: 30px;
+}
+
+.marker-orange {
+  color: rgb(239, 64, 59)
+}
+
+.marker-green {
+  color: rgb(0, 159, 119)
+}
 // .grid-show {
 //   display: grid;
 //   width: 100%;
