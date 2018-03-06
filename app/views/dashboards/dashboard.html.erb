@@ -1,7 +1,7 @@
 <% if current_user.transporter %>
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
+    <li role="presentation"  class="active" ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
+    <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
   </ul>
 <% else %>
   <ul class="nav nav-tabs" role="tablist">
@@ -12,12 +12,12 @@
 <div class="wrap-dash" >
   <div class="container">
     <div class="tab-content">
-      <div role="tajbpanel" class="tab-pane fade in active" id="home">
+      <div role="tajbpanel" class="tab-pane fade" id="home">
         <p>Bonjour</p>
       </div>
       <div role="tabpanel" class="tab-pane fade" id="profile">
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="messages">
+      <div role="tabpanel" class="tab-pane fade in active" id="messages">
         <div class="row">
           <% @products.each do |product| %>
             <div class="col-xs-12">
@@ -107,28 +107,8 @@
                 </div>
                 <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
                   <% product.offers.each do |offer| %>
-                  <% if offer.status == "Refusé" %>
-                  <% elsif offer.status == "Validé" %>
-                    <div class="dash-transporter-offer">
-                      <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
-                      <div class="dash-offer-desc">
-                        <p><%= offer.description.capitalize %></p>
-                        <p><%= offer.price %> € </p>
-                      </div>
-                    </div>
-                  <% else  %>
-                    <div class="dash-transporter-offer">
-                      <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
-                      <div class="dash-offer-desc">
-                        <p><%= offer.description.capitalize %></p>
-                        <p><%= offer.price %> € </p>
-                      </div>
-                      <div class="dash-offer-link">
-                        <%= link_to "Valider", validate_offer_path(product, offer), class: "button-dash-edit" %>
-                        <%= link_to "Refused", refused_offer_path(product, offer), class: "button-dash-suppr" %>
-                      </div>
-                    </div>
-                  <% end %>
+                  <div id="offer-<%= offer.id %>"></div>
+                    <%= render 'dashboards/offer',   offer: offer, product: product %>
                   <% end %>
                 <!-- </div> -->
               </div>
