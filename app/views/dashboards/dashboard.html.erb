@@ -113,8 +113,8 @@
                         <p><%= offer.price %> € </p>
                       </div>
                       <div class="dash-offer-link">
-                        <%= link_to "Valider", validate_offer_path(product, offer), class: "btn btn-primary" %>
-                        <%= link_to "Refused", refused_offer_path(product, offer), class: "btn btn-danger" %>
+                        <%= link_to "Valider", validate_offer_path(product, offer), class: "button-dash-edit" %>
+                        <%= link_to "Refused", refused_offer_path(product, offer), class: "button-dash-suppr" %>
                       </div>
                     </div>
                   <% end %>
