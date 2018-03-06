@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180305175912) do
+=======
+ActiveRecord::Schema.define(version: 20180306093358) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +70,8 @@ ActiveRecord::Schema.define(version: 20180305175912) do
     t.integer "price_cents", default: 0, null: false
     t.string "category"
     t.bigint "width_id"
+    t.datetime "date_delivery"
+
     t.index ["user_id"], name: "index_products_on_user_id"
     t.index ["width_id"], name: "index_products_on_width_id"
   end
