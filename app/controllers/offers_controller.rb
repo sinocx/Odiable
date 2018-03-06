@@ -55,7 +55,7 @@ class OffersController < ApplicationController
     redirect_to
   end
   def offers_params
-    params.require(:offer).permit(:price, :description)
+    params.require(:offer).permit(:price, :description, :hypothese_id)
   end
 
 end

@@ -1,0 +1,9 @@
+function refreshOffer(innerHTML) {
+  const newOffer = document.getElementById('offer-<%= @offer.id %>');
+  newOffer.innerHTML = ""
+  newOffer.innerHTML = innerHTML;
+}
+
+
+
+refreshOffer('<%= j render "dashboards/offer", offer: @offer, product: @product%>');

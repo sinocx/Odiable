@@ -23,7 +23,7 @@ class DashboardsController < ApplicationController
     authorize @offer
     @product.status = 1
     @offer.status = 1
-    other_offer = Offer.where(product_id: @product )
+    other_offer = Offer.where(product: @product )
     other_offer.each do |offer|
       offer.status = 2
       offer.save
@@ -31,7 +31,11 @@ class DashboardsController < ApplicationController
     # chercher les autres offres puis status validé
     @product.save
     @offer.save
-    redirect_to dashboards_path(@product)
+    respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+    end  # <-- will render `app/views/reviews/create.js.erb`
+    # redirect_to dashboards_path
   end
 
   def refused
@@ -41,6 +45,10 @@ class DashboardsController < ApplicationController
     @offer.status = 2
     @product.save
     @offer.save
-    redirect_to dashboards_path(@product)
+    respond_to do |format|
+      format.html { redirect_to dashboard_path }
+      format.js
+    end
+    redirect_to dashboards_path
   end
 end
