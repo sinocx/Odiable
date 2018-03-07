@@ -74,13 +74,13 @@
                     <p><%= product.aa %></p>
                   </div>
                 </div>
-                <div class="dash-description-desc">
+                <!-- <div class="dash-description-desc">
                   <p><%= product.description.capitalize %></p>
-                </div>
+                </div> -->
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
-                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre (<%= product.offers.length %>)</a></p>
+                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre (<%= product.offers.where(status: 1, status: 0).length %>)</a></p>
                 </div>
                 <div class="my-btn-delete">
                  <p>
