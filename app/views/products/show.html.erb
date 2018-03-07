@@ -66,7 +66,10 @@
   </div>
 </div>
 
-
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@product.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @product.description %>
+<% content_for :meta_image, cl_image_path(@product.photo.path) %>
 
 
 
