@@ -1,5 +1,7 @@
 .modal-map-container {
   padding: 10px 10px;
+  background-image: rgba(0,0,0,0.2);
+  border-radius: 3px;
 }
 .modal_card {
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
@@ -29,7 +31,7 @@
   color: white !important;
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-  a:hover {
+  &:hover {
     text-decoration: none !important;
     opacity: 0.7;
   }

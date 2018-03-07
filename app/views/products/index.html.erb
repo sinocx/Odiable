@@ -1,19 +1,15 @@
    <div class="search-container">
-    <div class="row">
-      <div class="col-xs-4">
+      <div class="form-search-index">
 
       <%= form_tag products_path, method: :get do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez une annonce"%>
+      </div>
+      <div class="submit-btn-index">
         <%= submit_tag("Recherchez") %>
-        <% end %>
 
       </div>
-      <div class="col-xs-6">
-        <%#= simple_form_for @product do |f| %>
-         <%#= f.input :category, collection: Product::CATEGORIES, prompt: "Which category?" %>
-          <%# end %>
-      </div>
-    </div>
+        <% end %>
+
   </div>
 
 <div class="main-container-index-product">
@@ -33,10 +29,11 @@
 
 
                     <div class="product-title-card">
-                    <p><%= product.title.capitalize %></p>
+                    <h5><%= product.title.capitalize %></h5>
                     </div>
                       <div class="product-categorie-card">
-                        <p><%= product.width.category.capitalize %></p>
+                       <p><%= image_tag 'size-icone.png', height: 15, width: 15 %>
+                          <%= product.width.category.capitalize %></p>
                       </div>
 
                 </div>
