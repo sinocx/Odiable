@@ -15,16 +15,38 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.setCenter(markers[0].lat, markers[0].lng);
     map.setZoom(14);
   } else if (markers.length === 2) {
+    // map.addMarkers(markers);
+    console.log(markers)
     var depart = markers[0];
     var arrivee = markers[1];
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+    const url = 'https://png.icons8.com/material/32/F43D40/marker.png'
+    const url2 = 'https://png.icons8.com/material/32/009F7B/marker.png'
+
+    const mapz = document.getElementById('map')
+
+    var map = new google.maps.Map(mapz, {
       center: depart,
-      zoom: 7,
+      icon: url,
+      zoom: 7
+
     });
+    // mapz.addMarker({ lat: 48.86, lng: 2.36});
+    const stuff = new google.maps.Marker({
+      position: markers[0],
+      map: map,
+      icon: url
+    })
+
+    const stuff2 = new google.maps.Marker({
+      position: markers[1],
+      map: map,
+      icon: url2
+    })
 
     var directionsDisplay = new google.maps.DirectionsRenderer({
-      map: map
+      map: map,
+      suppressMarkers: true
     });
 
     // Set destination, origin and travel mode.
@@ -41,8 +63,13 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       if (status == 'OK') {
         // Display the route on the map.
         directionsDisplay.setDirections(response);
+
       }
     });
+
+
+
+
   } else {
     console.log("hello")
 
@@ -56,30 +83,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   }
 }
 
-
-
-    var origin1 = markers[0];
-    var origin2 = markers[1];
-    var destinationA = markers[0];
-    var destinationB = markers[1];
-
-    var service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix(
-      {
-        origins: [origin1, origin2],
-        destinations: [destinationA, destinationB],
-        travelMode: 'DRIVING',
-        transitOptions: TransitOptions,
-        drivingOptions: DrivingOptions,
-        unitSystem: UnitSystem,
-        avoidHighways: Boolean,
-        avoidTolls: Boolean,
-      }, callback);
-
-    function callback(response, status) {
-      // See Parsing the Results for
-      // the basics of a callback function.
-    }
 
 import { autocomplete } from '../components/autocomplete';
 autocomplete();

@@ -8,12 +8,13 @@ class ProductsController < ApplicationController
     else
       @products = policy_scope(Product).order(created_at: :desc)
     end
-
     @markers = @products.map do |product|
       {
         lat: product.ad_latitude,
         lng: product.ad_longitude,
-        infoWindow: { content: render_to_string(partial: "/components/modal_map_index", locals: { product: product }) }
+        infoWindow:
+          { content: render_to_string(partial: "/components/modal_map_index",
+            locals: { product: product })}
       }
     end
 
@@ -34,6 +35,7 @@ class ProductsController < ApplicationController
     @offers = Offer.where(product_id: @product.id)
     @products = Product.where.not(ad_latitude: nil, ad_longitude: nil, aa_latitude: nil, aa_longitude: nil)
 
+    url = "http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png"
     @markers = []
     @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
     @markers << { lat: @product.aa_latitude, lng: @product.aa_longitude }
