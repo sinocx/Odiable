@@ -54,13 +54,12 @@
 
 .btn-signin {
   font-family: "Ubuntu", sans-serif;
-  background: #00AFF5;
-  border-radius: 8px;
+  border: 1px solid $blue;
+  border-radius: 3px;
   padding: 13px;
-  color: white !important;
+  color: $blue;
   &:hover {
-    background-color: $blue;
-    color: white;
+    color: $blue;
     text-decoration:none;
     opacity: 0.7;
   }
@@ -70,41 +69,37 @@
   font-family: $headers-font;
   padding-left: 32px;
   padding: 13px;
-  border: 0.2rem solid $blue;
   border-radius: 3px;
   margin-left: 20px;
+  color: rgba(0,0,0,0.7);
   &:hover {
-    border-radius: 3px;
-    color: $blue;
+    opacity: 1;
     text-decoration:none;
   }
 }
 
 .dashboard-btn {
   font-family: $headers-font;
-  background: $blue;
   font-size: 15px;
   border-radius: 3px;
   padding: 13px;
-  color: white;
+  color: $blue;
   margin-right: 30px;
   margin-left: 15px;
   &:hover {
     opacity: 0.7;
-    color: white;
-    text-decoration:none;
+    text-decoration: none;
   }
 }
 .btn-logout {
   font-family: $headers-font;
   font-size: 15px;
-  background: $red;
   border-radius: 3px;
   padding: 13px;
-  color: white;
+  color: $red;
   &:hover {
     opacity: 0.7;
-    color: white;
+    color: rgba(0,0,0,0.7);
     text-decoration:none;
   }
 }
