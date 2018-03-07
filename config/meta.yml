@@ -1,0 +1,5 @@
+meta_product_name: "Odiable"
+meta_title: "Odiable"
+meta_description: "Livraison de GROS colis entre particuliers"
+meta_image: "tag-social-media.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
