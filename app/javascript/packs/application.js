@@ -18,5 +18,6 @@ import { autocomplete3 } from '../components/autocomplete_index';
 stepForm();
 stepBack();
 showOffer();
-
-
+autocomplete()
+autocomplete2()
+autocomplete3()
