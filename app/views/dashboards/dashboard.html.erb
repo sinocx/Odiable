@@ -33,20 +33,28 @@
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
-                  <p><%= link_to "VOIR OFFRE", edit_product_path(product), class: "btn-dash-edit" %></p>
+                  <p><a href="#" data-product-id="<%= product.id %>">VOIR OFFRE ( <%= product.offers.length %> )</a></p>
                 </div>
                 <div class="my-btn-delete">
                  <p>
-                   <%= link_to "EDITER", edit_product_path(product) %>
+                   <%= link_to "Editer", edit_product_path(product) %>
                  </p>
                 </div>
                 <div class="my-btn-delete">
                   <p>
-                    <%= link_to "SUPPRIMER", product_path(product), method: :delete %>
+                    <%= link_to "Supprimer", product_path(product), method: :delete %>
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+            <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
+              <% product.offers.each do |offer| %>
+                <div class="offer-<%= offer.id %> ">
+                  <%= render "dashboards/offer", offer: offer, product: product%>
+                </div>
+              <% end %>
+            <!-- </div> -->
           </div>
         </div>
       <% end %>
