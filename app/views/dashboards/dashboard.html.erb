@@ -11,14 +11,14 @@
         </div>
       </div>
 
-        <div class="mes-produits actives">
+        <div class="mes-produits act">
           <h3><%= "Mes Produits" %></h3>
         </div>
         <div class="mes-offres">
           <h3>Mes Offres</h3>
         </div>
         <div class="mon-profil">
-          <h3>Mon profil</h3>
+          <h3>Mon Profil</h3>
         </div>
         <div class="mon-historique">
           <h3>Historique</h3>
@@ -53,16 +53,16 @@
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
-                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre( <%= product.offers.length %> )</a></p>
+                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre (<%= product.offers.length %>)</a></p>
                 </div>
                 <div class="my-btn-delete">
                  <p>
-                   <%= link_to "Editer", edit_product_path(product) %>
+                   <%= link_to image_tag("icons8-editer-le-fichier-50.png"), edit_product_path(product), class: "icons-edit" %>
                  </p>
                 </div>
                 <div class="my-btn-delete">
                   <p>
-                    <%= link_to "Supprimer", product_path(product), method: :delete %>
+                    <%= link_to image_tag("icons8-supprimer-80.png"), product_path(product), method: :delete, class: "icons" %>
                   </p>
                 </div>
               </div>
