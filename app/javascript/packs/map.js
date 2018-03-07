@@ -30,8 +30,9 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     // Set destination, origin and travel mode.
     var request = {
       destination: arrivee,
+
       origin: depart,
-      travelMode: 'DRIVING'
+      travelMode: 'DRIVING',
     };
 
     // Pass the directions request to the directions service.
@@ -52,6 +53,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
   }
 }
+
 
 
 
