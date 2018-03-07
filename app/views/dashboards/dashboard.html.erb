@@ -33,7 +33,7 @@
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
-                  <p><a href="#" data-product-id="<%= product.id %>">VOIR OFFRE ( <%= product.offers.length %> )</a></p>
+                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre( <%= product.offers.length %> )</a></p>
                 </div>
                 <div class="my-btn-delete">
                  <p>
@@ -48,9 +48,9 @@
               </div>
             </div>
           </div>
-            <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
+            <div class="dash-offer-details hidden", id="product-<%= product.id %>" data-offer-id="<%= product.id%>">
               <% product.offers.each do |offer| %>
-                <div class="offer-<%= offer.id %> ">
+                <div id="offer-<%= offer.id %>">
                   <%= render "dashboards/offer", offer: offer, product: product%>
                 </div>
               <% end %>
