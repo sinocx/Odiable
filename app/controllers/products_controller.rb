@@ -2,31 +2,48 @@ class ProductsController < ApplicationController
 
   def index
     @product = Product.new
+
     if params[:query].present?
       @products = policy_scope(Product).search_by_ad(params[:query])
     else
-    @products = policy_scope(Product).order(created_at: :desc)
+      @products = policy_scope(Product).order(created_at: :desc)
     end
-        @markers = @products.map do |product|
+
+    @markers = @products.map do |product|
       {
         lat: product.ad_latitude,
         lng: product.ad_longitude,
         infoWindow: { content: render_to_string(partial: "/components/modal_map_index", locals: { product: product }) }
       }
     end
+
+    @distances = @products.reduce({}) do |distances, product|
+      distances[product.id] = Geocoder::Calculations.distance_between(
+          [product.ad_latitude, product.ad_longitude],
+          [product.aa_latitude, product.aa_longitude]
+        ).round(2)
+
+      distances
+    end
   end
 
   def show
-
     @product = Product.find(params[:id])
-    @offers = Offer.where(product_id: @product.id)
     authorize @product
+
+    @offers = Offer.where(product_id: @product.id)
     @products = Product.where.not(ad_latitude: nil, ad_longitude: nil, aa_latitude: nil, aa_longitude: nil)
+
     @markers = []
     @markers << { lat: @product.ad_latitude, lng: @product.ad_longitude }
     @markers << { lat: @product.aa_latitude, lng: @product.aa_longitude }
-    @offer = Offer.new
 
+    @distance = Geocoder::Calculations.distance_between(
+        [@product.ad_latitude, @product.ad_longitude],
+        [@product.aa_latitude, @product.aa_longitude]
+      ).round(2)
+
+    @offer = Offer.new
   end
 
   def new
