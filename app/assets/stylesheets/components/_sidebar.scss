@@ -1,0 +1,57 @@
+.dash-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  .mon-avatar {
+    margin: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    .mon-avatar-photo {
+      text-align: center;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+    .mon-avatar-name {
+      font-size: 16px;
+      padding: 10px 20px;
+      border-bottom: 1px solid grey;
+      text-align: center;
+    }
+  }
+  .mes-produits,.mes-offres, .mon-profil, .mon-historique  {
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+    padding: 20px 30px;
+    h3 {
+      margin: 0;
+      font-size: 16px
+    }
+  }
+  h3 {
+      font-size: 16px
+  }
+}
+.act {
+  color: white;
+  background: #818181;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.mes-produits>h3 {
+  margin: 0;
+}
