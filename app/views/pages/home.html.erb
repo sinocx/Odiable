@@ -1,4 +1,14 @@
+<%# if current_user.transporter? %>
 
+<!-- <div class="banner-container">
+  <div class="banner-content">
+  <br><h1 id="specific">O Diable</h1>
+  <h2>Transport d'objets volumineux entre particuliers !</h2>
+  </div>
+<%#= link_to "Voir les annonces", products_path, class: 'btn-banner' %>
+</div> -->
+
+<%# else %>
 <div class="banner-container">
   <div class="banner-content">
   <br><h1 id="specific">O Diable</h1>
@@ -6,6 +16,7 @@
   </div>
 <%= link_to "Déposer une annonce", new_product_path, class: 'btn-banner' %>
 </div>
+<%# end %>
 
 <div class="container-produit-home">
     <div class="descriptif-produit-home">
