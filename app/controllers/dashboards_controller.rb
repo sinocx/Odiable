@@ -36,9 +36,10 @@ class DashboardsController < ApplicationController
     @product.save
     @offer.save
     respond_to do |format|
-        format.html { redirect_to dashboards_path }
-        format.js
-    end  # <-- will render `app/views/reviews/create.js.erb`
+      # format.html { redirect_to dashboards_path }
+      format.js
+    end
+      # <-- will render `app/views/reviews/create.js.erb`
     # redirect_to dashboards_path
   end
 
@@ -50,9 +51,8 @@ class DashboardsController < ApplicationController
     @product.save
     @offer.save
     respond_to do |format|
-      format.html { redirect_to dashboards_path }
+      # format.html { redirect_to dashboards_path }
       format.js
     end
-    redirect_to dashboards_path
   end
 end
