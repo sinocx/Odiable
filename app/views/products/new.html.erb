@@ -23,7 +23,7 @@
       <%= f.input :aa,:label => "Destination", placeholder: "Adresse" %>
       <%= f.input :date,:label => "Date d'échéance", as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "JJ/MM/AA" %>
         <%= f.input :date_delivery,:label => "Date de livraison",  as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "JJ/MM/AA" %>
-      <%= f.button :submit, "Valider", class: "btn-bleue" %>
+      <%= f.button :submit, "Valider", class: "btn-bleue ", id: "new-form" %>
       <%= f.button :submit, "Précédent", class: "btn-vert", id: "previous" %>
      <!--  <button class="button-previous-form" id="previous"> Précédent </button> -->
     </div>

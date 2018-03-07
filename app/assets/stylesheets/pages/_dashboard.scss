@@ -1,6 +1,10 @@
 .dashboard {
   display: flex;
 }
+.container-card-dash {
+  overflow: scroll;
+  height: 100vh;
+}
 .dash-sidebar {
   display: flex;
   flex-direction: column;
@@ -163,22 +167,23 @@
   justify-content: space-between;
   align-items: center;
   .button-dash-edit {
-    background: $blue;
+    // background: $blue;
+    border: 1px solid $blue;
     padding: 10px 20px;
     border-radius: 3px;
     text-align: center;
     a {
-      font-size: 25px;
+      font-size: 16px;
     }
     p {
       a {
-        color: white;
+        color: $blue;
       }
       margin: 0;
     }
     .btn-dash-edit {
       color: white;
-      font-weight: bold;
+      // font-weight: bold;
       margin-top: 10px;
       margin-bottom: 10px;
       text-decoration: none;
@@ -203,9 +208,19 @@
 }
 .my-btn-delete>p>a {
   border-radius: 3px;
-  border: 1px solid $blue !important;
+  // border: 1px solid $blue !important;
   padding: 15px 25px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 16px;
   color: $blue;
+}
+.icons {
+  img {
+    height: 40px;
+  }
+}
+.icons-edit {
+  img {
+    height:38px
+  }
 }

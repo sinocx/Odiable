@@ -30,8 +30,9 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     // Set destination, origin and travel mode.
     var request = {
       destination: arrivee,
+
       origin: depart,
-      travelMode: 'DRIVING'
+      travelMode: 'DRIVING',
     };
 
     // Pass the directions request to the directions service.
@@ -57,28 +58,28 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
 
 
+    var origin1 = markers[0];
+    var origin2 = markers[1];
+    var destinationA = markers[0];
+    var destinationB = markers[1];
 
+    var service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [origin1, origin2],
+        destinations: [destinationA, destinationB],
+        travelMode: 'DRIVING',
+        transitOptions: TransitOptions,
+        drivingOptions: DrivingOptions,
+        unitSystem: UnitSystem,
+        avoidHighways: Boolean,
+        avoidTolls: Boolean,
+      }, callback);
 
-  //    // Set destination, origin and travel mode.
-  //    var request = {
-  //      destination: markers[0],
-  //      origin: markers[1],
-  //      travelMode: 'DRIVING'
-  //    };
-
-  //    // Pass the directions request to the directions service.
-  //    var directionsService = new google.maps.DirectionsService();
-  //    directionsService.route(request, function(response, status) {
-  //      if (status == 'OK') {
-  //        // Display the route on the map.
-  //        directionsDisplay.setDirections(response);
-  //      }
-  //    });
-  // }
-  //   var directionsDisplay = new google.maps.DirectionsRenderer({
-  //      map: map
-  //    });
- // code du cours à rajouter
+    function callback(response, status) {
+      // See Parsing the Results for
+      // the basics of a callback function.
+    }
 
 import { autocomplete } from '../components/autocomplete';
 autocomplete();
