@@ -3,8 +3,12 @@ class DashboardsController < ApplicationController
   def dashboard
     # @orders = current_user.bookings
     @products = current_user.products
-    @transporter = Transporter.find_by(user: current_user.id)
-    @offers = @transporter.offers
+    if  current_user.transporter
+      @transporter = Transporter.find_by(user: current_user.id)
+      @offers = @transporter.offers
+    else
+
+    end
     # @product.sort_by! do |b|
     #   b.status
     # end
@@ -32,7 +36,7 @@ class DashboardsController < ApplicationController
     @product.save
     @offer.save
     respond_to do |format|
-        format.html { redirect_to dashboard_path }
+        format.html { redirect_to dashboards_path }
         format.js
     end  # <-- will render `app/views/reviews/create.js.erb`
     # redirect_to dashboards_path
@@ -46,7 +50,7 @@ class DashboardsController < ApplicationController
     @product.save
     @offer.save
     respond_to do |format|
-      format.html { redirect_to dashboard_path }
+      format.html { redirect_to dashboards_path }
       format.js
     end
     redirect_to dashboards_path
