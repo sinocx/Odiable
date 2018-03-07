@@ -15,8 +15,8 @@
       <p><%= offer.price %> € </p>
     </div>
     <div class="dash-offer-link">
-      <%= link_to "Valider", validate_offer_path(product, offer), class: "button-dash-edit",  remote: true %>
-      <%= link_to "Refused", refused_offer_path(product, offer), class: "button-dash-suppr",  remote: true %>
+      <%= link_to image_tag("icons8-checkmark-48.png"), validate_offer_path(product, offer), class: "button-dash-edit",  remote: true %>
+      <%= link_to image_tag("icons8-delete-48.png"), refused_offer_path(product, offer), class: "button-dash-suppr",  remote: true %>
     </div>
   </div>
 <% end %>

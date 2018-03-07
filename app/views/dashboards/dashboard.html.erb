@@ -30,7 +30,7 @@
       <div class="mon-avatar">
         <div class="mon-avatar-photo">
           <!-- <#%= link_to image_tag current_user.photo, crop: :fill  %> -->
-          <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo" %>
+          <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo-1" %>
         </div>
         <div class="mon-avatar-name">
           <%= current_user.first_name.capitalize %>
@@ -57,12 +57,15 @@
       <% @products.each do |product| %>
         <div class="col-xs-12 ">
           <div class="dash-card">
-            <div class="dash-card-photo" style="background-image: url(<%= cl_image_path product.photo,crop: :fill %>)">
+            <div class="dash-card-photo" style="background-image: url(<%= cl_image_path product.photo,crop: :fit %>)">
             </div>
             <div class="dash-card-description">
             <!--   <div class="dash-description-title">
                 <p><%= product.title.capitalize %></p>
               </div> -->
+                  <div class="dash-description-desc">
+                    <p><%= product.title.capitalize %></p>
+                  </div>
               <div class="dash-desc-address">
                 <div class="dash-description-aaad">
                   <div class="dash-description-ad">
@@ -74,9 +77,6 @@
                     <p><%= product.aa %></p>
                   </div>
                 </div>
-                <!-- <div class="dash-description-desc">
-                  <p><%= product.description.capitalize %></p>
-                </div> -->
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
@@ -85,12 +85,8 @@
                 <div class="my-btn-delete">
                  <p>
                    <%= link_to image_tag("icons8-editer-le-fichier-50.png"), edit_product_path(product), class: "icons-edit" %>
-                 </p>
-                </div>
-                <div class="my-btn-delete">
-                  <p>
                     <%= link_to image_tag("icons8-supprimer-80.png"), product_path(product), method: :delete, class: "icons" %>
-                  </p>
+                 </p>
                 </div>
               </div>
             </div>
