@@ -29,6 +29,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       center: depart,
       icon: url,
       zoom: 7
+
     });
     // mapz.addMarker({ lat: 48.86, lng: 2.36});
     const stuff = new google.maps.Marker({
