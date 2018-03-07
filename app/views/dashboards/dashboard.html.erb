@@ -1,9 +1,29 @@
 
 <div class="dashboard">
     <div class="dash-sidebar">
-      <div class="mes-produits">
-        <h1><%= "Mes Produits" %></h1>
+      <div class="mon-avatar">
+        <div class="mon-avatar-photo">
+          <!-- <#%= link_to image_tag current_user.photo, crop: :fill  %> -->
+          <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo" %>
+        </div>
+        <div class="mon-avatar-name">
+          <%= current_user.first_name.capitalize %>
+        </div>
       </div>
+
+        <div class="mes-produits actives">
+          <h3><%= "Mes Produits" %></h3>
+        </div>
+        <div class="mes-offres">
+          <h3>Mes Offres</h3>
+        </div>
+        <div class="mon-profil">
+          <h3>Mon profil</h3>
+        </div>
+        <div class="mon-historique">
+          <h3>Historique</h3>
+        </div>
+
     </div>
     <div class="container-fluid">
     <div class="row">

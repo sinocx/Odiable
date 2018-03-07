@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180306093358) do
     t.integer "price_cents", default: 0, null: false
     t.string "category"
     t.bigint "width_id"
-    t.date "date_delivery"
+    t.datetime "date_delivery"
     t.index ["user_id"], name: "index_products_on_user_id"
     t.index ["width_id"], name: "index_products_on_width_id"
   end
