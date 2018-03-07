@@ -15,6 +15,7 @@
 }
 
 
+
 .img-container-index img {
   width: 100%;
 
@@ -26,6 +27,18 @@
   align-items: center;
   padding-top: 20px;
   border-bottom: 1px solid #dddddd8c;
+  p {
+  padding: 5px 5px;
+  background: $blue;
+  color: white !important;
+  font-size: 15px;
+  border-radius: 3px;
+  }
+  h5 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgba(0,0,0,0.6);
+  }
 }
 
 .distance-card-index {
