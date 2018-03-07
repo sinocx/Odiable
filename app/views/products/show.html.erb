@@ -3,7 +3,7 @@
     <div class="empty"></div>
     <div class="card-show">
       <div class ="image-show">
-        <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill, class: "img-show"%>
+        <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fit, class: "img-show"%>
       </div>
       <div class="titre-show">
         <h2><%= @product.title %></h2>
