@@ -1,6 +1,10 @@
 .dashboard {
   display: flex;
 }
+.container-card-dash {
+  overflow: scroll;
+  height: 100vh;
+}
 .dash-sidebar {
   display: flex;
   flex-direction: column;
