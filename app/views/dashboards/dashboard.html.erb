@@ -1,11 +1,58 @@
 
 <div class="dashboard">
+  <% if current_user.transporter %>
     <div class="dash-sidebar">
-      <div class="mes-produits">
-        <h1><%= "Mes Produits" %></h1>
+      <div class="mon-avatar">
+        <div class="mon-avatar-photo">
+          <!-- <#%= link_to image_tag current_user.photo, crop: :fill  %> -->
+          <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo" %>
+        </div>
+        <div class="mon-avatar-name">
+          <%= current_user.first_name.capitalize %>
+        </div>
       </div>
+
+        <div class="mes-offres act">
+          <h3>Mes Offres</h3>
+        </div>
+        <div class="mes-produits">
+          <h3><%= "Mes Produits" %></h3>
+        </div>
+        <div class="mon-profil">
+          <h3>Mon Profil</h3>
+        </div>
+        <div class="mon-historique">
+          <h3>Historique</h3>
+        </div>
     </div>
-    <div class="container-fluid">
+    <% else %>
+    <div class="dash-sidebar">
+      <div class="mon-avatar">
+        <div class="mon-avatar-photo">
+          <!-- <#%= link_to image_tag current_user.photo, crop: :fill  %> -->
+          <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo" %>
+        </div>
+        <div class="mon-avatar-name">
+          <%= current_user.first_name.capitalize %>
+        </div>
+      </div>
+
+        <div class="mes-produits act">
+          <h3><%= "Mes Produits" %></h3>
+        </div>
+        <div class="mes-offres">
+          <h3>Mes Offres</h3>
+        </div>
+        <div class="mon-profil">
+          <h3>Mon Profil</h3>
+        </div>
+        <div class="mon-historique">
+          <h3>Historique</h3>
+        </div>
+    </div>
+  <% end %>
+  <div class="container-fluid">
+    <div class="container-card-dash">
     <div class="row">
       <% @products.each do |product| %>
         <div class="col-xs-12 ">
@@ -27,30 +74,30 @@
                     <p><%= product.aa %></p>
                   </div>
                 </div>
-                  <!-- <div class="dash-description-desc">
-                   <p><%= product.description.capitalize %></p>
-                  </div> -->
+                <div class="dash-description-desc">
+                  <p><%= product.description.capitalize %></p>
+                </div>
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
-                  <p><a href="#" data-product-id="<%= product.id %>">VOIR OFFRE ( <%= product.offers.length %> )</a></p>
+                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre (<%= product.offers.length %>)</a></p>
                 </div>
                 <div class="my-btn-delete">
                  <p>
-                   <%= link_to "Editer", edit_product_path(product) %>
+                   <%= link_to image_tag("icons8-editer-le-fichier-50.png"), edit_product_path(product), class: "icons-edit" %>
                  </p>
                 </div>
                 <div class="my-btn-delete">
                   <p>
-                    <%= link_to "Supprimer", product_path(product), method: :delete %>
+                    <%= link_to image_tag("icons8-supprimer-80.png"), product_path(product), method: :delete, class: "icons" %>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-            <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
+            <div class="dash-offer-details hidden", id="product-<%= product.id %>" data-offer-id="<%= product.id%>">
               <% product.offers.each do |offer| %>
-                <div class="offer-<%= offer.id %> ">
+                <div id="offer-<%= offer.id %>">
                   <%= render "dashboards/offer", offer: offer, product: product%>
                 </div>
               <% end %>
@@ -58,6 +105,7 @@
           </div>
         </div>
       <% end %>
+    </div>
     </div>
   </div>
 </div>

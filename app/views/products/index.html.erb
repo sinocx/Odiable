@@ -31,16 +31,20 @@
                     <div class="product-title-card">
                     <h5><%= product.title.capitalize %></h5>
                     </div>
+
                       <div class="product-categorie-card">
-                       <p><%= image_tag 'size-icone.png', height: 15, width: 15 %>
+                        <div class="display-flex-category">
+                       <p><%= image_tag 'size-icone-card.png', height: 15, width: 15 %>
                           <%= product.width.category.capitalize %></p>
+
+                        </div>
                       </div>
 
                 </div>
                 <div class="distance-card-index">
                       <div class="product-offer-distance">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>10km</p>
+                        <p><%=  @distances[product.id] %> Km</p>
                       </div>
                       <div class="product-offer-card">
                         <i class="fas fa-search"></i>
