@@ -4,13 +4,15 @@
 .container-card-dash {
   overflow: scroll;
   height: 100vh;
+  padding: 20px 15px;
 }
 .dash-sidebar {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full-height: remove this if you want "auto" height */
   width: 200px; /* Set the width of the sidebar */
-  background-color: #f3f1f1 /* Black */
+  background-color: $blue;
+  color: white;
 }
 
 .dash-card {
@@ -20,26 +22,30 @@
   padding: 0px;
   margin-top: 10px;
   margin-bottom: 26px;
+  box-shadow: 2px 2px 2px #e1e1e1;
   .dash-card-photo {
     width: 350px;
-    border: 1px solid #dedede;
-    margin: 0 20px;
     box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
    background-position: center;
    background-size: cover;
   }
-
-  .img-dash-card {
+  .mes-produits {
+    background: #2b355566;
   }
 
+.dash-description-desc {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
   .dash-card-description {
-    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     // border: 1px solid #dedede;
     flex: 1 0 auto;
-    margin: 0 20px;
+    margin: 0 20px 0 0;
+
     p {
       font-size: 16px;
     }
@@ -212,11 +218,11 @@
 }
 .icons {
   img {
-    height: 40px;
+    height: 25px;
   }
 }
 .icons-edit {
   img {
-    height:38px
+    height:25px;
   }
 }

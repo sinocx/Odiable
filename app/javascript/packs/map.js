@@ -20,7 +20,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
     var map = new google.maps.Map(document.getElementById('map'), {
       center: depart,
-      zoom: 7
+      zoom: 7,
     });
 
     var directionsDisplay = new google.maps.DirectionsRenderer({
