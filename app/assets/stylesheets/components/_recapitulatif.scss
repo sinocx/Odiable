@@ -1,22 +1,25 @@
 .recapitulatif {
- background-color: #97dff7;
-background-image: linear-gradient(116deg, #97dff7 0%, #ffffff 100%);
-
-  height: 300px;
+ background-color: #FFFFFF;
+ opacity: 0.8;
+  height: 400px;
   text-align: center;
   margin: 15px;
+
   p {
     font-size: 10px;
     font-family: $body-font;
   }
   h5 {
     font-size: 20px;
-    font-family: $headers-font;
+    font-family: $home-recap;
+    margin-left: 21px;
+
   }
   h1 {
     font-family: $headers-font;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
+    color: $blue;
 
   }
 }
@@ -24,6 +27,7 @@ background-image: linear-gradient(116deg, #97dff7 0%, #ffffff 100%);
 .content-explication {
   display: flex;
   justify-content: space-around;
+
 }
 
 .text-recapitulatif {
@@ -35,9 +39,11 @@ background-image: linear-gradient(116deg, #97dff7 0%, #ffffff 100%);
   height: 200px;
   width: 200px;
   display: left;
-  img {
+
+  i {
     padding-bottom: 40px;
     width: 50px;
+    font-size: 74px;
   h5 {
       font-size: 5px;
       text-align:left;

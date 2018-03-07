@@ -1,130 +1,55 @@
-<% if current_user.transporter %>
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mes offres</a></li>
-  </ul>
-<% else %>
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mes Produits</a></li>
-  </ul>
-<% end %>
-  <!-- Tab panes -->
-<div class="wrap-dash" >
-  <div class="container">
-    <div class="tab-content">
-      <div role="tajbpanel" class="tab-pane fade in active" id="home">
-        <p>Bonjour</p>
+
+<div class="dashboard">
+    <div class="dash-sidebar">
+      <div class="mes-produits">
+        <h1><%= "Mes Produits" %></h1>
       </div>
-      <div role="tabpanel" class="tab-pane fade" id="profile">
-      </div>
-      <div role="tabpanel" class="tab-pane fade" id="messages">
-        <div class="row">
-          <% @products.each do |product| %>
-            <div class="col-xs-12">
-              <div class="dashboard-card">
-                <!-- <div class="content-top-dash"> -->
-                  <div class="cover">
-                    <%= cl_image_tag product.photo, height: 200, width: 200, crop: :fill, class: "img-dash"%>
-                    <label>
-                      <i>
-                        <svg x="0px" y="0px" width="17px" height="17px">
-                        <%= image_tag("logo-odiable", id: "logo-dash") %>
-                        </svg>
-                      </i>
-                      <font>Votre annonce en cours</font>
-                    </label>
-                    <div class="title-dash">
-                      <h1><%= product.title.capitalize %></h1>
-                    </div>
-                    <div class="description-dashboard">
-                      <strong>Description:</strong>
-                      <%= product.description.capitalize %>
-                    </div>
-                    <div class="address-depart">
-                      <p><%= product.ad %></p>
-                    </div>
-                    <div class="addres-arrive">
-                      <p><%= product.aa %></p>
-                    </div>
-                    <div class="button-dash-edit">
-                      <p><%= link_to "Editer", edit_product_path(product) %></p>
-                    </div>
-                    <div class="button-dash-suppr">
-                      <p><%= link_to "Supprimer", product_path(product), method: :delete %></p>
-                    </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-xs-12 ">
+          <div class="dash-card">
+            <div class="dash-card-photo" style="background-image: url(<%= cl_image_path product.photo,crop: :fill %>)">
+            </div>
+            <div class="dash-card-description">
+            <!--   <div class="dash-description-title">
+                <p><%= product.title.capitalize %></p>
+              </div> -->
+              <div class="dash-desc-address">
+                <div class="dash-description-aaad">
+                  <div class="dash-description-ad">
+                    <i class="far fa-circle"></i>
+                    <p><%= product.ad %></p>
                   </div>
-                  <div class="info">
-                    <div class="recipe">
-                      <a href="#" data-product-id="<%= product.id %>">
-                        <i>
-                          <svg x="0px" y="0px" width="26px" height="28px">
-                            <g>
-                              <path d="M 8.5 20 L 8.5 21 L 17.5 21 L 17.5 20 L 8.5 20 ZM 8.5 16 L 8.5 17 L 17.5 17 L 17.5 16 L 8.5 16 ZM 8.5 12 L 8.5 13 L 17.5 13 L 17.5 12 L 8.5 12 ZM 20 0 C 19.4477 0 19 0.4477 19 1 L 19 6 C 19 6.5523 19.4477 7 20 7 C 20.5523 7 21 6.5523 21 6 L 21 1 C 21 0.4477 20.5523 0 20 0 ZM 13 0 C 12.4477 0 12 0.4477 12 1 L 12 6 C 12 6.5523 12.4477 7 13 7 C 13.5523 7 14 6.5523 14 6 L 14 1 C 14 0.4477 13.5523 0 13 0 ZM 6 0 C 5.4477 0 5 0.4477 5 1 L 5 6 C 5 6.5523 5.4477 7 6 7 C 6.5523 7 7 6.5523 7 6 L 7 1 C 7 0.4477 6.5523 0 6 0 ZM 15 4 L 18 4 L 18 3 L 15 3 L 15 4 ZM 8 4 L 11 4 L 11 3 L 8 3 L 8 4 ZM 3 4 L 4 4 L 4 3 L 3 3 C 1.3431 3 0 4.3431 0 6 L 0 25 C 0 26.6569 1.3431 28 3 28 L 23 28 C 24.6569 28 26 26.6569 26 25 L 26 6 C 26 4.3431 24.6569 3 23 3 L 22 3 L 22 4 L 23 4 C 24.1046 4 25 4.8954 25 6 L 25 25 C 25 26.1046 24.1046 27 23 27 L 3 27 C 1.8954 27 1 26.1046 1 25 L 1 6 C 1 4.8954 1.8954 4 3 4 Z" fill="#ffffff"/>
-                            </g>
-                          </svg>
-                        </i>
-                       <font>Voir Offres</font>
-                      </a>
-                    </div>
-                    <div class="content-bottom">
-                      <table width="100%" cellpadding="0" cellspacing="0">
-                        <tr>
-                          <td align="left" valign="middle" class="pad-right">
-                          </td>
-                          <td align="left" valign="middle"></td>
-                          <td width="20" rowspan="2" class="border-right">&nbsp;</td>
-                          <td width="140" rowspan="2" align="center" valign="middle">
-                            <h1>4.8/5</h1>
-                            <span class="stars">
-                              <em style="width: 91%"></em>
-                            </span><br />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td align="left" valign="middle" class="pad-right"><strong>Transporteurs:</strong></td>
-                          <td align="left" valign="middle" class="consumers">
-                            <img src="" />
-                            <img src="" />
-                            <img src="" />
-                            <img src="" />
-                            <span>(+4)</span>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
+                  <div class="dash-description-aa">
+                    <i class="fas fa-circle"></i>
+                    <p><%= product.aa %></p>
                   </div>
                 </div>
-                <div class="dash-offer-details hidden", data-offer-id="<%= product.id%>">
-                  <% product.offers.each do |offer| %>
-                  <% if offer.status == "Refusé" %>
-                  <% elsif offer.status == "Validé" %>
-                    <div class="dash-transporter-offer">
-                      <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
-                      <div class="dash-offer-desc">
-                        <p><%= offer.description.capitalize %></p>
-                        <p><%= offer.price %> € </p>
-                      </div>
-                    </div>
-                  <% else  %>
-                    <div class="dash-transporter-offer">
-                      <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
-                      <div class="dash-offer-desc">
-                        <p><%= offer.description.capitalize %></p>
-                        <p><%= offer.price %> € </p>
-                      </div>
-                      <div class="dash-offer-link">
-                        <%= link_to "Valider", validate_offer_path(product, offer), class: "button-dash-edit" %>
-                        <%= link_to "Refused", refused_offer_path(product, offer), class: "button-dash-suppr" %>
-                      </div>
-                    </div>
-                  <% end %>
-                  <% end %>
-                <!-- </div> -->
+                  <!-- <div class="dash-description-desc">
+                   <p><%= product.description.capitalize %></p>
+                  </div> -->
+              </div>
+              <div class="button-dash-all">
+                <div class="button-dash-edit">
+                  <p><%= link_to "VOIR OFFRE", edit_product_path(product), class: "btn-dash-edit" %></p>
+                </div>
+                <div class="my-btn-delete">
+                 <p>
+                   <%= link_to "EDITER", edit_product_path(product) %>
+                 </p>
+                </div>
+                <div class="my-btn-delete">
+                  <p>
+                    <%= link_to "SUPPRIMER", product_path(product), method: :delete %>
+                  </p>
+                </div>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

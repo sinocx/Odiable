@@ -51,6 +51,8 @@
       <%= simple_form_for [@product, @offer] do |f| %>
         <%= f.input :price, required: false, placeholder: "€" %>
         <%= f.input :description, required: false, placeholder: "Description" %>
+        <%=   f.collection_radio_buttons :hypothese_id, Hypothese.all, :id, :name %>
+
         <%= f.submit "Valider votre offre", class: "btn-bleue" %>
         <% end %>
       </div>

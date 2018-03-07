@@ -1,0 +1,22 @@
+<% if offer.status == "Refusé" %>
+<% elsif offer.status == "Validé" %>
+  <div class="dash-transporter-offer">
+    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
+    <div class="dash-offer-desc">
+      <p><%= offer.description.capitalize %></p>
+      <p><%= offer.price %> € </p>
+    </div>
+  </div>
+<% else  %>
+  <div class="dash-transporter-offer">
+    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
+    <div class="dash-offer-desc">
+      <p><%= offer.description.capitalize %></p>
+      <p><%= offer.price %> € </p>
+    </div>
+    <div class="dash-offer-link">
+      <%= link_to "Valider", validate_offer_path(product, offer), class: "button-dash-edit",  remote: true %>
+      <%= link_to "Refused", refused_offer_path(product, offer), class: "button-dash-suppr",  remote: true %>
+    </div>
+  </div>
+<% end %>
