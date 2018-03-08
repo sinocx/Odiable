@@ -68,91 +68,94 @@ user6.remote_photo_url ="https://avatars1.githubusercontent.com/u/9314769?s=460&
 user6.save!
 
 
+p "user create"
+# user1 = User.create(email:"adamsarfat@gmail.com",password: "123456", first_name: "adam", last_name:"Sarfati", age: 22, description: "Bonjour, transporter d'objet encombant depuis des années je disposes d'un camion pouvant sockter vos objets les plus imposant", transporter: true )
+# user2 = User.create(email:"adrien@gmail.com",password: "123456", first_name: "adrien", last_name:"Zafiropoulos", age: 27, description: "Bonjour, transporter d'objet encombant depuis des années je disposes d'un camion pouvant sockter vos objets les plus imposant", transporter: true )
+# user3 = User.create(email:"david@gmail.com",password: "123456", first_name: "david", last_name:"Crenin", age: 22, description: "Bonjour, disposant souvent d'objet encombrant, je suis a la recherche d'une personne pouvant deplacer mes objets frequemment", transporter: false )
+p "transporter debut"
+transporter1 = Transporter.create!(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user1)
+transporter2 = Transporter.create!(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user2)
+transporter5 = Transporter.create!(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user5)
+transporter6 = Transporter.create!(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user6)
+p "transporter fin"
+p "width debut"
+widths = %w(Petit Moyen Grand)
 
-user1 = User.create(email:"adamsarfat@gmail.com",password: "123456", first_name: "adam", last_name:"Sarfati", age: 22, description: "Bonjour, transporter d'objet encombant depuis des années je disposes d'un camion pouvant sockter vos objets les plus imposant", transporter: true )
-user2 = User.create(email:"adrien@gmail.com",password: "123456", first_name: "adrien", last_name:"Zafiropoulos", age: 27, description: "Bonjour, transporter d'objet encombant depuis des années je disposes d'un camion pouvant sockter vos objets les plus imposant", transporter: true )
-user3 = User.create(email:"david@gmail.com",password: "123456", first_name: "david", last_name:"Crenin", age: 22, description: "Bonjour, disposant souvent d'objet encombrant, je suis a la recherche d'une personne pouvant deplacer mes objets frequemment", transporter: false )
-
-transporter1 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user1)
-transporter2 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user2)
-transporter5 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user5)
-transporter6 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user6)
-
-
-# widths = %w(Petit Moyen Grand)
-
-# widths.each do |width|
-#   Width.create(category: width)
-# end
-
-# hypotheses = %w(Déménagement Transport)
+widths.each do |width|
+  Width.create!(category: width)
+end
+p "width fin"
+p "hypotheses"
+hypotheses = %w(Déménagement Transport)
 
 hypotheses.each do | hypothese|
-  Hypothese.create(name: hypothese)
+  Hypothese.create!(name: hypothese)
 end
+p  "hypotheses fin"
+p  "product debut"
 product20 = Product.new(user: user4 , title: "Enceintes", description:"J'habite dans une maison, pas d'escalier", status: 0,  aa: "15 Boulevard de Magenta, 75010 Paris", ad: "12 Rue Voltaire, 92300 Levallois-Perret", date: "23-03-2018", date_delivery:"27-03-2018", width: Width.order("RANDOM()").first)
 product20.remote_photo_url = "https://images.unsplash.com/photo-1507245921392-e902673ca772?ixlib=rb-0.3.5&s=f340bd956d2c846a52bbaa4af2408cde&auto=format&fit=crop&w=750&q=80"
-product20.save
+product20.save!
 
 product19 = Product.new(user: user4 , title: "Fauteuil", description:"J'ai un ascenseur", status: 0,  aa: "12 Rue Ernest Renan, 94700 Maisons-Alfort", ad: "12 Avenue Léonard de Vinci, 92400 Courbevoie", date: "27-03-2017", date_delivery:"11-04-2017", width: Width.order("RANDOM()").first)
 product19.remote_photo_url = "https://images.unsplash.com/photo-1464029902023-f42eba355bde?ixlib=rb-0.3.5&s=511e728f907ae4d4580bc4f8a5eee6b5&auto=format&fit=crop&w=750&q=80"
-product19.save
+product19.save!
 
 product18 = Product.new(user: user4 , title: "Lit", description:"J'habite au 1ère étage dans une maison", status: 0,  aa: "8 Passage Cardinet, 75017 Paris", ad: "39 Rue du Moulin des Bruyères, 92400 Courbevoie", date: "01-04-2018", date_delivery:"08-04-2018", width: Width.order("RANDOM()").first)
 product18.remote_photo_url = "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-0.3.5&s=bd8ed8308a093982ab2764855a014565&auto=format&fit=crop&w=750&q=80"
-product18.save
+product18.save!
 
 product17 = Product.new(user: user4 , title: "Télévision", description:"J'habite dans une maison, pas d'escalier, 1m30", status: 0,  aa: "106 Rue Brancion, 75015 Paris", ad: "51 Rue de Bercy, 75012 Paris", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product17.remote_photo_url = "https://images.unsplash.com/photo-1467293622093-9f15c96be70f?ixlib=rb-0.3.5&s=aa4a27d58bcdac27a7ff4f1078c9065d&auto=format&fit=crop&w=750&q=80"
-product17.save
+product17.save!
 
 product16 = Product.new(user: user4 , title: "Cafetière", description:"Aucun étage, pas d'escalier", status: 0,  aa: "1 Rue Henri Becquerel, 92140 Clamart", ad: "28 Rue de Sèvres, 92100 Boulogne-Billancourt", date: "29-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product16.remote_photo_url = "https://images.unsplash.com/photo-1421986598195-0d9c26ecfcde?ixlib=rb-0.3.5&s=2b63ac340a49b26360f1ec0aa831b4cb&auto=format&fit=crop&w=755&q=80"
-product16.save
+product16.save!
 
 product21 = Product.new(user: user4 , title: "Lave Linge", description:"2ème sans ascenceur, je cherche quelqu'un pour le soulever", status: 0,  aa: "31 Avenue George V, 75008 Paris", ad: "61 Avenue de l'Observatoire, 75014 Paris", date: "24-04-2018", date_delivery:"26-04-2018", width: Width.order("RANDOM()").first)
 product21.remote_photo_url = "https://images.unsplash.com/photo-1510551310160-589462daf284?ixlib=rb-0.3.5&s=fe0a494ce7183071934f6499a6e836c0&auto=format&fit=crop&w=749&q=80"
-product21.save
+product21.save!
 
 product22 = Product.new(user: user4 , title: "Canapé", description:"J'ai un ascenseur, si possible me le déplacer", status: 0,  aa: "50 Rue du Sergent Bobillot, 93100 Montreuil", ad: "17 Rue Geoffroy l'Asnier, 75004 Paris", date: "30-03-2018", date_delivery:"04-04-2018", width: Width.order("RANDOM()").first)
 product22.remote_photo_url = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-0.3.5&s=6286e40d53d85d1fe9fb0f2fae05c173&auto=format&fit=crop&w=750&q=80"
-product22.save
+product22.save!
 
 product23 = Product.new(user: user4 , title: "Bureau", description:"J'habite au 1er sans ascenceur, mon bureau mesure 2m", status: 0,  aa: "5 Rue de Belzunce, 75010 Paris", ad: "2 Rue Palatine, 75006 Paris", date: "28-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product23.remote_photo_url = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-0.3.5&s=6286e40d53d85d1fe9fb0f2fae05c173&auto=format&fit=crop&w=750&q=80"
-product23.save
+product23.save!
 
 product24 = Product.new(user: user4 , title: "Four", description:"Je descends mon four, je veux juste transport, 1m30x1m", status: 0,  aa: "21 Boulevard Morland, 75004 Paris", ad: "34 Rue Yves Toudic, 75010 Paris", date: "26-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product24.remote_photo_url = "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-0.3.5&s=e6edcd5ea442e1089709a0874788291d&auto=format&fit=crop&w=753&q=80"
-product24.save
+product24.save!
 
 product25 = Product.new(user: user4 , title: "Piano", description:"Pas d'escalier, besoin d'aide pour déplacement", status: 0,  aa: "247 Rue de Crimée, 75019 Paris", ad: "16 Rue Chaptal, 75009 Paris", date: "27-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product25.remote_photo_url = "https://images.unsplash.com/photo-1464288550599-43d5a73451b8?ixlib=rb-0.3.5&s=3f0d45456ee7532d6aa7345ad16cffa0&auto=format&fit=crop&w=772&q=80"
-product25.save
+product25.save!
 
 product26 = Product.new(user: user4 , title: "Bureau", description:"Juste transport, table de 1m80", status: 0,  aa: "24 Rue du Faubourg Saint-Honoré, 75008 Paris", ad: "224 Boulevard Saint-Germain, 75007 Paris", date: "01-04-2018", date_delivery:"03-04-2018", width: Width.order("RANDOM()").first)
 product26.remote_photo_url = "https://images.unsplash.com/photo-1497864768494-78100d1ddf01?ixlib=rb-0.3.5&s=6dd22ad7d4037f960390bd415b150d2c&auto=format&fit=crop&w=750&q=80"
-product26.save
+product26.save!
 
 product27 = Product.new(user: user4 , title: "Lit", description:"J'habite au 2ème sans ascenceur, lit de 3mx3m", status: 0,  aa: "29 Rue de la Croix Blanche, 33074 Bordeaux", ad: "18 Cours Barbey, 33800 Bordeaux", date: "26-03-2018", date_delivery:"28-03-2018", width: Width.order("RANDOM()").first)
 product27.remote_photo_url = "https://images.unsplash.com/photo-1509647924673-bbb53e22eeb8?ixlib=rb-0.3.5&s=016886bfd18a41d5d6fd59df82b21741&auto=format&fit=crop&w=747&q=80"
-product27.save
+product27.save!
 
 product28 = Product.new(user: user4 , title: "Chaises", description:"Juste transport", status: 0,  aa: "160 Rue de Saint- Genès, 33000 Bordeaux", ad: "7 Rue Ferrere, 33000 Bordeaux", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product28.remote_photo_url = "https://images.unsplash.com/photo-1509647924673-bbb53e22eeb8?ixlib=rb-0.3.5&s=016886bfd18a41d5d6fd59df82b21741&auto=format&fit=crop&w=747&q=80"
-product28.save
+product28.save!
 
 product29 = Product.new(user: user4 , title: "Plante", description:"Juste transport", status: 0,  aa: "95 Cours Maréchal Juin, 33000 Bordeaux", ad: "45 Cours Marechal Gallieni, 33000 Bordeaux", date: "26-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product29.remote_photo_url = "https://images.unsplash.com/photo-1446057468532-87b7525217d6?ixlib=rb-0.3.5&s=2520abd7d797b3b85f7bae2c1a79a89d&auto=format&fit=crop&w=751&q=80"
-product29.save
+product29.save!
 
 product30 = Product.new(user: user4 , title: "Commode", description:"Juste transport, 1m50 de long", status: 0,  aa: "16 Rue de Tivoli, 33000 Bordeaux", ad: "114 Avenue d'Arès, 33200 Bordeaux", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product30.remote_photo_url = "https://images.unsplash.com/photo-1520106392146-ef585c111254?ixlib=rb-0.3.5&s=b05812d01e603a070398ac44f0ca7ed2&auto=format&fit=crop&w=1312&q=80"
-product30.save
+product30.save!
 
 product1 = Product.new(user: user3, title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "12 Rue de Rivoli, 75004 Paris", ad: "16 villa gaudelet, Paris", date: "26-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product1.remote_photo_url = "https://i.pinimg.com/564x/b3/f0/32/b3f0326ab63050da8f3d83ecac036e63.jpg"
-product1.save
+product1.save!
 
 product2 = Product.new(user: user3 , title: "Banc orange", description:"Possibilité de démonter le banc, il pèse 40kg. Je suis au 2ème étage.", status: 0,  aa: "67 Rue Bichat, 75010 Paris", ad: "Rue de Tolbiac, 75013 Paris", date: "27-03-2018", date_delivery:"28-03-2018", width: Width.order("RANDOM()").first)
 product2.remote_photo_url = "https://images.unsplash.com/photo-1492433483212-7b3e7e53e6d9?ixlib=rb-0.3.5&s=3710dacd007a0b70b92a697dc0674aa2&auto=format&fit=crop&w=750&q=80"
@@ -172,43 +175,44 @@ product5.save!
 
 product6 = Product.new(user: user3 , title: "Canapé", description:"Canapé très lourd. J'habite au 5ème sans ascenceur. ", status: 0,  aa: "30 Rue Muller, 75018 Paris", ad: "111 Rue Réaumur, 75002 Paris", date: "26-03-2018", date_delivery:"29-03-2018", width: Width.order("RANDOM()").first)
 product6.remote_photo_url = "https://images.unsplash.com/photo-1512212621149-107ffe572d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f519fdb3efb21268177aa5689cde280f&auto=format&fit=crop&w=759&q=80"
-product6.save
+product6.save!
 
 product7 = Product.new(user: user3 , title: "Chaise", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "112 Rue Caulaincourt, 75018 Paris", ad: "91 Boulevard Beaumarchais, 75003 Paris", date: "18-03-2018", date_delivery:"24-03-2018", width: Width.order("RANDOM()").first)
 product7.remote_photo_url = "https://images.unsplash.com/photo-1496154077138-22d8a3b92e8b?ixlib=rb-0.3.5&s=1efa08934af3c5bce39d2d7bdf0560f8&auto=format&fit=crop&w=1350&q=80"
-product7.save
+product7.save!
 
 product8 = Product.new(user: user3 , title: "Table de platine", description:"table de platine légère", status: 0,  aa: "115 Avenue Jean Jaurès, 75019 Paris", ad: "105 Rue Saint-Antoine, 75004 Paris", date: "18-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product8.remote_photo_url = "https://i.pinimg.com/564x/6e/24/c9/6e24c9beaa14c3cf18ccabc74e9d1c33.jpg"
-product8.save
+product8.save!
 
 product9 = Product.new(user: user3 , title: "Meuble en bois", description:"Le meuble sera vide, il se porte facilement. Je suis au 2ème et il faudra le monter au 4ème à l'arrivée.", status: 0,  aa: "88 Boulevard de Belleville, 75020 Paris", ad: "47 Rue Gay-Lussac, 75005 Paris", date: "19-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product9.remote_photo_url = "https://i.pinimg.com/564x/85/38/17/853817156297f5c8b9939bf697eb8961.jpg"
-product9.save
+product9.save!
 
 product10 = Product.new(user: user3 , title: "Table bureau", description:"L 120cm P 65cm H 700 cm", status: 0,  aa: "263 Chemin du Vallon de l'Oriol, 13007 Marseille", ad: "120 Corniche du Président John F Kennedy, 13007 Marseille", date: "24-03-2018", date_delivery:"29-03-2018", width: Width.order("RANDOM()").first)
 product10.remote_photo_url = "https://i.pinimg.com/564x/97/7f/99/977f99112551b02cb9684e75c3c7d210.jpg"
-product10.save
+product10.save!
+p "fin product"
 
 # product11 = Product.new(user: user3 , title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "14 Rue du Ruisseau, 75018 Paris", ad: "19 Rue de Castellane, 75008 Paris", date: "26-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 # product11.remote_photo_url = "https://unsplash.com/photos/yEuEHQdLLEc"
-# product11.save
+# product11.save!
 
 # product12 = Product.new(user: user3 , title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "74 Boulevard des Batignolles, 75017 Paris", ad: "72 Rue de Rochechouart, 75009 Paris", date: "26-03-2018", date_delivery:"29-03-2018", width: Width.order("RANDOM()").first)
 # product12.remote_photo_url = "https://unsplash.com/photos/yEuEHQdLLEc"
-# product12.save
+# product12.save!
 
 # product13 = Product.new(user: user3 , title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "81 Rue Jean de la Fontaine, 75016 Paris", ad: "74 Rue du Faubourg Saint-Denis, 75010 Paris", date: "23-03-2018", date_delivery:"26-03-2018", width: Width.order("RANDOM()").first)
 # product13.remote_photo_url = "https://unsplash.com/photos/yEuEHQdLLEc"
-# product13.save
+# product13.save!
 
 # product14 = Product.new(user: user3 , title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "72 Rue Falguière, 75015 Paris", ad: "11 Rue Crespin du Gast, 75011 Paris", date: "25-03-2018", date_delivery:"28-03-2018", width: Width.order("RANDOM()").first)
 # product14.remote_photo_url = "https://unsplash.com/photos/yEuEHQdLLEc"
-# product14.save
+# product14.save!
 
 # product15 = Product.new(user: user3 , title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "14 Rue Sophie Germain, 75014 Paris", ad: "4 Rue Crozatier, 75012 Paris", date: "26-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 # product15.remote_photo_url = "https://unsplash.com/photos/yEuEHQdLLEc"
-# product15.save
+# product15.save!
 
 
 # hypotheses.each do | hypothese|
