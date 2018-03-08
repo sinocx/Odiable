@@ -99,7 +99,8 @@ product16 = Product.new(user: user4 , title: "Cafetière", description:"Aucun é
 product16.remote_photo_url = "https://images.unsplash.com/photo-1421986598195-0d9c26ecfcde?ixlib=rb-0.3.5&s=2b63ac340a49b26360f1ec0aa831b4cb&auto=format&fit=crop&w=755&q=80"
 product16.save
 
-product21 = Product.new(user: user4 , title: "Lave Linge", description:"2ème sans ascenceur, je cherche quelqu'un pour le soulever", status: 0,  aa: "31 Avenue George V, 75008 Paris", ad: "61 Avenue de l'Observatoire, 75014 Paris", date: "24-04-2018 19:00:00", date_delivery:"26-04-2018 19:00:00", width: Width.order("RANDOM()").first)
+
+product21 = Product.new(user: user3 , title: "Lave Linge", description:"2ème sans ascenceur, je cherche quelqu'un pour le soulever", status: 0,  aa: "31 Avenue George V, 75008 Paris", ad: "61 Avenue de l'Observatoire, 75014 Paris", date: "24-04-2018", date_delivery:"26-04-2018", width: Width.order("RANDOM()").first)
 product21.remote_photo_url = "https://images.unsplash.com/photo-1510551310160-589462daf284?ixlib=rb-0.3.5&s=fe0a494ce7183071934f6499a6e836c0&auto=format&fit=crop&w=749&q=80"
 product21.save
 
@@ -107,8 +108,9 @@ product22 = Product.new(user: user4 , title: "Canapé", description:"J'ai un asc
 product22.remote_photo_url = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-0.3.5&s=6286e40d53d85d1fe9fb0f2fae05c173&auto=format&fit=crop&w=750&q=80"
 product22.save
 
-product23 = Product.new(user: user4 , title: "Bureau", description:"J'habite au 1er sans ascenceur, mon bureau mesure 2m", status: 0,  aa: "5 Rue de Belzunce, 75010 Paris", ad: "2 Rue Palatine, 75006 Paris", date: "28-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
-product23.remote_photo_url = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-0.3.5&s=6286e40d53d85d1fe9fb0f2fae05c173&auto=format&fit=crop&w=750&q=80"
+
+product23 = Product.new(user: user4 , title: "Bureau", description:"J'habite au 1er sans ascenceur, mon bureau mesure 2m", status: 0,  aa: "5 Rue de Belzunce, 75010 Paris", ad: "2 Rue Palatine, 75006 Paris", date: "28-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
+product23.remote_photo_url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1784b1578fa6ead4ed29e0f402ca9d32&auto=format&fit=crop&w=1350&q=80"
 product23.save
 
 product24 = Product.new(user: user4 , title: "Four", description:"Je descends mon four, je veux juste transport, 1m30x1m", status: 0,  aa: "21 Boulevard Morland, 75004 Paris", ad: "34 Rue Yves Toudic, 75010 Paris", date: "26-03-2018 19:00:00", date_delivery:"30-03-2018 19:00:00", width: Width.order("RANDOM()").first)
@@ -127,8 +129,9 @@ product27 = Product.new(user: user4 , title: "Lit", description:"J'habite au 2è
 product27.remote_photo_url = "https://images.unsplash.com/photo-1509647924673-bbb53e22eeb8?ixlib=rb-0.3.5&s=016886bfd18a41d5d6fd59df82b21741&auto=format&fit=crop&w=747&q=80"
 product27.save
 
-product28 = Product.new(user: user4 , title: "Chaises", description:"Juste transport", status: 0,  aa: "160 Rue de Saint- Genès, 33000 Bordeaux", ad: "7 Rue Ferrere, 33000 Bordeaux", date: "27-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
-product28.remote_photo_url = "https://images.unsplash.com/photo-1509647924673-bbb53e22eeb8?ixlib=rb-0.3.5&s=016886bfd18a41d5d6fd59df82b21741&auto=format&fit=crop&w=747&q=80"
+
+product28 = Product.new(user: user4 , title: "Chaises", description:"Juste transport", status: 0,  aa: "160 Rue de Saint- Genès, 33000 Bordeaux", ad: "7 Rue Ferrere, 33000 Bordeaux", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
+product28.remote_photo_url = "https://images.unsplash.com/photo-1479243727560-fef3e12ffab4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f1ba3d2fb81aeb860116da622f7c59aa&auto=format&fit=crop&w=1950&q=80"
 product28.save
 
 product29 = Product.new(user: user4 , title: "Plante", description:"Juste transport", status: 0,  aa: "95 Cours Maréchal Juin, 33000 Bordeaux", ad: "45 Cours Marechal Gallieni, 33000 Bordeaux", date: "26-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
@@ -139,43 +142,44 @@ product30 = Product.new(user: user4 , title: "Commode", description:"Juste trans
 product30.remote_photo_url = "https://images.unsplash.com/photo-1520106392146-ef585c111254?ixlib=rb-0.3.5&s=b05812d01e603a070398ac44f0ca7ed2&auto=format&fit=crop&w=1312&q=80"
 product30.save
 
-product1 = Product.new(user: user3, title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "12 Rue de Rivoli, 75004 Paris", ad: "16 villa gaudelet, Paris", date: "26-03-2018 19:00:00", date_delivery:"30-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+
+product1 = Product.new(user: user4, title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "12 Rue de Rivoli, 75004 Paris", ad: "16 villa gaudelet, Paris", date: "26-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product1.remote_photo_url = "https://i.pinimg.com/564x/b3/f0/32/b3f0326ab63050da8f3d83ecac036e63.jpg"
 product1.save
 
-product2 = Product.new(user: user3 , title: "Banc orange", description:"Possibilité de démonter le banc, il pèse 40kg. Je suis au 2ème étage.", status: 0,  aa: "67 Rue Bichat, 75010 Paris", ad: "Rue de Tolbiac, 75013 Paris", date: "27-03-2018 19:00:00", date_delivery:"28-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product2 = Product.new(user: user4, title: "Banc orange", description:"Possibilité de démonter le banc, il pèse 40kg. Je suis au 2ème étage.", status: 0,  aa: "67 Rue Bichat, 75010 Paris", ad: "Rue de Tolbiac, 75013 Paris", date: "27-03-2018", date_delivery:"28-03-2018", width: Width.order("RANDOM()").first)
 product2.remote_photo_url = "https://images.unsplash.com/photo-1492433483212-7b3e7e53e6d9?ixlib=rb-0.3.5&s=3710dacd007a0b70b92a697dc0674aa2&auto=format&fit=crop&w=750&q=80"
 product2.save!
 
-product3 = Product.new(user: user3 , title: "2 chaises ", description:"J'habite au RDC, et il faut les monter au 3ème. Ces chaises mesurent 130cm de haut, 100cm de largeur et 80 c de profondeur.", status: 0,  aa: "71 Rue du Faubourg Poissonnière, 75009 Paris", ad: "90 Rue des Entrepreneurs, 75015 Paris", date: "28-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product3 = Product.new(user: user5 , title: "2 chaises ", description:"J'habite au RDC, et il faut les monter au 3ème. Ces chaises mesurent 130cm de haut, 100cm de largeur et 80 c de profondeur.", status: 0,  aa: "71 Rue du Faubourg Poissonnière, 75009 Paris", ad: "90 Rue des Entrepreneurs, 75015 Paris", date: "28-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product3.remote_photo_url = "https://images.unsplash.com/photo-1493150134366-cacb0bdc03fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d98494c50eba8a4b8ccb965288cfa490&auto=format&fit=crop&w=750&q=80"
 product3.save!
 
-product4 = Product.new(user: user3 , title: "3 Caméra photo", description:"les 3 appareils sont dans un carton de 30x40x70cm", status: 0,  aa: "12 Rue de Rivoli, 75004 Paris", ad: "30 Rue Legendre, 75017 Paris", date: "26-03-2018 19:00:00", date_delivery:"28-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product4 = Product.new(user: user5 , title: "3 Caméra photo", description:"les 3 appareils sont dans un carton de 30x40x70cm", status: 0,  aa: "12 Rue de Rivoli, 75004 Paris", ad: "30 Rue Legendre, 75017 Paris", date: "26-03-2018", date_delivery:"28-03-2018", width: Width.order("RANDOM()").first)
 product4.remote_photo_url = "https://images.unsplash.com/photo-1515469796227-05ae4d8241a5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aebcdad248e83a31bfd460d55d522e91&auto=format&fit=crop&w=750&q=80"
 product4.save!
 
-product5 = Product.new(user: user3 , title: "Vélo", description:"Vélo de 11kg", status: 0,  aa: "57 Rue des Dames, 75017 Paris", ad: "19 Rue Duphot, 75001 Paris", date: "26-03-2018 19:00:00", date_delivery:"27-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product5 = Product.new(user: user5 , title: "Vélo", description:"Vélo de 11kg", status: 0,  aa: "57 Rue des Dames, 75017 Paris", ad: "19 Rue Duphot, 75001 Paris", date: "26-03-2018", date_delivery:"27-03-2018", width: Width.order("RANDOM()").first)
 product5.remote_photo_url = "https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=51a9aa4dd828bf5d50fcd8154dc405b8&auto=format&fit=crop&w=1350&q=80"
 product5.save!
 
-product6 = Product.new(user: user3 , title: "Canapé", description:"Canapé très lourd. J'habite au 5ème sans ascenceur. ", status: 0,  aa: "30 Rue Muller, 75018 Paris", ad: "111 Rue Réaumur, 75002 Paris", date: "26-03-2018 19:00:00", date_delivery:"29-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product6 = Product.new(user: user5 , title: "Canapé", description:"Canapé très lourd. J'habite au 5ème sans ascenceur. ", status: 0,  aa: "30 Rue Muller, 75018 Paris", ad: "111 Rue Réaumur, 75002 Paris", date: "26-03-2018", date_delivery:"29-03-2018", width: Width.order("RANDOM()").first)
 product6.remote_photo_url = "https://images.unsplash.com/photo-1512212621149-107ffe572d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f519fdb3efb21268177aa5689cde280f&auto=format&fit=crop&w=759&q=80"
 product6.save
 
-product7 = Product.new(user: user3 , title: "Chaise", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "112 Rue Caulaincourt, 75018 Paris", ad: "91 Boulevard Beaumarchais, 75003 Paris", date: "18-03-2018 19:00:00", date_delivery:"24-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product7 = Product.new(user: user5 , title: "Chaise", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "112 Rue Caulaincourt, 75018 Paris", ad: "91 Boulevard Beaumarchais, 75003 Paris", date: "18-03-2018", date_delivery:"24-03-2018", width: Width.order("RANDOM()").first)
 product7.remote_photo_url = "https://images.unsplash.com/photo-1496154077138-22d8a3b92e8b?ixlib=rb-0.3.5&s=1efa08934af3c5bce39d2d7bdf0560f8&auto=format&fit=crop&w=1350&q=80"
 product7.save
 
-product8 = Product.new(user: user3 , title: "Table de platine", description:"table de platine légère", status: 0,  aa: "115 Avenue Jean Jaurès, 75019 Paris", ad: "105 Rue Saint-Antoine, 75004 Paris", date: "18-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product8 = Product.new(user: user5 , title: "Table de platine", description:"table de platine légère", status: 0,  aa: "115 Avenue Jean Jaurès, 75019 Paris", ad: "105 Rue Saint-Antoine, 75004 Paris", date: "18-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product8.remote_photo_url = "https://i.pinimg.com/564x/6e/24/c9/6e24c9beaa14c3cf18ccabc74e9d1c33.jpg"
 product8.save
 
-product9 = Product.new(user: user3 , title: "Meuble en bois", description:"Le meuble sera vide, il se porte facilement. Je suis au 2ème et il faudra le monter au 4ème à l'arrivée.", status: 0,  aa: "88 Boulevard de Belleville, 75020 Paris", ad: "47 Rue Gay-Lussac, 75005 Paris", date: "19-03-2018 19:00:00", date_delivery:"30-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product9 = Product.new(user: user5 , title: "Meuble en bois", description:"Le meuble sera vide, il se porte facilement. Je suis au 2ème et il faudra le monter au 4ème à l'arrivée.", status: 0,  aa: "88 Boulevard de Belleville, 75020 Paris", ad: "47 Rue Gay-Lussac, 75005 Paris", date: "19-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product9.remote_photo_url = "https://i.pinimg.com/564x/85/38/17/853817156297f5c8b9939bf697eb8961.jpg"
 product9.save
 
-product10 = Product.new(user: user3 , title: "Table bureau", description:"L 120cm P 65cm H 700 cm", status: 0,  aa: "263 Chemin du Vallon de l'Oriol, 13007 Marseille", ad: "120 Corniche du Président John F Kennedy, 13007 Marseille", date: "24-03-2018 19:00:00", date_delivery:"29-03-2018 19:00:00", width: Width.order("RANDOM()").first)
+product10 = Product.new(user: user5 , title: "Table bureau", description:"L 120cm P 65cm H 700 cm", status: 0,  aa: "263 Chemin du Vallon de l'Oriol, 13007 Marseille", ad: "120 Corniche du Président John F Kennedy, 13007 Marseille", date: "24-03-2018", date_delivery:"29-03-2018", width: Width.order("RANDOM()").first)
 product10.remote_photo_url = "https://i.pinimg.com/564x/97/7f/99/977f99112551b02cb9684e75c3c7d210.jpg"
 product10.save
 
@@ -225,42 +229,42 @@ product10.save
 # offer11 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
 # offer12 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
 
-offer1 = Offer.create!(product: product1, transporter:transporter1, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer2 = Offer.create(product: product1, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer3 = Offer.create(product: product1, transporter:transporter5, price: 14, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer4 = Offer.create(product: product1, transporter:transporter6, price: 10, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer1 = Offer.create!(product: product21, transporter:transporter1, price: 20, description: "Bonjour je suis dispo 0642415690", status: 0, hypothese_id: Hypothese.last.id)
+offer2 = Offer.create(product: product21, transporter:transporter2, price: 55, description: "Dispo 0622527610", status: 0, hypothese_id: Hypothese.first.id)
+offer3 = Offer.create(product: product21, transporter:transporter5, price: 40, description: "Disponible au 0612523620", status: 0, hypothese_id: Hypothese.first.id)
+offer4 = Offer.create(product: product21, transporter:transporter6, price: 22, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
 
-offer5 = Offer.create(product: product2, transporter:transporter1, price: 7, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer6 = Offer.create(product: product2, transporter:transporter2, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer7 = Offer.create(product: product2, transporter:transporter5, price: 9, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer8 = Offer.create(product: product2, transporter:transporter6, price: 10, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer5 = Offer.create(product: product2, transporter:transporter1, price: 15, description: "Dispo 0616423630", status: 0, hypothese_id: Hypothese.last.id)
+offer6 = Offer.create(product: product2, transporter:transporter2, price: 16, description: "Dispo 0662326670", status: 0, hypothese_id: Hypothese.last.id)
+offer7 = Offer.create(product: product2, transporter:transporter5, price: 30, description: "Dispo 0622223610", status: 0, hypothese_id: Hypothese.first.id)
+offer8 = Offer.create(product: product2, transporter:transporter6, price: 25, description: "Dispo 0662424640", status: 0, hypothese_id: Hypothese.first.id)
 
-offer9 = Offer.create(product: product3, transporter:transporter1, price: 25, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer10 = Offer.create(product: product3, transporter:transporter2, price: 24, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer11 = Offer.create(product: product3, transporter:transporter5, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer12 = Offer.create(product: product3, transporter:transporter6, price: 18, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer9 = Offer.create(product: product3, transporter:transporter1, price: 38, description: "Dispo 0653435330", status: 0, hypothese_id: Hypothese.first.id)
+offer10 = Offer.create(product: product3, transporter:transporter2, price: 39, description: "Dispo 0712424690", status: 0, hypothese_id: Hypothese.first.id)
+offer11 = Offer.create(product: product3, transporter:transporter5, price: 27, description: "Dispo 0614422670", status: 0, hypothese_id: Hypothese.last.id)
+offer12 = Offer.create(product: product3, transporter:transporter6, price: 18, description: "Dispo 0616426670", status: 0, hypothese_id: Hypothese.last.id)
 
-offer13 = Offer.create(product: product4, transporter:transporter1, price: 9, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer14 = Offer.create(product: product4, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer15 = Offer.create(product: product4, transporter:transporter5, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer16 = Offer.create(product: product4, transporter:transporter6, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer13 = Offer.create(product: product4, transporter:transporter1, price: 15, description: "Dispo 0643465190", status: 0, hypothese_id: Hypothese.last.id)
+offer14 = Offer.create(product: product4, transporter:transporter2, price: 25, description: "Dispo 0632435630", status: 0, hypothese_id: Hypothese.first.id)
+offer15 = Offer.create(product: product4, transporter:transporter5, price: 16, description: "Dispo 0652425690", status: 0, hypothese_id: Hypothese.last.id)
+offer16 = Offer.create(product: product4, transporter:transporter6, price: 27, description: "Dispo 0632325110", status: 0, hypothese_id: Hypothese.first.id)
 
-offer17 = Offer.create(product: product5, transporter:transporter1, price: 11, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer18 = Offer.create(product: product5, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer19 = Offer.create(product: product5, transporter:transporter5, price: 14, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer17 = Offer.create(product: product5, transporter:transporter1, price: 15, description: "Dispo 0613435630", status: 0, hypothese_id: Hypothese.last.id)
+offer18 = Offer.create(product: product5, transporter:transporter2, price: 16, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer19 = Offer.create(product: product5, transporter:transporter5, price: 27, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 offer20 = Offer.create(product: product5, transporter:transporter6, price: 20, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 
-offer21 = Offer.create(product: product6, transporter:transporter1, price: 20, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer22 = Offer.create(product: product6, transporter:transporter2, price: 19, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer23 = Offer.create(product: product6, transporter:transporter5, price: 17, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer24 = Offer.create(product: product6, transporter:transporter6, price: 18, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer21 = Offer.create(product: product6, transporter:transporter1, price: 40, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer22 = Offer.create(product: product6, transporter:transporter2, price: 45, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer23 = Offer.create(product: product6, transporter:transporter5, price: 30, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer24 = Offer.create(product: product6, transporter:transporter6, price: 25, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
 
-offer25 = Offer.create(product: product7, transporter:transporter1, price: 23, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer25 = Offer.create(product: product7, transporter:transporter1, price: 20, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
 offer26 = Offer.create(product: product7, transporter:transporter2, price: 22, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer27 = Offer.create(product: product7, transporter:transporter5, price: 25, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer28 = Offer.create(product: product7, transporter:transporter6, price: 24, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer27 = Offer.create(product: product7, transporter:transporter5, price: 38, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer28 = Offer.create(product: product7, transporter:transporter6, price: 34, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 
 offer29 = Offer.create(product: product8, transporter:transporter1, price: 30, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer30 = Offer.create(product: product8, transporter:transporter2, price: 31, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer30 = Offer.create(product: product8, transporter:transporter2, price: 47, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 offer31 = Offer.create(product: product8, transporter:transporter5, price: 26, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer32 = Offer.create(product: product8, transporter:transporter6, price: 34, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer32 = Offer.create(product: product8, transporter:transporter6, price: 45, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)

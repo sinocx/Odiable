@@ -18,11 +18,12 @@
       <% @products.each do |product| %>
         <% if product.status == "en_cours" %>
           <% if product.photo.present? %>
-            <div class="col-xs-12 col-sm-12 col-md-6" >
+            <div class="col-xs-12 col-sm-12 col-md-4" >
               <div class="card-container-index">
-                <div class="img-container-index">
+                <div class="img-container-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path product.photo, height: 300, crop: :fill %>')">
 
-                  <%= cl_image_tag product.photo, height: 300, width: 400, crop: :fit %>
+                  <%# cl_image_tag product.photo, height: 300, width: 400, crop: :fit %>
 
                 </div>
                   <div class="info-card-index">

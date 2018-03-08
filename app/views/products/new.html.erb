@@ -1,7 +1,7 @@
 <div class="container-add-product">
 <div class="wrapper">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-2">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4">
         <div class="form-product-add">
         <h1>Nouveau produit</h1>
   <%= simple_form_for(@product) do |f| %>
@@ -9,10 +9,16 @@
       <div class="form-description-title">
         <%= f.input :title,:label => "Titre", placeholder: "Votre product", required: false  %>
         <%= f.input :description, placeholder: "Description de votre produit", required: false %>
+        <div class="radio-btn-product">
         <%=   f.collection_radio_buttons :width, Width.all, :id, :category %>
 
+
+        </div>
+        <div class="btn-photo-product">
         <%= f.input :photo, class: "input-photo-add" %>
         <%= f.input :photo_cache, as: :hidden %>
+
+        </div>
       </div>
       <%= f.button :submit, "Continuer", class: "btn-bleue", id: "next" %>
     </div>
@@ -24,7 +30,7 @@
       <%= f.input :date,:label => "Date d'échéance", as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "JJ/MM/AA" %>
         <%= f.input :date_delivery,:label => "Date de livraison",  as: :string, required: false, input_html: {class: "datepicker"}, placeholder: "JJ/MM/AA" %>
       <%= f.button :submit, "Valider", class: "btn-bleue ", id: "new-form" %>
-      <%= f.button :submit, "Précédent", class: "btn-vert", id: "previous" %>
+      <%#= f.button :submit, "Précédent", class: "btn-vert", id: "previous" %>
      <!--  <button class="button-previous-form" id="previous"> Précédent </button> -->
     </div>
 </div>
