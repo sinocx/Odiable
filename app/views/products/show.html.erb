@@ -10,8 +10,9 @@
         <p class="description-show"><%= @product.description %></p>
         <p><img src="https://png.icons8.com/material/24/F43D40/marker.png"></i><%= @product.ad %></p>
         <p><img src="https://png.icons8.com/material/24/009F7B/marker.png"></i><%= @product.aa %></p>
-        <p><%= @product.category %></p>
-        <p ><i class="fas fa-truck truck-blue"> <br></i> <%= l(@product.date_delivery) %></p>
+        <p><%= image_tag 'size-icone-card.png', height: 20, width: 20 %>  <%=  @product.width.category %></p>
+        <p ><i class="fas fa-truck truck-blue"> <br></i> <%= Date.parse(@product.date_delivery.to_s).strftime('%d/%m/%Y') %></p>
+        <p><img src="https://png.icons8.com/dusk/24/00FF00/clock.png"> <%= Date.parse(@product.date_delivery.to_s).strftime('%H:%M') %> </p>
         <p class ="last-aa"><i class="fas fa-arrows-alt-h arrows-blue"></i> <%= @distance %> Km</p>
 
 
@@ -70,9 +71,3 @@
 <% content_for :meta_title, "#{@product.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @product.description %>
 <% content_for :meta_image, cl_image_path(@product.photo) %>
-
-
-
-
-
-

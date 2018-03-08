@@ -20,17 +20,13 @@
   font-family: $specific-title;
   color: white;
   font-size: 65px;
-  margin-top: 155px;
-  margin-bottom: 50px;
   letter-spacing: 2px;
 }
 .banner-content {
   color: f7f4f4;
-      margin-right: 220px;
-
   h2 {
     margin-top: 32px;
-    padding-bottom: 180px;
+    margin-bottom: 50px;
     font-size: 20px;
   }
 }
@@ -42,7 +38,8 @@
     color: white;
     text-decoration: none;
     border-radius: 3px;
-    padding: 25px;
+    padding: 20px;
+
   &:hover {
     text-decoration:none;
     color: white;
