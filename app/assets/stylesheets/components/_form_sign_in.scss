@@ -1,6 +1,6 @@
 .form-log-in {
 
-  background-color: #f7f7f7;
+  background-color: #9f9f9f5e;
   padding: 20px 30px;
   border-radius: 5px;
   margin-top: 50px;
@@ -9,18 +9,19 @@
   h2 {
     text-align: center;
     font-size: 40px !important;
-
-
+    color: white;
   }
   a {
-    color: black;
+    color: white;
     &:hover {
       text-decoration: none;
     }
   }
 }
 
-
+.checkbox {
+  color: white;
+}
 
 .btn-bleue {
   background-color: $blue;
@@ -40,7 +41,7 @@
 
 .main-container {
   min-height: 80%;
-  background: image-url("back-signin.jpg");
+  background: image-url("fond-ecran-3.jpg");
   background-size: cover;
   background-position: center;
 }

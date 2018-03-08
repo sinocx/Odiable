@@ -17,9 +17,9 @@
 
 
         <% if @product.user == current_user %>
-            <%= link_to "Editer", edit_product_path(@product) ,class: "btn btn-primary btn-lg button-show-size" %>
+            <%= link_to "Editer", edit_product_path(@product) ,class: "btn btn-lg button-show-size" %>
         <% elsif current_user.transporter? %>
-          <button type="button" class="btn btn-primary btn-lg button-show-size" data-toggle="modal" data-target="#modalPrice">
+          <button type="button" class="button-show-size" data-toggle="modal" data-target="#modalPrice">
             Faire une offre
           </button>
         <% else %>

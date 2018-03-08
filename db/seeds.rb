@@ -61,18 +61,20 @@ user6 = User.new(email:"lamia@gmail.com",password: "123456", first_name: "Lamia"
 user6.remote_photo_url ="https://avatars1.githubusercontent.com/u/9314769?s=460&v=4"
 user6.save!
 
+
 transporter1 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user1)
 transporter2 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user2)
 transporter5 = Transporter.create(car: "Camion", capacity: "Tres grande", permit: "123412345123", cin: "123131234123", user: user5)
 transporter6 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user6)
 
-widths = %w(Petit Moyen Grand)
 
-widths.each do |width|
-  Width.create(category: width)
-end
+# widths = %w(Petit Moyen Grand)
 
-hypotheses = %w(Déménagement Transport)
+# widths.each do |width|
+#   Width.create(category: width)
+# end
+
+# hypotheses = %w(Déménagement Transport)
 
 hypotheses.each do | hypothese|
   Hypothese.create(name: hypothese)
@@ -196,6 +198,11 @@ product10.save
 # product15 = Product.new(user: user3 , title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "14 Rue Sophie Germain, 75014 Paris", ad: "4 Rue Crozatier, 75012 Paris", date: "26-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 # product15.remote_photo_url = "https://unsplash.com/photos/yEuEHQdLLEc"
 # product15.save
+
+
+# hypotheses.each do | hypothese|
+#   Hypothese.create(name: hypothese)
+# end
 
 # product1 = Product.create!(title: "Canaper", description: "4m x 1.5m", status: 0, aa: "16 villa gaudelet, Paris", ad: "25 place jules ferry", date: "25-03-2017", user: user1, width: 1, date_delivery: "26-03-2017", photo: "http://www.archiexpo.fr/prod/domingolotti/product-57305-1015717.html")
 # product2 = Product.create(title: "Canaper", description: "4m x 1.5m", status: 0, aa: "16 villa gaudelet, Paris", ad: "25 place jules ferry", date: "25-03-2017", user: user3, width: Width.first.id, date_delivery: "26-03-2017", photo: "http://www.archiexpo.fr/prod/domingolotti/product-57305-1015717.html")

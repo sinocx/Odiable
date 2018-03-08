@@ -16,7 +16,7 @@
 }
 
 .dash-card {
-  height: 250px;
+  height: 222px;
   display: flex;
   justify-content: space-between;
   padding: 0px;
@@ -37,6 +37,10 @@
   margin-left: 20px;
   font-size: 20px;
 }
+  h3 {
+    font-size: 22px;
+    color: $blue;
+  }
 
   .dash-card-description {
     padding: 20px;
@@ -56,10 +60,10 @@
       padding: 0;
     }
     .dash-desc-address {
-      margin-bottom: 36px;
+      margin-bottom:20px;
       display: flex;
       justify-content: space-between;
-      margin-top: 20px;
+
       border-bottom: 1px solid rgba(200,200,200, 0.3);
       .dash-description-desc {
         padding: 20px;
@@ -119,7 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
   .dash-transporter-offer {
     background: rgba(250,250,250, 0.8) !important;
     margin: 10px;
@@ -216,6 +220,9 @@
     }
   }
 
+
+
+
   // .button-dash-suppr {
   //   background: #ab2727;
   //   padding: 1px 27px;
@@ -242,5 +249,44 @@
 .icons-edit {
   img {
     height:25px;
+  }
+}
+
+.mes-offres {
+  color: white;
+  background: #2b355566;
+}
+.spe-prod-dispense {
+  background: none !important;
+}
+.hypothese-1-dash {
+  background-color: $blue;
+}
+.icon-camion {
+  background: $blue !important;
+}
+
+.button-dash-ticket {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+   p {
+    margin-left: 20px;
+    font-size: 25px;
+   }
+   h4 {
+    margin-left: 20px;
+    font-size: 16px;
+   }
+  }
+.date-dash-transp {
+  position: relative;
+  .offer-dasth-status {
+    position: absolute;
+    top: -67px;
+    right: 22px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
