@@ -1,6 +1,26 @@
 class DashboardsController < ApplicationController
   skip_after_action :verify_authorized
+
   def dashboard
+    @products = current_user.products
+
+    @offers = {}
+
+    @products.each do |product|
+      product_offers = product.offers.joins(:hypothese)
+
+      @offers[product.id] = {
+        demenagement: product_offers.where(hypotheses:{ name: "Déménagement" }).order(:price).first,
+        transport: product_offers.where(hypotheses:{ name: "Transport" }).order(:price).first
+      }
+    end
+
+    @hypothese1_products = Product.joins(offers: :hypothese).where(hypotheses:{ name: "Déménagement" }).group(:id)
+    @hypothese2_products = Product.joins(offers: :hypothese).where(hypotheses:{ name: "Transport" }).group(:id)
+
+    # product.offers.order(:price).first
+
+
     # @orders = current_user.bookings
     @products = current_user.products
     if  current_user.transporter
@@ -9,11 +29,24 @@ class DashboardsController < ApplicationController
     else
 
     end
-    # @product.sort_by! do |b|
-    #   b.status
-    # end
-    # @product_bookings = current_user.bookings
+
+    @hypothese1 = []
+    @hypothese2 = []
+
+    @products.each do |product|
+      product.offers.each do |offer|
+        if offer.hypothese_id == 1
+          @hypothese1 << offer
+        else offer.hypothese_id == 2
+          @hypothese2 << offer
+        end
+      end
+    end
+    @hypothese1.sort_by do |b|
+      b.price
+    end
   end
+
 
   def show
 
