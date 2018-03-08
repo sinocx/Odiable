@@ -75,6 +75,7 @@
       .dash-description-aaad {
         display:flex;
         flex-direction: column;
+        position: relative;
         .dash-description-ad {
           display:flex;
           padding: 20px;
@@ -85,6 +86,7 @@
             // font-weight: bold;
           }
           i {
+            z-index: 5;
             font-size: 20px;
             color: rgb(0,200,0)
           }
@@ -289,4 +291,11 @@
     padding: 10px 20px;
     font-size: 16px;
   }
+}
+.line-dash {
+  border-left: 3px dotted #00c800;
+  height: 32px;
+  position: absolute;
+  top: 31px;
+  left: 29px;
 }

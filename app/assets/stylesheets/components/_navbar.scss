@@ -96,10 +96,10 @@
   font-size: 15px;
   border-radius: 3px;
   padding: 13px;
-  color: $red;
+  color: #A3A5A7;
   &:hover {
     opacity: 0.7;
-    color: rgba(0,0,0,0.7);
+    color: $red;
     text-decoration:none;
   }
 }
