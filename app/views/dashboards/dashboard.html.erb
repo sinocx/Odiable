@@ -37,11 +37,11 @@
         </div>
       </div>
 
-        <div class="mes-produits act">
-          <h3><%= "Mes Produits" %></h3>
-        </div>
         <div class="mes-offres">
           <h3>Mes Offres</h3>
+        </div>
+        <div class="mes-produits act spe-prod-dispense">
+          <h3><%= "Mes Produits" %></h3>
         </div>
         <div class="mon-profil">
           <h3>Mon Profil</h3>
@@ -51,7 +51,62 @@
         </div>
     </div>
   <% end %>
+
+ <% if current_user.transporter  %>
   <div class="container-fluid">
+    <div class="container-card-dash">
+    <div class="row">
+      <% @offers.each do |offer| %>
+        <div class="col-xs-12 ">
+          <div class="dash-card">
+            <div class="dash-card-photo" style="background-image: url(<%= cl_image_path offer.product.photo,crop: :fit %>)">
+            </div>
+
+            <div class="dash-card-description">
+            <!--   <div class="dash-description-title">
+                <p><%#product.title.capitalize %></p>
+              </div> -->
+                  <div class="dash-description-desc">
+                    <h3><%= offer.product.title.capitalize %></h3>
+                  </div>
+              <div class="dash-desc-address">
+                <div class="dash-description-aaad">
+                  <div class="dash-description-ad">
+                    <i class="far fa-circle"></i>
+                    <p><%= offer.product.ad %></p>
+                  </div>
+                  <div class="dash-description-aa">
+                    <i class="fas fa-circle"></i>
+                    <p><%= offer.product.aa %></p>
+                  </div>
+                </div>
+                <div class="date-dash-transp">
+                  <div class="offer-dasth-status">
+                      <%= offer.status %>
+                  </div>
+                  <div class="date-delivery">
+
+                  <p><%= offer.product.date_delivery %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="button-dash-ticket">
+                <div class="offer-price-dash">
+                <p>  <%= offer.price %>€ </p>
+                </div>
+                <div class="offer-description-dash">
+                  <h4> <%= offer.description %> </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+    <div class="container-fluid">
     <div class="container-card-dash">
     <div class="row">
       <% @products.each do |product| %>
@@ -64,7 +119,7 @@
                 <p><%= product.title.capitalize %></p>
               </div> -->
                   <div class="dash-description-desc">
-                    <p><%= product.title.capitalize %></p>
+                    <h3><%= product.title.capitalize %></h3>
                   </div>
               <div class="dash-desc-address">
                 <div class="dash-description-aaad">
@@ -92,15 +147,28 @@
             </div>
           </div>
             <div class="dash-offer-details hidden", id="product-<%= product.id %>" data-offer-id="<%= product.id%>">
-              <% product.offers.each do |offer| %>
-                <div id="offer-<%= offer.id %>">
-                  <%= render "dashboards/offer", offer: offer, product: product%>
+              <% if @offers[product.id][:demenagement] %>
+                <div id="offer-<%= @offers[product.id][:demenagement].id %>">
+                  <%= render "dashboards/offer", offer: @offers[product.id][:demenagement], product: product%>
                 </div>
               <% end %>
-            <!-- </div> -->
+
+              <% if @offers[product.id][:transport] %>
+                <div id="offer-<%= @offers[product.id][:transport].id %>">
+                  <%= render "dashboards/offer", offer: @offers[product.id][:transport], product: product%>
+                </div>
+              <% end %>
+             <!--  <%# product.offers.each do |offer| %>
+                <div id="offer-<%= offer.id %>">
+                  <%#= render "dashboards/offer", offer: offer, product: product%>
+                </div>
+              <%# end %> -->
+
           </div>
         </div>
       <% end %>
+      <% end %>
+
     </div>
     </div>
   </div>

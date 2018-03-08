@@ -1,10 +1,14 @@
 <% if offer.status == "Refusé" %>
 <% elsif offer.status == "Validé" %>
   <div class="dash-transporter-offer">
-    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
+    <%= image_tag "icons8-camion-24.png", class: "dash-offer-user" %>
+     <!--  <div class="hypothese-1-dash">
+    <%#= image_tag "icons8-camion-24.png", class: 'icon-camion' %>
+      </div> -->
     <div class="dash-offer-desc">
       <p><%= offer.description.capitalize %></p>
       <p><%= offer.price %> € </p>
+
     </div>
   </div>
 <% else  %>
