@@ -239,7 +239,7 @@ p "fin product"
 # offer10 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
 # offer11 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
 # offer12 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
-
+p "offer debut"
 offer1 = Offer.create!(product: product1, transporter:transporter1, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
 offer2 = Offer.create(product: product1, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 offer3 = Offer.create(product: product1, transporter:transporter5, price: 14, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
@@ -279,3 +279,4 @@ offer29 = Offer.create(product: product8, transporter:transporter1, price: 30, d
 offer30 = Offer.create(product: product8, transporter:transporter2, price: 31, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 offer31 = Offer.create(product: product8, transporter:transporter5, price: 26, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
 offer32 = Offer.create(product: product8, transporter:transporter6, price: 34, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+p "offer fin"
