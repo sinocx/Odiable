@@ -6,7 +6,7 @@
         <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fit, class: "img-show"%>
       </div>
       <div class="titre-show">
-        <h2><%= @product.title %></h2>
+        <h2><%= @product.title.capitalize %></h2>
         <p class="description-show"><%= @product.description %></p>
         <p><img src="https://png.icons8.com/material/24/F43D40/marker.png"></i><%= @product.ad %></p>
         <p><img src="https://png.icons8.com/material/24/009F7B/marker.png"></i><%= @product.aa %></p>
