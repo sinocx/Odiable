@@ -1,5 +1,6 @@
 class Offer < ApplicationRecord
   enum status: ["En attente", "Validé", "Refusé"]
+  belongs_to :hypothese
   belongs_to :product
   belongs_to :transporter
   # belongs_to :user, through: :transporter

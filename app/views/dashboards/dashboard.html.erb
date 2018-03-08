@@ -11,7 +11,6 @@
           <%= current_user.first_name.capitalize %>
         </div>
       </div>
-
         <div class="mes-offres act">
           <h3>Mes Offres</h3>
         </div>
@@ -92,6 +91,8 @@
             </div>
           </div>
             <div class="dash-offer-details hidden", id="product-<%= product.id %>" data-offer-id="<%= product.id%>">
+
+
               <% product.offers.each do |offer| %>
                 <div id="offer-<%= offer.id %>">
                   <%= render "dashboards/offer", offer: offer, product: product%>

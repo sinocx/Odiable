@@ -15,6 +15,7 @@ class OffersController < ApplicationController
     @product = Product.find(params[:product_id])
     @offer.product = @product
     @offer.status = 0
+    # @offer.hypotheses_id  = params[:hypotheses_id]
     @transporter = Transporter.find_by(user_id: current_user.id)
     @offer.transporter = @transporter
     if @offer.save!
