@@ -79,65 +79,69 @@ hypotheses = %w(Déménagement Transport)
 hypotheses.each do | hypothese|
   Hypothese.create(name: hypothese)
 end
-product20 = Product.new(user: user4 , title: "Enceintes", description:"J'habite dans une maison, pas d'escalier", status: 0,  aa: "15 Boulevard de Magenta, 75010 Paris", ad: "12 Rue Voltaire, 92300 Levallois-Perret", date: "23-03-2018", date_delivery:"27-03-2018", width: Width.order("RANDOM()").first)
+product20 = Product.new(user: user4 , title: "Enceintes", description:"J'habite dans une maison, pas d'escalier", status: 0,  aa: "15 Boulevard de Magenta, 75010 Paris", ad: "12 Rue Voltaire, 92300 Levallois-Perret", date: "23-03-2018 19:00:00" , date_delivery:"27-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product20.remote_photo_url = "https://images.unsplash.com/photo-1507245921392-e902673ca772?ixlib=rb-0.3.5&s=f340bd956d2c846a52bbaa4af2408cde&auto=format&fit=crop&w=750&q=80"
 product20.save
 
-product19 = Product.new(user: user4 , title: "Fauteuil", description:"J'ai un ascenseur", status: 0,  aa: "12 Rue Ernest Renan, 94700 Maisons-Alfort", ad: "12 Avenue Léonard de Vinci, 92400 Courbevoie", date: "27-03-2017", date_delivery:"11-04-2017", width: Width.order("RANDOM()").first)
+product19 = Product.new(user: user4 , title: "Fauteuil", description:"J'ai un ascenseur", status: 0,  aa: "12 Rue Ernest Renan, 94700 Maisons-Alfort", ad: "12 Avenue Léonard de Vinci, 92400 Courbevoie", date: "27-03-2017 19:00:00", date_delivery:"11-04-2017 19:00:00", width: Width.order("RANDOM()").first)
 product19.remote_photo_url = "https://images.unsplash.com/photo-1464029902023-f42eba355bde?ixlib=rb-0.3.5&s=511e728f907ae4d4580bc4f8a5eee6b5&auto=format&fit=crop&w=750&q=80"
 product19.save
 
-product18 = Product.new(user: user4 , title: "Lit", description:"J'habite au 1ère étage dans une maison", status: 0,  aa: "8 Passage Cardinet, 75017 Paris", ad: "39 Rue du Moulin des Bruyères, 92400 Courbevoie", date: "01-04-2018", date_delivery:"08-04-2018", width: Width.order("RANDOM()").first)
+product18 = Product.new(user: user4 , title: "Lit", description:"J'habite au 1ère étage dans une maison", status: 0,  aa: "8 Passage Cardinet, 75017 Paris", ad: "39 Rue du Moulin des Bruyères, 92400 Courbevoie", date: "01-04-2018 19:00:00", date_delivery:"08-04-2018 19:00:00", width: Width.order("RANDOM()").first)
 product18.remote_photo_url = "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-0.3.5&s=bd8ed8308a093982ab2764855a014565&auto=format&fit=crop&w=750&q=80"
 product18.save
 
-product17 = Product.new(user: user4 , title: "Télévision", description:"J'habite dans une maison, pas d'escalier, 1m30", status: 0,  aa: "106 Rue Brancion, 75015 Paris", ad: "51 Rue de Bercy, 75012 Paris", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
+product17 = Product.new(user: user4 , title: "Télévision", description:"J'habite dans une maison, pas d'escalier, 1m30", status: 0,  aa: "106 Rue Brancion, 75015 Paris", ad: "51 Rue de Bercy, 75012 Paris", date: "27-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product17.remote_photo_url = "https://images.unsplash.com/photo-1467293622093-9f15c96be70f?ixlib=rb-0.3.5&s=aa4a27d58bcdac27a7ff4f1078c9065d&auto=format&fit=crop&w=750&q=80"
 product17.save
 
-product16 = Product.new(user: user4 , title: "Cafetière", description:"Aucun étage, pas d'escalier", status: 0,  aa: "1 Rue Henri Becquerel, 92140 Clamart", ad: "28 Rue de Sèvres, 92100 Boulogne-Billancourt", date: "29-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
+product16 = Product.new(user: user4 , title: "Cafetière", description:"Aucun étage, pas d'escalier", status: 0,  aa: "1 Rue Henri Becquerel, 92140 Clamart", ad: "28 Rue de Sèvres, 92100 Boulogne-Billancourt", date: "29-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product16.remote_photo_url = "https://images.unsplash.com/photo-1421986598195-0d9c26ecfcde?ixlib=rb-0.3.5&s=2b63ac340a49b26360f1ec0aa831b4cb&auto=format&fit=crop&w=755&q=80"
 product16.save
+
 
 product21 = Product.new(user: user3 , title: "Lave Linge", description:"2ème sans ascenceur, je cherche quelqu'un pour le soulever", status: 0,  aa: "31 Avenue George V, 75008 Paris", ad: "61 Avenue de l'Observatoire, 75014 Paris", date: "24-04-2018", date_delivery:"26-04-2018", width: Width.order("RANDOM()").first)
 product21.remote_photo_url = "https://images.unsplash.com/photo-1510551310160-589462daf284?ixlib=rb-0.3.5&s=fe0a494ce7183071934f6499a6e836c0&auto=format&fit=crop&w=749&q=80"
 product21.save
 
-product22 = Product.new(user: user4 , title: "Canapé", description:"J'ai un ascenseur, si possible me le déplacer", status: 0,  aa: "50 Rue du Sergent Bobillot, 93100 Montreuil", ad: "17 Rue Geoffroy l'Asnier, 75004 Paris", date: "30-03-2018", date_delivery:"04-04-2018", width: Width.order("RANDOM()").first)
+product22 = Product.new(user: user4 , title: "Canapé", description:"J'ai un ascenseur, si possible me le déplacer", status: 0,  aa: "50 Rue du Sergent Bobillot, 93100 Montreuil", ad: "17 Rue Geoffroy l'Asnier, 75004 Paris", date: "30-03-2018 19:00:00", date_delivery:"04-04-2018 19:00:00", width: Width.order("RANDOM()").first)
 product22.remote_photo_url = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-0.3.5&s=6286e40d53d85d1fe9fb0f2fae05c173&auto=format&fit=crop&w=750&q=80"
 product22.save
+
 
 product23 = Product.new(user: user4 , title: "Bureau", description:"J'habite au 1er sans ascenceur, mon bureau mesure 2m", status: 0,  aa: "5 Rue de Belzunce, 75010 Paris", ad: "2 Rue Palatine, 75006 Paris", date: "28-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product23.remote_photo_url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1784b1578fa6ead4ed29e0f402ca9d32&auto=format&fit=crop&w=1350&q=80"
 product23.save
 
-product24 = Product.new(user: user4 , title: "Four", description:"Je descends mon four, je veux juste transport, 1m30x1m", status: 0,  aa: "21 Boulevard Morland, 75004 Paris", ad: "34 Rue Yves Toudic, 75010 Paris", date: "26-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
+product24 = Product.new(user: user4 , title: "Four", description:"Je descends mon four, je veux juste transport, 1m30x1m", status: 0,  aa: "21 Boulevard Morland, 75004 Paris", ad: "34 Rue Yves Toudic, 75010 Paris", date: "26-03-2018 19:00:00", date_delivery:"30-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product24.remote_photo_url = "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-0.3.5&s=e6edcd5ea442e1089709a0874788291d&auto=format&fit=crop&w=753&q=80"
 product24.save
 
-product25 = Product.new(user: user4 , title: "Piano", description:"Pas d'escalier, besoin d'aide pour déplacement", status: 0,  aa: "247 Rue de Crimée, 75019 Paris", ad: "16 Rue Chaptal, 75009 Paris", date: "27-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
+product25 = Product.new(user: user4 , title: "Piano", description:"Pas d'escalier, besoin d'aide pour déplacement", status: 0,  aa: "247 Rue de Crimée, 75019 Paris", ad: "16 Rue Chaptal, 75009 Paris", date: "27-03-2018 19:00:00", date_delivery:"30-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product25.remote_photo_url = "https://images.unsplash.com/photo-1464288550599-43d5a73451b8?ixlib=rb-0.3.5&s=3f0d45456ee7532d6aa7345ad16cffa0&auto=format&fit=crop&w=772&q=80"
 product25.save
 
-product26 = Product.new(user: user4 , title: "Bureau", description:"Juste transport, table de 1m80", status: 0,  aa: "24 Rue du Faubourg Saint-Honoré, 75008 Paris", ad: "224 Boulevard Saint-Germain, 75007 Paris", date: "01-04-2018", date_delivery:"03-04-2018", width: Width.order("RANDOM()").first)
+product26 = Product.new(user: user4 , title: "Bureau", description:"Juste transport, table de 1m80", status: 0,  aa: "24 Rue du Faubourg Saint-Honoré, 75008 Paris", ad: "224 Boulevard Saint-Germain, 75007 Paris", date: "01-04-2018 19:00:00", date_delivery:"03-04-2018 19:00:00", width: Width.order("RANDOM()").first)
 product26.remote_photo_url = "https://images.unsplash.com/photo-1497864768494-78100d1ddf01?ixlib=rb-0.3.5&s=6dd22ad7d4037f960390bd415b150d2c&auto=format&fit=crop&w=750&q=80"
 product26.save
 
-product27 = Product.new(user: user4 , title: "Lit", description:"J'habite au 2ème sans ascenceur, lit de 3mx3m", status: 0,  aa: "29 Rue de la Croix Blanche, 33074 Bordeaux", ad: "18 Cours Barbey, 33800 Bordeaux", date: "26-03-2018", date_delivery:"28-03-2018", width: Width.order("RANDOM()").first)
+product27 = Product.new(user: user4 , title: "Lit", description:"J'habite au 2ème sans ascenceur, lit de 3mx3m", status: 0,  aa: "29 Rue de la Croix Blanche, 33074 Bordeaux", ad: "18 Cours Barbey, 33800 Bordeaux", date: "26-03-2018 19:00:00", date_delivery:"28-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product27.remote_photo_url = "https://images.unsplash.com/photo-1509647924673-bbb53e22eeb8?ixlib=rb-0.3.5&s=016886bfd18a41d5d6fd59df82b21741&auto=format&fit=crop&w=747&q=80"
 product27.save
+
 
 product28 = Product.new(user: user4 , title: "Chaises", description:"Juste transport", status: 0,  aa: "160 Rue de Saint- Genès, 33000 Bordeaux", ad: "7 Rue Ferrere, 33000 Bordeaux", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
 product28.remote_photo_url = "https://images.unsplash.com/photo-1479243727560-fef3e12ffab4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f1ba3d2fb81aeb860116da622f7c59aa&auto=format&fit=crop&w=1950&q=80"
 product28.save
 
-product29 = Product.new(user: user4 , title: "Plante", description:"Juste transport", status: 0,  aa: "95 Cours Maréchal Juin, 33000 Bordeaux", ad: "45 Cours Marechal Gallieni, 33000 Bordeaux", date: "26-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
+product29 = Product.new(user: user4 , title: "Plante", description:"Juste transport", status: 0,  aa: "95 Cours Maréchal Juin, 33000 Bordeaux", ad: "45 Cours Marechal Gallieni, 33000 Bordeaux", date: "26-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product29.remote_photo_url = "https://images.unsplash.com/photo-1446057468532-87b7525217d6?ixlib=rb-0.3.5&s=2520abd7d797b3b85f7bae2c1a79a89d&auto=format&fit=crop&w=751&q=80"
 product29.save
 
-product30 = Product.new(user: user4 , title: "Commode", description:"Juste transport, 1m50 de long", status: 0,  aa: "16 Rue de Tivoli, 33000 Bordeaux", ad: "114 Avenue d'Arès, 33200 Bordeaux", date: "27-03-2018", date_delivery:"31-03-2018", width: Width.order("RANDOM()").first)
+product30 = Product.new(user: user4 , title: "Commode", description:"Juste transport, 1m50 de long", status: 0,  aa: "16 Rue de Tivoli, 33000 Bordeaux", ad: "114 Avenue d'Arès, 33200 Bordeaux", date: "27-03-2018 19:00:00", date_delivery:"31-03-2018 19:00:00", width: Width.order("RANDOM()").first)
 product30.remote_photo_url = "https://images.unsplash.com/photo-1520106392146-ef585c111254?ixlib=rb-0.3.5&s=b05812d01e603a070398ac44f0ca7ed2&auto=format&fit=crop&w=1312&q=80"
 product30.save
+
 
 product1 = Product.new(user: user4, title: "Canapé", description:"J'habite au 5ème sans ascenceur, il faudra le monter au 1er étage à l'arrivée", status: 0,  aa: "12 Rue de Rivoli, 75004 Paris", ad: "16 villa gaudelet, Paris", date: "26-03-2018", date_delivery:"30-03-2018", width: Width.order("RANDOM()").first)
 product1.remote_photo_url = "https://i.pinimg.com/564x/b3/f0/32/b3f0326ab63050da8f3d83ecac036e63.jpg"
