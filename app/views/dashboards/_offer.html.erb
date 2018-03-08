@@ -1,10 +1,14 @@
 <% if offer.status == "Refusé" %>
 <% elsif offer.status == "Validé" %>
   <div class="dash-transporter-offer">
-    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
+    <%= image_tag "icons8-camion-24.png", class: "dash-offer-user" %>
+     <!--  <div class="hypothese-1-dash">
+    <%#= image_tag "icons8-camion-24.png", class: 'icon-camion' %>
+      </div> -->
     <div class="dash-offer-desc">
       <p><%= offer.description.capitalize %></p>
       <p><%= offer.price %> € </p>
+
     </div>
   </div>
 <% else  %>
@@ -13,11 +17,11 @@
     <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
     <div class="dash-offer-desc">
       <p><%= offer.description.capitalize %></p>
-      <p><%= offer.price %> € </p>
     </div>
+      <p><%= offer.price %> € </p>
     <div class="dash-offer-link">
-      <%= link_to image_tag("icons8-checkmark-48.png"), validate_offer_path(product, offer), class: "button-dash-edit",  remote: true %>
-      <%= link_to image_tag("icons8-delete-48.png"), refused_offer_path(product, offer), class: "button-dash-suppr",  remote: true %>
+      <%= link_to image_tag("icons8-checkmark-48.png"), validate_offer_path(product, offer), class: 'check-mark',  remote: true %>
+      <%= link_to image_tag("icons8-delete-48.png"), refused_offer_path(product, offer), class: 'delete-offerss', remote: true %>
     </div>
   </div>
 <% end %>

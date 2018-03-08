@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'pages#home'
   resources :users, only: [ :show, :new, :create, :destroy, :update, :edit]
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   get "/dashboards/product/:product_id/offer/:id/refused", to: "dashboards#refused", as: "refused_offer"
   get "/transporter/sign_up", to: "transporters#new", as: "sign_up_transporter"
   post "transporter/create", to: "transporters#create", as: "registration_session"
+  get "/404", to: "errors#not_found"
+  get "/500", to: "errors#internal_server_error"
 end
