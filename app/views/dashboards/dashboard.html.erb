@@ -30,8 +30,12 @@
     <% else %>
     <div class="dash-sidebar">
       <div class="mon-avatar">
-         <div class="mon-avatar-photo" style="background-image: url('<%= cl_image_path current_user.photo, height: 50, crop: :fill %>')">
+         <% if current_user.photo.present? %>
+            <div class="mon-avatar-photo" style="background-image: url('<%= cl_image_path current_user.photo, height: 50, crop: :fill %>')">
             </div>
+          <% else %>
+            <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo" %>
+          <% end %>
         <div class="mon-avatar-name">
           <%= current_user.first_name.capitalize %>
         </div>
@@ -139,7 +143,7 @@
                 </div>
                 <div class="my-btn-delete">
                  <p>
-                   <%= link_to image_tag("icons8-editer-le-fichier-50.png"), edit_product_path(product), class: "icons-edit" %>
+                    <%= link_to image_tag("icons8-editer-le-fichier-50.png"), edit_product_path(product), class: "icons-edit" %>
                     <%= link_to image_tag("icons8-supprimer-80.png"), product_path(product), method: :delete, class: "icons" %>
                  </p>
                 </div>
@@ -158,6 +162,12 @@
                   <%= render "dashboards/offer", offer: @offers[product.id][:transport], product: product%>
                 </div>
               <% end %>
+              <% product.offers.each do |offer| %>
+                <div class="all-dash-offers hidden">
+                  <%= render "dashboards/offer", offer: offer, product: product%>
+                </div>
+              <% end %>
+
            </div>
         </div>
       <% end %>
