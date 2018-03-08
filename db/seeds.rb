@@ -68,13 +68,13 @@ transporter5 = Transporter.create(car: "Camion", capacity: "Tres grande", permit
 transporter6 = Transporter.create(car: "Camion", capacity: "grande", permit: "123410345123", cin: "123331234123", user: user6)
 
 
-# widths = %w(Petit Moyen Grand)
+widths = %w(Petit Moyen Grand)
 
-# widths.each do |width|
-#   Width.create(category: width)
-# end
+widths.each do |width|
+  Width.create(category: width)
+end
 
-# hypotheses = %w(Déménagement Transport)
+hypotheses = %w(Déménagement Transport)
 
 hypotheses.each do | hypothese|
   Hypothese.create(name: hypothese)
