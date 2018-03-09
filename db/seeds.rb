@@ -115,9 +115,10 @@ product16.remote_photo_url = "https://images.unsplash.com/photo-1421986598195-0d
 product16.save!
 
 
-product21 = Product.new(user: user3 , title: "Lave Linge", description:"2ème sans ascenceur, je cherche quelqu'un pour le soulever", status: 0,  aa: "31 Avenue George V, 75008 Paris", ad: "61 Avenue de l'Observatoire, 75014 Paris", date: "24-04-2018", date_delivery:"26-04-2018", width: Width.order("RANDOM()").first)
-product21.remote_photo_url = "https://images.unsplash.com/photo-1510551310160-589462daf284?ixlib=rb-0.3.5&s=fe0a494ce7183071934f6499a6e836c0&auto=format&fit=crop&w=749&q=80"
-product21.save!
+product21 = Product.new(user: user3 , title: "Commode", description:"1m50 de long et 80cm de large. 2ème étage et 3ème étage", status: 0,  aa: "23 Rue des Dames, 75017 Paris", ad: "1 Rue Manuel, 75009 Paris", date: "08-03-2018 15:00:00", date_delivery:"11-03-2018 15:00:00", width: Width.order("RANDOM()").first)
+product21.remote_photo_url = "https://cdn.vente-unique.com/thumbnails/rs/930/202/202275/0/commode_202275.png"
+product21.save
+
 
 product22 = Product.new(user: user4 , title: "Canapé", description:"J'ai un ascenseur, si possible me le déplacer", status: 0,  aa: "50 Rue du Sergent Bobillot, 93100 Montreuil", ad: "17 Rue Geoffroy l'Asnier, 75004 Paris", date: "30-03-2018 19:00:00", date_delivery:"04-04-2018 19:00:00", width: Width.order("RANDOM()").first)
 product22.remote_photo_url = "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-0.3.5&s=6286e40d53d85d1fe9fb0f2fae05c173&auto=format&fit=crop&w=750&q=80"
@@ -244,57 +245,42 @@ p "fin product"
 # offer10 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
 # offer11 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
 # offer12 = Offer.create(product_id: product4, transporter_id:transporter1, price: 25, description: "TRES BONNE ETAT", status: 0, hypothese_id: 1)
-# <<<<<<< HEAD
-p "offer debut"
-offer1 = Offer.create!(product: product1, transporter:transporter1, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer2 = Offer.create(product: product1, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer3 = Offer.create(product: product1, transporter:transporter5, price: 14, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer4 = Offer.create(product: product1, transporter:transporter6, price: 10, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
 
-offer5 = Offer.create(product: product2, transporter:transporter1, price: 7, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer6 = Offer.create(product: product2, transporter:transporter2, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer7 = Offer.create(product: product2, transporter:transporter5, price: 9, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer8 = Offer.create(product: product2, transporter:transporter6, price: 10, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
+offer1 = Offer.create(product: product21, transporter:transporter1, price: 20, description: "Tél : 0642415690", status: 0, hypothese_id: Hypothese.last.id)
+offer2 = Offer.create(product: product21, transporter:transporter2, price: 27, description: "Tél : 0729728710", status: 0, hypothese_id: Hypothese.first.id)
+offer3 = Offer.create(product: product21, transporter:transporter5, price: 40, description: "Disponible au 0612523620", status: 0, hypothese_id: Hypothese.first.id)
+offer4 = Offer.create(product: product21, transporter:transporter6, price: 32, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer401 = Offer.create(product: product21, transporter:transporter6, price: 72, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer402 = Offer.create(product: product21, transporter:transporter6, price: 73, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer403 = Offer.create(product: product21, transporter:transporter6, price: 74, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer404 = Offer.create(product: product21, transporter:transporter6, price: 75, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer405 = Offer.create(product: product21, transporter:transporter6, price: 76, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer406 = Offer.create(product: product21, transporter:transporter6, price: 77, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer407 = Offer.create(product: product21, transporter:transporter6, price: 78, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer408 = Offer.create(product: product21, transporter:transporter6, price: 79, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
 
-offer9 = Offer.create(product: product3, transporter:transporter1, price: 25, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer10 = Offer.create(product: product3, transporter:transporter2, price: 24, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer11 = Offer.create(product: product3, transporter:transporter5, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer12 = Offer.create(product: product3, transporter:transporter6, price: 18, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
 
-offer13 = Offer.create(product: product4, transporter:transporter1, price: 9, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer14 = Offer.create(product: product4, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-offer15 = Offer.create(product: product4, transporter:transporter5, price: 8, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer16 = Offer.create(product: product4, transporter:transporter6, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 
-offer17 = Offer.create(product: product5, transporter:transporter1, price: 11, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer18 = Offer.create(product: product5, transporter:transporter2, price: 12, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-offer19 = Offer.create(product: product5, transporter:transporter5, price: 14, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-# =======
 
-# offer1 = Offer.create!(product: product21, transporter:transporter1, price: 20, description: "Bonjour je suis dispo 0642415690", status: 0, hypothese_id: Hypothese.last.id)
-# offer2 = Offer.create(product: product21, transporter:transporter2, price: 55, description: "Dispo 0622527610", status: 0, hypothese_id: Hypothese.first.id)
-# offer3 = Offer.create(product: product21, transporter:transporter5, price: 40, description: "Disponible au 0612523620", status: 0, hypothese_id: Hypothese.first.id)
-# offer4 = Offer.create(product: product21, transporter:transporter6, price: 22, description: "Dispo 0615422640", status: 0, hypothese_id: Hypothese.last.id)
+offer5 = Offer.create(product: product2, transporter:transporter1, price: 15, description: "Dispo 0616423630", status: 0, hypothese_id: Hypothese.last.id)
+offer6 = Offer.create(product: product2, transporter:transporter2, price: 16, description: "Dispo 0662326670", status: 0, hypothese_id: Hypothese.last.id)
+offer7 = Offer.create(product: product2, transporter:transporter5, price: 30, description: "Dispo 0622223610", status: 0, hypothese_id: Hypothese.first.id)
+offer8 = Offer.create(product: product2, transporter:transporter6, price: 25, description: "Dispo 0662424640", status: 0, hypothese_id: Hypothese.first.id)
 
-# offer5 = Offer.create(product: product2, transporter:transporter1, price: 15, description: "Dispo 0616423630", status: 0, hypothese_id: Hypothese.last.id)
-# offer6 = Offer.create(product: product2, transporter:transporter2, price: 16, description: "Dispo 0662326670", status: 0, hypothese_id: Hypothese.last.id)
-# offer7 = Offer.create(product: product2, transporter:transporter5, price: 30, description: "Dispo 0622223610", status: 0, hypothese_id: Hypothese.first.id)
-# offer8 = Offer.create(product: product2, transporter:transporter6, price: 25, description: "Dispo 0662424640", status: 0, hypothese_id: Hypothese.first.id)
+offer9 = Offer.create(product: product3, transporter:transporter1, price: 38, description: "Dispo 0653435330", status: 0, hypothese_id: Hypothese.first.id)
+offer10 = Offer.create(product: product3, transporter:transporter2, price: 39, description: "Dispo 0712424690", status: 0, hypothese_id: Hypothese.first.id)
+offer11 = Offer.create(product: product3, transporter:transporter5, price: 27, description: "Dispo 0614422670", status: 0, hypothese_id: Hypothese.last.id)
+offer12 = Offer.create(product: product3, transporter:transporter6, price: 18, description: "Dispo 0616426670", status: 0, hypothese_id: Hypothese.last.id)
 
-# offer9 = Offer.create(product: product3, transporter:transporter1, price: 38, description: "Dispo 0653435330", status: 0, hypothese_id: Hypothese.first.id)
-# offer10 = Offer.create(product: product3, transporter:transporter2, price: 39, description: "Dispo 0712424690", status: 0, hypothese_id: Hypothese.first.id)
-# offer11 = Offer.create(product: product3, transporter:transporter5, price: 27, description: "Dispo 0614422670", status: 0, hypothese_id: Hypothese.last.id)
-# offer12 = Offer.create(product: product3, transporter:transporter6, price: 18, description: "Dispo 0616426670", status: 0, hypothese_id: Hypothese.last.id)
+offer13 = Offer.create(product: product4, transporter:transporter1, price: 15, description: "Dispo 0643465190", status: 0, hypothese_id: Hypothese.last.id)
+offer14 = Offer.create(product: product4, transporter:transporter2, price: 25, description: "Dispo 0632435630", status: 0, hypothese_id: Hypothese.first.id)
+offer15 = Offer.create(product: product4, transporter:transporter5, price: 16, description: "Dispo 0652425690", status: 0, hypothese_id: Hypothese.last.id)
+offer16 = Offer.create(product: product4, transporter:transporter6, price: 27, description: "Dispo 0632325110", status: 0, hypothese_id: Hypothese.first.id)
 
-# offer13 = Offer.create(product: product4, transporter:transporter1, price: 15, description: "Dispo 0643465190", status: 0, hypothese_id: Hypothese.last.id)
-# offer14 = Offer.create(product: product4, transporter:transporter2, price: 25, description: "Dispo 0632435630", status: 0, hypothese_id: Hypothese.first.id)
-# offer15 = Offer.create(product: product4, transporter:transporter5, price: 16, description: "Dispo 0652425690", status: 0, hypothese_id: Hypothese.last.id)
-# offer16 = Offer.create(product: product4, transporter:transporter6, price: 27, description: "Dispo 0632325110", status: 0, hypothese_id: Hypothese.first.id)
+offer17 = Offer.create(product: product5, transporter:transporter1, price: 15, description: "Dispo 0613435630", status: 0, hypothese_id: Hypothese.last.id)
+offer18 = Offer.create(product: product5, transporter:transporter2, price: 16, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
+offer19 = Offer.create(product: product5, transporter:transporter5, price: 27, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 
-# offer17 = Offer.create(product: product5, transporter:transporter1, price: 15, description: "Dispo 0613435630", status: 0, hypothese_id: Hypothese.last.id)
-# offer18 = Offer.create(product: product5, transporter:transporter2, price: 16, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.last.id)
-# offer19 = Offer.create(product: product5, transporter:transporter5, price: 27, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
-# >>>>>>> cdec67d566a97d2dc0af1ca84bcafd5582830688
 offer20 = Offer.create(product: product5, transporter:transporter6, price: 20, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
 
 offer21 = Offer.create(product: product6, transporter:transporter1, price: 40, description: "Dispo 0612425690", status: 0, hypothese_id: Hypothese.first.id)
