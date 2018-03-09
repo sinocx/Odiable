@@ -1,57 +1,76 @@
-<h1>INDEX</h1>
+   <div class="search-container">
+      <div class="form-search-index">
 
-<%= form_tag(products_path, method: :get) do %>
-      <%= text_field_tag :query, nil, placeholder: "Choisir une ville", class: 'btn-sea' %>
-      <%= submit_tag 'Recherche', class: "btn-recherche" %>
-      <% end %>
-
-
-
-
-
-
-<%= form_tag(products_path, method: :get) do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Trouve une annonce"
-  %>
-  <%= submit_tag 'Recherche' %>
-<% end %>
-
-
-
-      <% @products.each do |product| %>
-
-          <%= product.title %>
-          <%= product.description %>
-          <%= product.status %>
-          <%= link_to "Show", product_path(product) %>
-
-      <% end %>
-<div class="main-container">
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="card-test"></div>
-    </div>
-      <div class="col-xs-4">
-        <div class="card-test"></div>
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Trouvez une annonce"%>
       </div>
-        <div class="col-xs-4">
-          <div class="card-test"></div>
-        </div>
-          <div class="col-xs-4">
-            <div class="card-test"></div>
-          </div>
+      <div class="submit-btn-index">
+        <%= submit_tag("Recherchez") %>
+
+      </div>
+        <% end %>
+
+  </div>
+
+<div class="main-container-index-product">
+    <div class="content-card-index">
+      <div class="row">
+      <% @products.each do |product| %>
+        <% if product.status == "en_cours" %>
+          <% if product.photo.present? %>
+            <div class="col-xs-12 col-sm-12 col-md-4" >
+              <div class="card-container-index">
+                <div class="img-container-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path product.photo, height: 300, crop: :fill %>')">
+
+                  <%# cl_image_tag product.photo, height: 300, width: 400, crop: :fit %>
+
+                </div>
+                  <div class="info-card-index">
+
+
+                    <div class="product-title-card">
+                    <h5><%= product.title.capitalize %></h5>
+                    </div>
+
+                      <div class="product-categorie-card">
+                        <div class="display-flex-category">
+                       <p><%= image_tag 'size-icone-card.png', height: 15, width: 15 %>
+                          <%= product.width.category.capitalize %></p>
+
+                        </div>
+                      </div>
+
+                </div>
+                <div class="distance-card-index">
+                      <div class="product-offer-distance">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><%=  @distances[product.id] %> Km</p>
+                      </div>
+                      <div class="product-offer-card">
+                        <i class="fas fa-search"></i>
+                        <%= link_to "Voir le produit", product_path(product), class: "link-index" %>
+                      </div>
+                </div>
+
+              </div>
+              <%#= render partial: "components/card", locals: {product: product} %>
+            </div>
+          <% end %>
+        <% else %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  <div class="container-map">
+     <div
+        id="map"
+        style="width: 100%;
+        height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
+  </div>
 </div>
-
-          <div id="map">
-
-          </div>
-</div>
-
-
-
 
 
 

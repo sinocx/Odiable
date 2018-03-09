@@ -1,10 +1,19 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700|PT+Sans:400,700');
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Merriweather+Sans:300,400,700');
 // Define fonts for body and headers
-$body-font: "PT Sans", "sans-serif";
-$headers-font: "Cuprum", "sans-serif";
-$specific-title: 'Rock Salt', cursive;
+$body-font: 'Merriweather Sans', sans-serif;
+$headers-font: 'Ubuntu', sans-serif;
+$specific-title: 'Pacifico', cursive;
+$very-specific: 'Josefin Sans', sans-serif;
+$home-recap: 'PT Sans Narrow', sans-serif;
+
+
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -15,3 +24,7 @@ $specific-title: 'Rock Salt', cursive;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+p {
+  font-size: 15px;
+}

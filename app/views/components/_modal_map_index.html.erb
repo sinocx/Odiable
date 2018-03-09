@@ -1,0 +1,17 @@
+<div class="modal-map-container">
+  <div class="modal_card">
+    <%= cl_image_tag product.photo, height: 150, width: 150, crop: :fill %>
+  </div>
+  <div class="container-title-offer-index">
+    <div class="title-map-index">
+      <%= product.title.capitalize %>
+    </div>
+
+  </div>
+    <!-- <div class="disance-modal-map-index">
+      <p><%#=  @distances[product.id] %> Km</p>
+    </div> -->
+  <div class="link-modal-index">
+  <%= link_to "Voir le produit", product_path(product), class: "link-modal-index"   %>
+    </div>
+</div>

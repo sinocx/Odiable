@@ -9,7 +9,15 @@
 
 import 'bootstrap';
 import "../plugins/flatpickr";
-
-import { stepForm, stepBack } from "../component/signup_form";
+import "../components/active"
+import { showOffer } from "../components/dash_offer";
+import { stepForm, stepBack } from "../components/signup_form";
+import { autocomplete } from '../components/autocomplete';
+import { autocomplete2 } from '../components/autocomplete2';
+import { autocomplete3 } from '../components/autocomplete_index';
 stepForm();
 stepBack();
+showOffer();
+autocomplete()
+autocomplete2()
+autocomplete3()

@@ -1,0 +1,33 @@
+.collection_radio_buttons {
+  text-decoration: none;
+  background: rgb(150,150,150);
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-right: 10px;
+  margin-left: 20px;
+  padding:0 20px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  border-radius: 5px;
+  // flex: 0 0 30%;
+  text-align: center;
+  &:hover {
+    background: rgb(100,100,100);
+
+    text-decoration: none;
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+  .actives {
+  text-decoration: none;
+  background: $blue;
+  color: white;
+  opacity: 1;
+  }
+#product_width_1, #product_width_2, #product_width_3, #offer_hypothese_id_1, #offer_hypothese_id_2{
+  display: none;
+}

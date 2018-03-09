@@ -1,36 +1,74 @@
-
 <div class="banner-container">
   <div class="banner-content">
-  <br><h1 id="specific">O diable</h1>
-  <h2>Transport d'objets volumineux</h2>
+  <br><h1 id="specific">O Diable</h1>
+  <h2>Trouvez un transporteur pour vos objets volumineux n'a jamais été aussi simple !</h2>
+  <% if user_signed_in? && current_user.transporter? %>
+    <%= link_to "Voir les annonces", products_path, class: 'btn-banner' %>
+  <% else %>
+    <%= link_to "Déposer une annonce", new_product_path, class: 'btn-banner' %>
+  <% end %>
   </div>
-<%= link_to "Déposer une annonce", '/', class: 'btn-banner' %>
+
 </div>
 
+<div class="container-produit-home">
+    <div class="descriptif-produit-home">
+      <div class="picture-home-large",>
+        <%= image_tag("large-product.jpg") %>
+      </div>
+      <h1>LARGE (L)</h1>
+      <p>Mobilier de taille très importante: Table, canapé, armoire ...</p>
+    </div>
+    <div class="descriptif-produit-home">
+      <h1>MOYEN (M)</h1>
+      <p>Mobilier de taille moyenne: Commode, table, rangement ...</p>
+      <div class="picture-home-medium">
+        <%= image_tag("medium-product.jpg") %>
+      </div>
+    </div>
+    <div class="descriptif-produit-home">
+      <h1>PETIT (S)</h1>
+      <p>Mobilier de taille petite: Chaises, table de nuit, etagère ...</p>
+      <div class="picture-home-small">
+      <%= image_tag("small-product.jpg")  %>
+      </div>
+    </div>
+</div>
 
+<div class="container-transporter">
+
+    <div class="contenu-home-transporteur">
+      <h2> Devenez transporteur !</h2>
+      <p>Ammortissez votre véhicule plus sereinement.</p>
+    </div>
+
+    <div class="btn-home-transporteur">
+      <%= link_to "Devenir transporteur", sign_up_transporter_path, class: 'btn-banner btn-transporter' %>
+    </div>
+
+</div>
 
 <div class="recapitulatif">
-  <div class="text">
+  <div class="text-comment">
   <h1>Comment ça marche ?</h1>
   </div>
 
   <div class="content-explication">
     <div class="card-explication">
-      <%= link_to image_tag("edit.png")  %>
-      <h5>  Déposer votre annonce </h5>
-      <p>Renseignez les caractéristiques de votre meuble</p>
+      <i class="fas fa-edit"></i>
+      <h5>  Déposez votre annonce </h5>
     </div>
 
     <div class="card-explication">
-      <%= link_to image_tag("proposition.png")  %>
+     <i class="fas fa-envelope"></i>
       <h5> Recevez des propositions</h5>
-      <p>Des propositions vont vous parvenir</p>
+
     </div>
 
     <div class="card-explication">
-      <%= link_to image_tag("validate.png")  %>
+      <i class="fas fa-check-square"></i>
       <h5>  Validez votre réservation</h5>
-      <p>Choisissez parmi plusieurs propositions celle qui vous convient le mieux</p>
+      <!-- <p>Choisissez parmi plusieurs propositions celle qui vous convient le mieux</p> -->
     </div>
   </div>
 </div>
@@ -46,8 +84,5 @@
 
 
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "Add product", new_product_path %>
 

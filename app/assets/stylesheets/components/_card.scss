@@ -1,75 +1,98 @@
-.card-content {
-  display: flex;
-  flex-direction: column;
-  width: 310px;
-  border: 2px solid #E8E8E8;
-  border-radius: 2px;
-}
+// .card-content {
+//   display: flex;
+//   flex-direction: column;
+//   border-radius: 2px;
+//   box-shadow: 2px 2px 2px #dadada;
+//   background-color: #F9F9F9;
+//   margin-bottom: 32px;
+//   width: 200px;
+// }
 
-.card-image {
-  background-image: url('meuble4.jpg');
-  border-radius: 2px;
-  height: 304px;
-  width: 100%;
-  align-items: center;
-  background-size: 100% 100%;
-}
+// .card-image {
+//   border-radius: 2px;
+//   height: 210px;
+//   width: 100%;
+//   align-items: center;
+//   // background-size: 100% 100%;
+//   background-size: cover;
+//   background-position: center;
+// }
 
-.description {
- font-family: courrier new;
- text-align: center;
- color: #4F4F4F;
- background-color: #F9F9F9;
- width: 100%;
- height: 116px;
- border-bottom: 1px solid #E8E8E8;
- display: flex;
- align-items: center;
-}
+// .card-content-details {
+//   position: relative;
+//   height: 175px;
+// }
+// .card-title {
+//   background-color: #F9F9F9;
+//   position: absolute;
+//   top: 8px;
+//   left: 8px;
+//   font-size: 19px;
+// }
 
-p {
-  color: #606060;
-}
+// .card-title > p {
+//   color: #606060;
+// }
 
-.details {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #f1f1f1;
-}
 
-.offres {
-  text-align: center;
-  margin-right: 41px;
-  padding-right: 12px;
-  padding-left: 12px;
-  letter-spacing: 6px;
-}
 
-.poste {
-  text-align: center;
-  padding-right: 12px;
-  letter-spacing: 6px;
-  padding-left: 12px;
-}
+// .card-kilometre > p {
+//   color: #606060;
+// }
 
-.button {
-  background-color: white;
-  border: 2px solid #D4334D !important;
-  border-radius: 2px;
-  width: 100%;
-  right:    0;
-  bottom:   0;
-  color: #757575 !important;
-  font-weight: lighter;
-  padding-bottom: 0px;
-  transition: 0.2s !important;
-  font-size: 13px;
-  text-align: center;
+// .card-description {
+//  position: absolute;
+//  top: 52px;
+//  left: 8px;
 
-  &:hover {
-    color: #161616 !important;
-    transition-duration: 0.2s !important;
-  }
-}
+//  font-size: 16px;
+// }
+
+// .card-description > p {
+//   color: #606060;
+// }
+
+
+// .card-offres {
+//   position: absolute;
+//   bottom: -5px;
+//   left: 13px;
+//   text-align: center;
+//   font-size: 15px;
+//   line-height: 17px;
+// }
+
+// .card-offres > p {
+//   color: #6d6d6d;
+// }
+
+// .card-offres-p {
+//   margin-bottom: 5px;
+// }
+
+
+
+
+
+// .button2 {
+//   position: absolute;
+//   top: 130px;
+//   right: 8px;
+//   background-color: $blue;
+//   border-radius: 4px;
+//   color: white;
+//   font-weight: lighter;
+//   font-size: 13px;
+//   text-align: center;
+//   height: 38px;
+//   width: 210px;
+//   padding: 5px;
+//   font-size: 16px;
+//   &:hover {
+//     background-color: #008ff5;
+//     text-decoration: none;
+//     color: white;
+//   }
+// }
+
+

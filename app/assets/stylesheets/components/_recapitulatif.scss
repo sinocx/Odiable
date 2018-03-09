@@ -1,34 +1,59 @@
 .recapitulatif {
-  height: 400px;
+ background-color: #FFFFFF;
+ opacity: 0.8;
+  height: 350px;
   text-align: center;
+  margin: 15px;
+
   p {
     font-size: 10px;
+    font-family: $body-font;
   }
   h5 {
-    font-size: 15px;
+    font-size: 20px;
+    font-family: $home-recap;
+
+
+  }
+  h1 {
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 40px;
+    color: $blue;
+
   }
 }
 
 .content-explication {
   display: flex;
   justify-content: space-around;
+
 }
 
-.text {
+.text-recapitulatif {
   padding-bottom: 50px;
   padding-top: 40px;
 }
 
 .card-explication {
+  padding: 13px 42px;
   height: 200px;
   width: 200px;
-  img {
+  border: 2px solid;
+  border-radius: 50%;
+  i {
     padding-bottom: 40px;
-    width: 50px;
-  h6 {
+    width: 74px;
+    font-size: 74px;
+  h5 {
       font-size: 5px;
       text-align:left;
     }
   }
 }
+.text-comment {
+  margin-bottom: 63px;
+  padding-top: 20px;
+}
+
 

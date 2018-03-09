@@ -1,0 +1,33 @@
+.container-transporter {
+  height: 400px;
+  margin: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: image-url("transporteur-home.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.btn-transporter {
+  padding: 20px;
+  font-family: $headers-font;
+}
+
+.contenu-home-transporteur {
+  margin-bottom: -24px;
+  h2 {
+    font-family: $headers-font;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white !important;
+  }
+  p {
+    color: white !important;
+    margin-bottom: 30px;
+    font-family: $body-font;
+    font-weight: 300;
+  }
+}

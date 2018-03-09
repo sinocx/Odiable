@@ -1,5 +1,16 @@
-<%= simple_form_for [@product, @offer] do |f| %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.submit "Valider votre offre"%>
-<% end %>
+<div class="offer-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4">
+        <div class="form-offer-price-description">
+        <h2>Votre offre</h3>
+          <%= simple_form_for [@product, @offer] do |f| %>
+            <%= f.input :price, required: false, placeholder: "€" %>
+            <%= f.input :description, required: false, placeholder: "Description" %>
+            <%= f.submit "Valider votre offre", class: "btn-bleue" %>
+          <% end %>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>

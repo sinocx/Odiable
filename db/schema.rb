@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228141224) do
+ActiveRecord::Schema.define(version: 20180306093358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hypotheses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "offers", force: :cascade do |t|
     t.bigint "product_id"
@@ -23,6 +29,9 @@ ActiveRecord::Schema.define(version: 20180228141224) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status"
+    t.integer "price_cents", default: 0, null: false
+    t.bigint "hypothese_id"
+    t.index ["hypothese_id"], name: "index_offers_on_hypothese_id"
     t.index ["product_id"], name: "index_offers_on_product_id"
     t.index ["transporter_id"], name: "index_offers_on_transporter_id"
   end
@@ -50,7 +59,16 @@ ActiveRecord::Schema.define(version: 20180228141224) do
     t.string "aa"
     t.string "ad"
     t.datetime "date"
+    t.float "ad_latitude"
+    t.float "ad_longitude"
+    t.float "aa_latitude"
+    t.float "aa_longitude"
+    t.integer "price_cents", default: 0, null: false
+    t.string "category"
+    t.bigint "width_id"
+    t.datetime "date_delivery"
     t.index ["user_id"], name: "index_products_on_user_id"
+    t.index ["width_id"], name: "index_products_on_width_id"
   end
 
   create_table "transporters", force: :cascade do |t|
@@ -82,14 +100,23 @@ ActiveRecord::Schema.define(version: 20180228141224) do
     t.integer "age"
     t.text "description"
     t.boolean "transporter", default: false
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "widths", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "offers", "hypotheses", column: "hypothese_id"
   add_foreign_key "offers", "products"
   add_foreign_key "offers", "transporters"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "users"
+  add_foreign_key "products", "widths"
   add_foreign_key "transporters", "users"
 end

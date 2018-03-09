@@ -1,20 +1,398 @@
+// <<<<<<< HEAD
+// .dashboard {
+//   display: flex;
+//   justify-content: space-around;
+// }
+// .content-dashboard-show {
+//   border: 1px solid black;
+//    .offer {
+//     height: 150px;
+//     width: 150px;
+//     border: 1px solid black
+//   }
+// }
+// .dash-card {
+//   height: 250px;
+//   border: 1px solid black;
+//   margin: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around
+// =======
+p {
+  margin: 0
+}
 .dashboard {
   display: flex;
-  justify-content: space-around;
 }
-.content-dashboard-show {
-  border: 1px solid black;
-   .offer {
-    height: 150px;
-    width: 150px;
-    border: 1px solid black
+.container-card-dash {
+  overflow: scroll;
+  height: 100vh;
+  padding: 20px 15px;
+}
+.dash-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
+  background-color: $blue;
+  color: white;
+}
+
+.dash-card {
+  height: 222px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  box-shadow: 2px 2px 2px #e1e1e1;
+  .dash-card-photo {
+    width: 350px;
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
+   background-position: center;
+   background-size: cover;
+  }
+  .mes-produits {
+    background: #2b355566;
+  }
+
+.dash-description-desc {
+  margin-left: 20px;
+  font-size: 20px;
+}
+  h3 {
+    font-size: 22px;
+    color: $blue;
+  }
+
+  .dash-card-description {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid #dedede;
+    flex: 1 0 auto;
+    margin: 0 20px 0 0;
+
+    p {
+      font-size: 16px;
+    }
+
+    .dash-description-title {
+      text-align: center;
+      width-min: 100px;
+      padding: 0;
+    }
+    .dash-desc-address {
+      margin-bottom:20px;
+      display: flex;
+      justify-content: space-between;
+
+      border-bottom: 1px solid rgba(200,200,200, 0.3);
+      .dash-description-desc {
+        padding: 20px;
+        width: 400px;
+        p {
+          margin: 0;
+        }
+      }
+      .dash-description-aaad {
+        display:flex;
+        flex-direction: column;
+        position: relative;
+        .dash-description-ad {
+          display:flex;
+          padding: 20px;
+          align-items: center;
+          p {
+            margin: 0;
+            padding-left: 10px;
+            // font-weight: bold;
+          }
+          i {
+            z-index: 5;
+            font-size: 20px;
+            color: rgb(0,200,0)
+          }
+        }
+         .dash-description-aa{
+          display:flex;
+          padding: 20px;
+          align-items: center;
+          p {
+            margin: 0;
+            padding-left: 10px;
+            // font-weight: bold;
+          }
+          i {
+            font-size: 20px;
+            color: rgb(0, 200,  0);
+          }
+        }
+      }
+    }
+  }
+
+  .dash-card-btn {
+    border: 1px solid #dedede;
+    display: flex;
+    margin: 0 20px;
+    flex-direction: column;
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
   }
 }
-.dash-card {
-  height: 250px;
-  border: 1px solid black;
-  margin: 10px;
+.dash-offer-details {
+  background-color: #ffffff;
+  height: 170px;
+  margin: 0;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around
+  justify-content: space-around;
+  box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
+  margin-left: 350px;
+    background-color: rgb(255,255,255);
+  .dash-transporter-offer {
+    // border-left: 1px solid rgb(250,250,250);
+    // background: rgba(255,255,255, 0.8) !important;
+    margin: 10px;
+    // box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px 29px;
+    position: relative;
+    p {
+      margin: 0;
+    }
+    .dash-offer-user {
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+      // position: absolute;
+      // top: -13px;
+      // left: -20px;
+    }
+    // .dash-offer-desc {
+    //   margin-right: 10px;
+
+    // }
+    .dash-offer-link {
+      position: relative;
+      display:flex;
+      // flex-position: column;
+      justify-content: space-between;
+      p {
+        margin: 0;
+      }
+      .check-mark {
+        img {
+          height: 30px;
+          // margin-bottom: 10px;
+          margin-left: 15px;
+
+        }
+      }
+      .delete-offerss {
+        img {
+         height: 30px;
+         margin-bottom: 0px
+
+        }
+      }
+    }
+
+
+    //   .link-dash-edit {
+    //     border: 2px solid green;
+    //     border-radius: 25px;
+    //     background-color: rgba(17, 198, 45, 1);
+    //     color: white;
+    //     text-decoration:none;
+    //   }
+    //   .link-dash-supprimer {
+    //     border: 2px solid $red;
+    //     border-radius: 25px;
+    //     background-color: rgba(198,17, 45,1);
+    //     color: white;
+    //     text-decoration:none;
+  //   //   }
+  //   }
+  }
+
+}
+.button-dash-all {
+
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  .button-dash-edit {
+    // background: $blue;
+    border: 1px solid $blue;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-align: center;
+    a {
+      font-size: 16px;
+    }
+    p {
+      a {
+        color: $blue;
+      }
+      margin: 0;
+    }
+    .btn-dash-edit {
+      color: white;
+      // font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    .my-btn-delete {
+      p {
+        margin: 0 !important;
+
+      }
+    }
+  }
+
+
+
+
+  // .button-dash-suppr {
+  //   background: #ab2727;
+  //   padding: 1px 27px;
+  //   border-radius: 3px;
+  // }
+}
+.my-btn-delete>p {
+  margin: 0;
+  // font-weight: bold;
+}
+.my-btn-delete>p>a {
+  border-radius: 3px;
+  // border: 1px solid $blue !important;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  color: $blue;
+}
+.icons {
+  img {
+    height: 25px;
+  }
+}
+.icons-edit {
+  img {
+    height:25px;
+  }
+}
+
+.mes-offres {
+  color: white;
+  background: #2b355566;
+}
+.spe-prod-dispense {
+  background: none !important;
+}
+.hypothese-1-dash {
+  background-color: $blue;
+}
+.icon-camion {
+  background: $blue !important;
+}
+
+.button-dash-ticket {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+   p {
+    margin-left: 20px;
+    font-size: 25px;
+   }
+   h4 {
+    margin-left: 20px;
+    font-size: 16px;
+   }
+  }
+.date-dash-transp {
+  position: relative;
+  .offer-dasth-status {
+    position: absolute;
+    top: -67px;
+    right: 22px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+// .mon-avatar-photo {
+
+//   height: 50px;
+//   border-radius: 50%
+// }
+.offers-prices {
+  p {
+    font-size: 16px;
+    color: rgb(100,100,100);
+  }
+}
+.flex-link{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  // padding: 10px;
+  p {
+    margin: 0
+  }
+  .red {
+    color: red;
+    margin-left: 10px
+    // height:30px;
+  }
+  .green {
+    margin-left: 10px;
+    a {
+      font-size: 30px;
+    }
+    color: green;
+  }
+}
+.truck {
+  margin-bottom: 1rem;
+  // font-size: 15px;
+  padding-left: 10px;
+  font-size: 20px;
+  // height: 30px;
+  color: $blue
+}
+.salut {
+  border-top: 1px solid rgb(230, 230,230);
+  border-radius: 2px;
+  padding: 10px 20px;
+}
+.dash-prix {
+  p{
+  color: black;
+  font-size: 20px !important
+  }
+}
+.presentation-hypo {
+  display:flex;
+  align-items: center;
+}
+.presention-hypos {
+  height: 40px;
+  display:flex;
+  align-items: center;
+.line-dash {
+  border-left: 3px dotted #00c800;
+  height: 32px;
+  position: absolute;
+  top: 31px;
+  left: 29px;
+
 }

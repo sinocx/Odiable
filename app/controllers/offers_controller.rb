@@ -15,8 +15,9 @@ class OffersController < ApplicationController
     @product = Product.find(params[:product_id])
     @offer.product = @product
     @offer.status = 0
-    @transporter = Transporter.where(user_id: current_user.id)
-    @offer.transporter = @transporter.first
+    # @offer.hypotheses_id  = params[:hypotheses_id]
+    @transporter = Transporter.find_by(user_id: current_user.id)
+    @offer.transporter = @transporter
     if @offer.save!
       redirect_to product_path(@product)
     else
@@ -30,6 +31,11 @@ class OffersController < ApplicationController
     authorize @offer
     @product.status = 1
     @offer.status = 1
+    other_offer = Offer.where(product_id: @product )
+    other_offer.each do |offer|
+      offer.status = 2
+      offer.save
+    end
     @product.save
     @offer.save
     redirect_to product_path(@product)
@@ -50,7 +56,7 @@ class OffersController < ApplicationController
     redirect_to
   end
   def offers_params
-    params.require(:offer).permit(:price, :description)
+    params.require(:offer).permit(:price, :description, :hypothese_id)
   end
 
 end

@@ -1,35 +1,73 @@
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="content">
-          <%= @product.title %>
-          <%= cl_image_tag @product.photo, height: 400, width: 480, crop: :fill, class: "img-show"%> %>
-          <%= @product.description %>
-
-          <%= @product.status %>
-          <%= link_to "retour au produit", products_path %>
-          <%= link_to "Faire une offre", new_product_offer_path(@product) %>
-        </div>
+<div class="container-grey">
+  <div class="content-show">
+    <div class="empty"></div>
+    <div class="card-show">
+      <div class ="image-show">
+        <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fit, class: "img-show"%>
       </div>
-      <div class="col-xs-12">
-        <div class="content">
-          <% @offers.each do |offer|  %>
-          <% if offer.status ==  %>
+      <div class="titre-show">
+        <h2><%= @product.title.capitalize %></h2>
+        <p class="description-show"><%= @product.description %></p>
+        <p><img src="https://png.icons8.com/material/24/F43D40/marker.png"></i><%= @product.ad %></p>
+        <p><img src="https://png.icons8.com/material/24/009F7B/marker.png"></i><%= @product.aa %></p>
+        <p><%= image_tag 'size-icone-card.png', height: 20, width: 20 %>  <%=  @product.width.category %></p>
+        <p ><i class="fas fa-truck truck-blue"> <br></i> <%= Date.parse(@product.date_delivery.to_s).strftime('%d/%m/%Y') %></p>
+        <p><img src="https://png.icons8.com/dusk/24/00FF00/clock.png"> <%= @product.date.strftime('%H:%M') %> </p>
+        <p class ="last-aa"><i class="fas fa-arrows-alt-h arrows-blue"></i> <%= @distance %> Km</p>
 
-            <div class="offer">
-              <%= offer.transporter.user.first_name %>
-              <%= offer.description %>
-              <%= offer.price %>
-              <% if @product.user == current_user %>
-                <%= link_to "Validé", validate_offer_path(@product,offer)  %>
-                <%= link_to "Refusé", refused_offer_path(@product,offer)  %>
-              <% end %>
-            </div>
-          <% end %>
-          <% end %>
-        </div>
+
+
+        <% if @product.user == current_user %>
+            <%= link_to "Editer", edit_product_path(@product) ,class: "btn btn-lg button-show-size" %>
+        <% elsif current_user.transporter? %>
+          <button type="button" class="button-show-size" data-toggle="modal" data-target="#modalPrice">
+            Faire une offre
+          </button>
+        <% else %>
+
+        <% end %>
+      </div>
+    </div>
+    <div class="map-show">
+      <div
+        id="map"
+        style="width: 100%;
+        height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalPrice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-price">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Votre offre</h4>
+      </div>
+      <div class="modal-body">
+      <%= simple_form_for [@product, @offer] do |f| %>
+        <%= f.input :price, required: false, placeholder: "€" %>
+        <%= f.input :description, required: false, placeholder: "Description" %>
+        <%=   f.collection_radio_buttons :hypothese_id, Hypothese.all, :id, :name %>
+
+        <%= f.submit "Valider votre offre", class: "btn-bleue" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <!--         <button type="button" class="btn btn-primary">Valider votre offre</button>
+        -->
       </div>
     </div>
   </div>
 </div>
+
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@product.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @product.description %>
+<% content_for :meta_image, cl_image_path(@product.photo) %>

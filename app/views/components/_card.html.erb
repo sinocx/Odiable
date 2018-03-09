@@ -1,32 +1,66 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xl-6">
-      <div class="card-content">
-        <div class="card-image">
-          <!-- MON IMAGE -->
-          <%= image_tag product.photo%>
-        </div>
-        <div class="description">
-          <p><%= "Je cherche quelqu'un pour transporter mon meuble de 0x1m" %></p>
-        </div>
-        <div class="details">
-          <div class="offres">
-            <p><%= "5" %></p>
-            <p><%= "Offres" %></p>
+
+      <% if product.photo.present? %>
+        <div class="card-content">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path product.photo, crop: :fill %>')">
           </div>
-          <div class="poste">
-            <p><%= "10j" %></p>
-            <p><%= "Posté" %></p>
+          <div class="card-content-details">
+            <div class="card-title">
+              <p><%= product.title %></p>
+            </div>
+            <div class="card-kilometre">
+              <p><%= "10Km" %></p>
+            </div>
+            <div class="card-description">
+              <p><%= product.description %></p>
+            </div>
+            <div class="offre-poste">
+            <div class="card-offres">
+              <p><strong><%= product.offers.length %></strong></p>
+              <p><%= "Offres" %></p>
+            </div>
+            <div class="card-poste">
+              <p><strong><%= "10j" %></strong></p>
+              <p><%= "Restant" %></p>
+            </div>
+            </div>
+
+              <%= link_to "Voir l'annonce", product_path(product), class: "button2" %>
+            <%# end %>
           </div>
         </div>
-        <div class="button">
-          <p><%= "Voir l'annonce" %></p>
+      <% else %>
+        <div class="card-content">
+          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= link_to image_tag 'meuble.jpg', heigth: 200, width: 200, crop: :fill %>')">
+          </div>
+          <div class="card-content-details">
+            <div class="card-title">
+              <p><%= product.title %></p>
+            </div>
+            <div class="card-kilometre">
+              <p><%= "10Km" %></p>
+            </div>
+            <div class="card-description">
+              <p><%= product.description %></p>
+            </div>
+            <div class="offre-poste">
+            <div class="card-offres">
+              <p><strong><%= product.offers.length %></strong></p>
+              <p><%= "Offres" %></p>
+            </div>
+            <div class="card-poste">
+              <p><strong><%= "10j" %></strong></p>
+              <p><%= "Restant" %></p>
+            </div>
+            </div>
+
+              <%= link_to "Voir l'annonce", product_path(product), class: "button2" %>
+            <%# end %>
+          </div>
         </div>
-      </div>
-    </div>
-
-
-
+      <% end %>
+   <!--  </div>
   </div>
-</div>
+</div> -->
 
