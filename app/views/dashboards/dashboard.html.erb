@@ -139,12 +139,13 @@
               </div>
               <div class="button-dash-all">
                 <div class="button-dash-edit">
-                  <p><a href="#" data-product-id="<%= product.id %>">Voir offre (<%= product.offers.where(status: 1, status: 0).length %>)</a></p>
+                  <p><a href="#" data-product-id="<%= product.id %>">Meilleures Offres</a></p>
                 </div>
                 <div class="my-btn-delete">
                  <p>
                    <%= link_to image_tag("icons8-editer-le-fichier-50.png"), edit_product_path(product), class: "icons-edit" %>
                     <%= link_to image_tag("icons8-supprimer-80.png"), product_path(product), method: :delete, class: "icons" %>
+                    Offre(s) :  <%= product.offers.where(status: 1, status: 0).length %>
                  </p>
                 </div>
               </div>
