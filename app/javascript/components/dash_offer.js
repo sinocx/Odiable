@@ -7,6 +7,7 @@ const showOffer = () => {
       const productId = event.currentTarget.dataset.productId;
       const toggleElement = document.querySelector(`.dash-offer-details[data-offer-id='${productId}']`);
       toggleElement.classList.toggle("hidden")
+      toggleElement.classList.toggle("open")
     });
   });
 };
