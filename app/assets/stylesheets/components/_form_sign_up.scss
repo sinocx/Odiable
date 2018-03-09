@@ -1,5 +1,5 @@
 .form-log-up {
-  background-color: #f7f7f7;
+  background-color: #1b1a1aeb;
   padding: 20px 30px;
   border-radius: 5px;
   margin-top: 50px;
@@ -7,9 +7,14 @@
   box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   h2 {
     text-align: center;
+    color: white;
+    margin-bottom: 20px;
   }
 }
 
 .container-sign-up {
   min-height: 80%;
+  background-image: image-url("sign-up-wall.jpg");
+  background-position: center;
+  background-size: cover;
 }
