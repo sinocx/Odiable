@@ -7,8 +7,8 @@
   <%= simple_form_for(@product) do |f| %>
     <div id="step-1">
       <div class="form-description-title">
-        <%= f.input :title,:label => "Titre", placeholder: "Votre product", required: false  %>
-        <%= f.input :description, placeholder: "Description de votre produit", required: false %>
+        <%= f.input :title,:label => "Titre de l'annonce", placeholder: "Votre product", required: false  %>
+        <%= f.input :description, :label => 'Infos pour le transporteur', placeholder: "Description de votre produit", required: false %>
         <div class="radio-btn-product">
         <%=   f.collection_radio_buttons :width, Width.all, :id, :category %>
 
