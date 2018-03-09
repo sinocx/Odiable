@@ -4,12 +4,7 @@
     <div class="dash-sidebar">
       <div class="mon-avatar">
         <div class="mon-avatar-photo">
-          <!-- <#%= link_to image_tag current_user.photo, crop: :fill  %> -->
-          <% if current_user.photo.present? %>
-            <%= cl_image_tag current_user.photo, class: "mon-avatar-photo" %>
-          <% else %>
-            <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo" %>
-          <% end %>
+          <%= image_tag current_user.photo, crop: :fill , class: "mon-avatar-photo" %>
         </div>
         <div class="mon-avatar-name">
           <%= current_user.first_name.capitalize %>
@@ -32,8 +27,8 @@
     <div class="dash-sidebar">
       <div class="mon-avatar">
         <div class="mon-avatar-photo">
+           <%= image_tag current_user.photo, crop: :fill , class: "mon-avatar-photo" %>
           <!-- <#%= link_to image_tag current_user.photo, crop: :fill  %> -->
-          <%= image_tag "logo-diable.jpg", class: "mon-avatar-photo-1" %>
         </div>
         <div class="mon-avatar-name">
           <%= current_user.first_name.capitalize %>
