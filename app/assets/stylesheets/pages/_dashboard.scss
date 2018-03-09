@@ -388,7 +388,9 @@ p {
   height: 40px;
   display:flex;
   align-items: center;
-  .line-dash {
+}
+
+.line-dash {
     border-left: 3px dotted #00c800;
     height: 32px;
     position: absolute;
@@ -396,4 +398,4 @@ p {
     left: 29px;
   }
 
-}
+
