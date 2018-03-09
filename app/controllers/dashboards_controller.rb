@@ -29,6 +29,7 @@ class DashboardsController < ApplicationController
     else
 
     end
+
     @hypothese1 = []
     @hypothese2 = []
 

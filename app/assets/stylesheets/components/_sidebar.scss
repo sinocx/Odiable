@@ -9,13 +9,11 @@
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    .mon-avatar-photo {
-      background-size: center;
-      background-size: cover;
+    .mon-avatar-photo-1 {
       text-align: center;
       border-radius: 50%;
-      height: 50px !important;
-      width: 50px !important;
+      height: 50px;
+      width: 50px;
     }
     .mon-avatar-name {
       font-size: 16px;
