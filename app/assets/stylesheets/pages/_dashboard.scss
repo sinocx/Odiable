@@ -388,11 +388,12 @@ p {
   height: 40px;
   display:flex;
   align-items: center;
-.line-dash {
-  border-left: 3px dotted #00c800;
-  height: 32px;
-  position: absolute;
-  top: 31px;
-  left: 29px;
+  .line-dash {
+    border-left: 3px dotted #00c800;
+    height: 32px;
+    position: absolute;
+    top: 31px;
+    left: 29px;
+  }
 
 }
