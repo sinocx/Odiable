@@ -2,8 +2,8 @@ class DashboardsController < ApplicationController
   skip_after_action :verify_authorized
 
   def dashboard
-    @products = current_user.products
-
+    @product = current_user.products
+    @products = @product.order("created_at DESC")
     @offers = {}
 
     @products.each do |product|
@@ -22,7 +22,7 @@ class DashboardsController < ApplicationController
 
 
     # @orders = current_user.bookings
-    @products = current_user.products
+    # @products = current_user.products
     if  current_user.transporter
       @transporter = Transporter.find_by(user: current_user.id)
       @offers = @transporter.offers
