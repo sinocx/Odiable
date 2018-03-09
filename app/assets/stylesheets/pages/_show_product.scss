@@ -23,6 +23,7 @@
   // margin: 15px;
   // height: 100%;
   // max-width:400px;
+  overflow: scroll;
 }
 
 .image-show {
@@ -30,7 +31,7 @@
 }
 .img-show {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 3px;
   box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
@@ -64,7 +65,7 @@
 
 .titre-show {
   background: white;
-  border-radius: 8px;
+  border-radius: 3px;
   // border: 1px solid #e9f2f9;
   padding: 20px 30px;
   margin: 20px;
@@ -77,6 +78,8 @@
 
 .map-show {
   flex: 0 0 65%;
+  height: 100vh;
+
   position: sticky !important;
   top: 0 !important;
 }
@@ -99,7 +102,7 @@
 
 .transporter-show{
   background: white;
-  border-radius: 8px;
+  border-radius: 3px;
   // border: 1px solid #e9f2f9;
   padding: 15px 12px;
   margin: 20px;

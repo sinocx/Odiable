@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.date_delivery = params[:product][:date_delivery]
     @width = Width.find(params[:product][:width])
     @product.width = @width
     authorize @product
