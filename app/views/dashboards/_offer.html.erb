@@ -1,99 +1,30 @@
 <% if offer.status == "Refusé" %>
 <% elsif offer.status == "Validé" %>
   <div class="dash-transporter-offer">
-      <div class="presentation-hypo">
-        <%= image_tag 'noun_1435545_cc', height: 40, crop: :fill %>
-        <p>Chez moi</p>
-      </div>
-     <div class="salut">
-       <p style= "font-weight: bold;">
-         <%= image_tag offer.transporter.user.photo, class: "dash-offer-user" %>
-         <%= offer.transporter.user.first_name %>
-       </p>
-     <!-- <div class="dash-offer-link"> -->
-        <div class="offers-prices">
-          <div class="flex-link">
-            <div class="dash-prix">
-              <p><%= offer.price %> € </p>
-            </div>
-          </div>
-        </div>
-        <div class="offers-prices">
-         <p><%= offer.description.capitalize %></p>
-        </div>
-      </div>
-    </div>
-<% else  %>
-  <!-- <div class="dash-transporter-offers"> -->
-  <% if offer.hypothese.name == "Déménagement" %>
-    <div class="dash-transporter-offer">
-      <div class="presentation-hypo">
-        <%= image_tag 'noun_1435545_cc', height: 40, crop: :fill %>
-        <p>Chez moi</p>
-      </div>
-     <div class="salut">
-       <p style= "font-weight: bold;">
-         <%= image_tag offer.transporter.user.photo, class: "dash-offer-user" %>
-         <%= offer.transporter.user.first_name %>
-       </p>
-     <!-- <div class="dash-offer-link"> -->
-        <div class="offers-prices">
-          <div class="flex-link">
-            <div class="dash-prix">
-              <p><%= offer.price %> € </p>
-            </div>
-            <%= link_to validate_offer_path(product, offer),  remote: true do %>
-              <i class="far fa-2x fa-check-circle green"></i>
-            <% end %>
-            <%= link_to refused_offer_path(product, offer),remote: true do %>
-              <i class="far fa-2x fa-times-circle red"></i>
-            <% end %>
-          </div>
-        </div>
-        <div class="offers-prices">
-         <p><%= offer.description.capitalize %></p>
-        </div>
-      </div>
-    </div>
-  <% else %>
-     <div class="dash-transporter-offer">
-      <div class="presention-hypos">
-        <p>
-           <i class="fas fa-truck truck"></i>
-          Pied du camion
-        </p>
-      </div>
-      <div class="salut">
-        <p style= "font-weight: bold;">
-          <%= image_tag offer.transporter.user.photo, class: "dash-offer-user" %>
-          <%= offer.transporter.user.first_name %>
-        </p>
-      <!-- <div class="dash-offer-link"> -->
-        <div class="offers-prices">
-         <div class="flex-link">
-          <div class="dash-prix">
-            <p><%= offer.price %> € </p>
-          </div>
-         <%= link_to validate_offer_path(product, offer),  remote: true do %>
-            <i class="far fa-2x fa-check-circle green"></i>
-            <% end %>
-          <%= link_to refused_offer_path(product, offer),remote: true do %>
-            <i class="far fa-2x fa-times-circle red"></i>
-          <% end %>
-         </div>
-        </div>
-          <div class="offers-prices">
-            <p><%= offer.description.capitalize %></p>
-          </div>
-      </div>
-        <!-- <div class="offerss-link"> -->
-        <!-- </div> -->
-      <!-- </div> -->
-    </div>
-  <% end %>
-  <!-- </div> -->
-<% end %>
+    <%= image_tag "icons8-camion-24.png", class: "dash-offer-user" %>
+     <!--  <div class="hypothese-1-dash">
+    <%#= image_tag "icons8-camion-24.png", class: 'icon-camion' %>
+      </div> -->
+    <div class="dash-offer-desc">
+      <p><%= offer.description.capitalize %></p>
+      <p><%= offer.price %> € </p>
 
+    </div>
+  </div>
+<% else  %>
+
+  <div class="dash-transporter-offer">
+    <%= image_tag "logo-diable.jpg", class: "dash-offer-user" %>
+    <div class="dash-offer-desc">
+      <p><%= offer.description.capitalize %></p>
+    </div>
+      <p><%= offer.price %> € </p>
+    <div class="dash-offer-link">
+      <%= link_to image_tag("icons8-checkmark-48.png"), validate_offer_path(product, offer), class: 'check-mark',  remote: true %>
+      <%= link_to image_tag("icons8-delete-48.png"), refused_offer_path(product, offer), class: 'delete-offerss', remote: true %>
+    </div>
+  </div>
+<% end %>
 <%#= @hypotheses1.each do |offer| %>
   <%# if offer.product == product %>
     <%# raise %>
